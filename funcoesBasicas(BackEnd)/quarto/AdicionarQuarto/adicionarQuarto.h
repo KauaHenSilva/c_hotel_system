@@ -1,5 +1,9 @@
 #include "../../../db/model.h"
 #include "_adicionarEspacoQuarto.h"
+
+#if !defined(ADICIONARQUARTO)
+#define ADICIONARQUARTO
+
 #include "_adicionaridQuarto.h"
 #include "_adicionarTipoDoQuarto.h"
 #include "_adicionarValorQuarto.h"
@@ -14,3 +18,5 @@ void adicionarQuarto(stDbQuarto **dbQuartos, int *numQuartos)
   adicionarValorQuarto(*dbQuartos, *numQuartos);
   adicionarStatusQuarto(*dbQuartos, *numQuartos);
 };
+
+#endif // ADICIONARQUARTO
