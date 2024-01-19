@@ -12,7 +12,7 @@ void adicionarTipoQuarto(stDbQuarto *dbQuarto, int numQuartos)
   printf("1 - Simples\n");
   printf("2 - Duplo\n");
   printf("3 - Suite\n");
-  
+
   Utils.obterNumero(&tipo);
 
   switch (tipo)
@@ -28,7 +28,7 @@ void adicionarTipoQuarto(stDbQuarto *dbQuarto, int numQuartos)
       break;
     default:
       printf("Tipo de quarto invalido\n");
-      adicionarTipoQuarto(dbQuarto, numQuartos);
+      adicionarTipoQuarto(dbQuarto, numQuartos + 1);
   }
 }
 
