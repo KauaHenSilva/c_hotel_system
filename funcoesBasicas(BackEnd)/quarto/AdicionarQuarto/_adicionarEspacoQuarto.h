@@ -1,5 +1,5 @@
-#if !defined(ADICIONARQUARTO)
-#define ADICIONARQUARTO
+#if !defined(_ADICIONARQUARTO)
+#define _ADICIONARQUARTO
 
 #include "../../../db/model.h"
 #include <stdio.h>

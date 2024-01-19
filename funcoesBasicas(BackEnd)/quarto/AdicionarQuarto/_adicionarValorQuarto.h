@@ -1,5 +1,5 @@
-#if !defined(__PEGARVALORQUARTO)
-#define __PEGARVALORQUARTO
+#if !defined(_ADICIONARVALORQUARTO)
+#define _ADICIONARVALORQUARTO
 
 #include "../../../db/model.h"
 void adicionarValorQuarto(stDbQuarto *dbQuarto, int numQuartos) {

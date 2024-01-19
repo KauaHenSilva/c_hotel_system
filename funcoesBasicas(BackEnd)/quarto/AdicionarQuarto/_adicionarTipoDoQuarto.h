@@ -1,5 +1,5 @@
-#if !defined(PEGARTIPODOQUARTO)
-#define PEGARTIPODOQUARTO
+#if !defined(_ADICIONARTIPODOQUARTO)
+#define _ADICIONARTIPODOQUARTO
 
 #include "../../../db/model.h"
 void adicionarTipoQuarto(stDbQuarto *dbQuarto, int numQuartos)
