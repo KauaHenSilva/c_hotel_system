@@ -2,7 +2,8 @@
 #define _ADICIONARTIPODOQUARTO
 
 #include "../../../db/model.h"
-#include "../../utils/utils.h"
+#include "../../../utils/utilis.h"
+
 void adicionarTipoQuarto(stDbQuarto *dbQuarto, int numQuartos)
 {
   numQuartos -= 1;
