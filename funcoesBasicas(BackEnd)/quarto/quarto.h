@@ -1,9 +1,11 @@
 #if !defined(QUARTO)
 #define QUARTO
 
+#include "../../db/model.h"
 #include "./AdicionarQuarto/adicionarQuarto.h"
+#include "./exibirQuarto/exibirQuarto.h"
 
-/* 
+/*
   A estrutura Quarto contém funções para adicionar, remover e exibir Quartos.
 */
 struct stQuarto
@@ -19,9 +21,14 @@ struct stQuarto
    * @param Quantiade de quantos que o sistema possui.
    */
   void (*adicionarQuarto)(stDbQuarto **dbQuartos, int *numQuartos);
+  stExibirQuarto ExibirQuarto;
 
 } Quarto = {
     (void (*)(stDbQuarto **, int *)) adicionarQuarto,
+    {
+      (void (*)(stDbQuarto *, int )) exibirQuartoAll,
+      (void (*)(stDbQuarto *, int )) exibirQuartoId,
+    },
 };
 
 #endif // QUARTO
