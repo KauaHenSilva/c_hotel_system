@@ -4,6 +4,10 @@
     ".env.*": "dotenv",
     ".prettierrc": "json",
     "*.css": "css",
-    "initdb.h": "c"
+    "initdb.h": "c",
+    "quarto.h": "c",
+    "adicionarquarto.h": "c",
+    "exibirquarto.h": "c",
+    "exibirquartoall.h": "c"
   }
 }
