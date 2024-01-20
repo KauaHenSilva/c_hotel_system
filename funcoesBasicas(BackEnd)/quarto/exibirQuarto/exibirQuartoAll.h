@@ -2,7 +2,7 @@
 #define EXIBIRALLQUARTOALL
 
 #include "../../../db/model.h"
-#include "./_get_IdQuarto.h"
+#include "../../../utils/_get_IdQuarto.h"
 #include "./_exibir_StatusDoQuarto.h"
 #include "./_exibir_IdDoQuarto.h"
 #include "./_exibir_TipoDoQuarto.h"

@@ -13,16 +13,18 @@
 struct stUtils
 {
   /**
- * @brief Função responsável por adicionar um valor inteiro ao sistema.
+ * @brief strict responsável por adicionar um valor inteiro ao sistema.
  *
- * Esta função realiza as validações necessárias e adiciona o valor int.
+ * Esta struct realiza as validações necessárias e adiciona o valor int.
  * 
  * @param *int esse valor vai ser o valor a ser adicionado.
  */
   void (*obterNumero)(int *numero);
+  void (*get_idQuarto)(int *numero);
 
 } Utils = {
-    (void (*)(int *))obterNumero,
+    (void (*)(int *)) obterNumero,
+    (void (*)(stDbQuarto *, int, int *)) get_idQuarto,
 };
 
 #endif // MACRO
