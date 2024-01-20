@@ -13,7 +13,7 @@
 
 void exibirQuartoId(stDbQuarto *quarto, int numQuartos){
   int id;
-  Utils.get_idQuarto(quarto, numQuartos, &id);
+  Utils.getQuartoId(quarto, numQuartos, &id);
   exibirIdDoQuarto(quarto, id);
   exibirStatusDoQuarto(quarto, id);
   exibirTipoDoQuarto(quarto, id);

@@ -2,13 +2,13 @@
 #define _USERQUARTOID
 
 #include <stdio.h>
-#include "./db/model.h"
-#include "../../../utils/utilis.h"
+#include "../db/model.h"
+#include "./_obterNumero.h"
 
 void getQuartoId(stDbQuarto *dbQuarto, int numQuartos, int *idQuarto)
 {
     printf("Digite o id do quarto: ");
-    Utils.obterNumero(idQuarto);
+    obterNumero(idQuarto);
     (*idQuarto)--;
     if(*idQuarto > numQuartos - 1 || *idQuarto < 0){
         printf("Item não encontrado\n");

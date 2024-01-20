@@ -2,6 +2,7 @@
 #define UTILS
 
 #include "_obterNumero.h"
+#include "_get_IdQuarto.h"
 
 /**
  * @brief Função responsável por utilidades ao sistema.
@@ -20,11 +21,11 @@ struct stUtils
  * @param *int esse valor vai ser o valor a ser adicionado.
  */
   void (*obterNumero)(int *numero);
-  void (*get_idQuarto)(int *numero);
+  void (*getQuartoId)(stDbQuarto *dbQuarto, int numQuartos, int *idQuarto);
 
 } Utils = {
     (void (*)(int *)) obterNumero,
-    (void (*)(stDbQuarto *, int, int *)) get_idQuarto,
+    (void (*)(stDbQuarto *, int, int *)) getQuartoId,
 };
 
 #endif // MACRO
