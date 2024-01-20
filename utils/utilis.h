@@ -1,31 +1,30 @@
 #if !defined(UTILS)
 #define UTILS
 
-#include "_obterNumero.h"
+#include "_clear_buffer.h"
+#include "_clear_tela.h"
+#include "_get_ConfirmacaoChar.h"
+#include "_get_NumeroInt.h"
+#include "_get_IdQuarto.h"
+#include "_get_NumeroDouble.h"
 #include "_get_IdQuarto.h"
 
-/**
- * @brief Função responsável por utilidades ao sistema.
- *
- * Esta função recebe as informações necessárias para adicionar uma Variavel
- * int.
- *
- */
 struct stUtils
 {
-  /**
- * @brief strict responsável por adicionar um valor inteiro ao sistema.
- *
- * Esta struct realiza as validações necessárias e adiciona o valor int.
- * 
- * @param *int esse valor vai ser o valor a ser adicionado.
- */
-  void (*obterNumero)(int *numero);
+  void (*clearBuffer)();
+  void (*clearTela)();
+  void (*getConfirmacaoChar)();
   void (*getQuartoId)(stDbQuarto *dbQuarto, int numQuartos, int *idQuarto);
+  void (*getNumeroInt)(int *numero, const char *msg);
+  void (*getNumeroDouble)(double *numero, const char *msg);
 
 } Utils = {
-    (void (*)(int *)) obterNumero,
-    (void (*)(stDbQuarto *, int, int *)) getQuartoId,
+  (void (*)()) limparBuffer,
+  (void (*)()) clearTela,
+  (void (*)) getConfirmacao,
+  (void (*)(stDbQuarto *, int, int *)) getQuartoId,
+  (void (*)(int *, const char *)) getNumeroInt,
+  (void (*)(double *, const char *)) getNumeroDouble,
 };
 
-#endif // MACRO
+#endif // UTILS

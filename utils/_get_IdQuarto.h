@@ -3,15 +3,22 @@
 
 #include <stdio.h>
 #include "../db/model.h"
-#include "./_obterNumero.h"
+#include "./_get_NumeroInt.h"
+#include "./_clear_buffer.h"
 
 void getQuartoId(stDbQuarto *dbQuarto, int numQuartos, int *idQuarto)
 {
-    printf("Digite o id do quarto: ");
-    obterNumero(idQuarto);
+    if (numQuartos == 0)
+    {
+        printf("\nNao ha quartos cadastrados\n");
+        return;
+    }
+
+    getNumeroInt(idQuarto, "Digite o id do quarto: ");
     (*idQuarto)--;
-    if(*idQuarto > numQuartos - 1 || *idQuarto < 0){
-        printf("Item não encontrado\n");
+    if (*idQuarto > numQuartos - 1 || *idQuarto < 0)
+    {
+        printf("Item nao encontrado\n");
         getQuartoId(dbQuarto, numQuartos, idQuarto);
     }
 }
