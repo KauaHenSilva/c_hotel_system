@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 #include <ctype.h>
-#include "./_clear_buffer.h"
+#include "../systemComand/_clear_buffer.h"
 
 void getNumeroInt(int *numero, const char *msg)
 {

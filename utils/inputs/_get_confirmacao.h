@@ -2,7 +2,7 @@
 #define _GETCONFIRMACAO
 
 #include <stdio.h>
-#include "_clear_buffer.h"
+#include "../systemComand/_clear_buffer.h"
 
 int getConfirmacao()
 {

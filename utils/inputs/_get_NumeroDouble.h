@@ -2,8 +2,8 @@
 #define _OBTERNUMERODOUBLE
 
 #include <stdio.h>
-#include "./_clear_buffer.h"
-#include "_get_confirmacaoChar.h"
+#include "../systemComand/_clear_buffer.h"
+#include "_get_confirmacao.h"
 
 void getNumeroDouble(double *numero, const char *msg)
 {
