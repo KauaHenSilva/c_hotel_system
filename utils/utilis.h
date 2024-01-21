@@ -12,13 +12,13 @@
 #include "./inputs/_get_IdQuarto.h"
 #include "./inputs/_get_confirmacao.h"
 
-#include "./exibirOnly/exibirOnly.h"
+#include "./exibirSystem/exibirSystem.h"
 
 struct stUtils
 {
   stSystemComand SystemComand;
   stInputs Inputs;
-  stExibir ExibirOnly;
+  stExibir ExibirSystem;
 
 } Utils = {
   { 
@@ -33,7 +33,7 @@ struct stUtils
     (void (*)(double *, const char *)) getNumeroDouble,
   },
   {
-    (void (*)(stDbQuarto *, int)) exibirQuartoOnlyId,
+    (void (*)(stDbQuarto *, int)) exibirQuartoIdSystem,
   }
 
 };

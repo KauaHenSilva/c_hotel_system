@@ -4,7 +4,6 @@
 
 #include "../../../db/model.h"
 #include "../../../utils/utilis.h"
-#include "./exibirQuartoIDSystem.h"
 #include <stdio.h>
 
 static void exibirQuartoSimples(stDbQuarto *quarto, int numQuartos);
@@ -48,7 +47,7 @@ static void exibirQuartoSimples(stDbQuarto *quarto, int numQuartos)
     if (quarto[x].tipoQuarto == SIMPLES)
     {
       existe = 1;
-      exibirQuartoIdSystem(quarto, x);
+      Utils.ExibirSystem.exibirQuartoIdSystem(quarto, x);
     }
   }
   if(!existe)
@@ -62,7 +61,7 @@ static void exibirQuartoDuplo(stDbQuarto *quarto, int numQuartos)
   {
     existe = 1;
     if (quarto[x].tipoQuarto == DUPLO)
-      exibirQuartoIdSystem(quarto, x);
+      Utils.ExibirSystem.exibirQuartoIdSystem(quarto, x);
   }
   if(!existe)
     printf("Nao existe quartos do tipo Duplo\n");
@@ -74,7 +73,7 @@ static void exibirQuartoSuite(stDbQuarto *quarto, int numQuartos)
   for (int x = 0; x < numQuartos; x++)
   {
     if (quarto[x].tipoQuarto == SUITE)
-      exibirQuartoIdSystem(quarto, x);
+      Utils.ExibirSystem.exibirQuartoIdSystem(quarto, x);
   }
   if(!existe)
     printf("Nao existe quartos do tipo Suite\n");

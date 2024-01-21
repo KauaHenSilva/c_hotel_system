@@ -22,8 +22,8 @@ void editarQuarto(stDbQuarto *dbQuarto, int numQuartos)
   Utils.Inputs.getNumeroInt(&opcao, "Selecione uma opcao: ");
   if (opcao == 0) return;
 
-  Utils.ExibirOnly.exibirOnlyIdQuarto(dbQuarto, numQuartos);
-  
+  Utils.ExibirSystem.exibirQuartoIdSystem(dbQuarto, numQuartos);
+
   int id;
   Utils.Inputs.getQuartoId(dbQuarto, numQuartos, &id);
   if(id == -1) return;

@@ -4,7 +4,6 @@
 
 #include "../../../db/model.h"
 #include "../../../utils/utilis.h"
-#include "./exibirQuartoIDSystem.h"
 #include <stdio.h>
 
 static void exibirQuartoLivre(stDbQuarto *quarto, int id);
@@ -48,7 +47,7 @@ static void exibirQuartoLivre(stDbQuarto *quarto, int numQuartos)
     if (quarto[x].statusQuarto == LIVRE)
     {
       existe = 1;
-      exibirQuartoIdSystem(quarto, x);
+      Utils.ExibirSystem.exibirQuartoIdSystem(quarto, x);
     }
   }
   if(!existe)
@@ -63,7 +62,7 @@ static void exibirQuartoOcupado(stDbQuarto *quarto, int numQuartos)
     if (quarto[x].statusQuarto == OCUPADO)
     {
       existe = 1;
-      exibirQuartoIdSystem(quarto, x);
+      Utils.ExibirSystem.exibirQuartoIdSystem(quarto, x);
     }
   }
   if(!existe)
@@ -78,7 +77,7 @@ static void exibirQuartoResevado(stDbQuarto *quarto, int numQuartos)
     if (quarto[x].statusQuarto == RESERVADO)
     {
       existe = 1;
-      exibirQuartoIdSystem(quarto, x);
+      Utils.ExibirSystem.exibirQuartoIdSystem(quarto, x);
     }
   }
   if(!existe)

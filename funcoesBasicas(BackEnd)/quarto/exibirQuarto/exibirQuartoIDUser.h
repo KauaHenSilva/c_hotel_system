@@ -3,12 +3,6 @@
 #define EXIBIRQUARTOID
 
 #include "../../../db/model.h"
-#include "../../../utils/utilis.h"
-
-#include "./_exibir_StatusDoQuarto.h"
-#include "./_exibir_IdDoQuarto.h"
-#include "./_exibir_TipoDoQuarto.h"
-#include "./_exibir_ValorDoQuarto.h"
 
 #include "./../../../utils/utilis.h"
 
@@ -16,20 +10,19 @@
 void exibirQuartoId(stDbQuarto *quarto, int numQuartos){
   clearTela();
 
-  Utils.ExibirOnly.exibirOnlyIdQuarto(quarto, numQuartos);
-  int id;
+  for(int x = 0 ; x < numQuartos ; x++)
+    Utils.ExibirSystem.exibirQuartoIdSystem(quarto, x);
 
+  int id;
   Utils.Inputs.getQuartoId(quarto, numQuartos, &id);
+
   if(id == -1){
     printf("Nenhum quarto cadrastrado!\n");
     Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
     return;
   };
 
-  exibirIdDoQuarto(quarto, id);
-  exibirStatusDoQuarto(quarto, id);
-  exibirTipoDoQuarto(quarto, id);
-  exibirValorDoQuarto(quarto, id);
+  Utils.ExibirSystem.exibirQuartoIdSystem(quarto, id);
   
   Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
 }

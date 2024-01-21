@@ -2,27 +2,19 @@
 #if !defined(EXIBIRQUARTOIDSYSTEM)
 #define EXIBIRQUARTOIDSYSTEM
 
-#include "../../../db/model.h"
-#include "../../../utils/utilis.h"
+#include "../../db/model.h"
 
-#include "./_exibir_StatusDoQuarto.h"
-#include "./_exibir_IdDoQuarto.h"
-#include "./_exibir_TipoDoQuarto.h"
-#include "./_exibir_ValorDoQuarto.h"
-
-#include "./../../../utils/utilis.h"
-
+#include "./exibirOnlyQuarto/_exibir_IdDoQuarto.h"
+#include "./exibirOnlyQuarto/_exibir_StatusDoQuarto.h"
+#include "./exibirOnlyQuarto/_exibir_TipoDoQuarto.h"
+#include "./exibirOnlyQuarto/_exibir_ValorDoQuarto.h"
 
 void exibirQuartoIdSystem(stDbQuarto *quarto, int id){
-  
   exibirIdDoQuarto(quarto, id);
   exibirStatusDoQuarto(quarto, id);
   exibirTipoDoQuarto(quarto, id);
   exibirValorDoQuarto(quarto, id);
   printf("\n");
-  
 }
-
-
 
 #endif // EXIBIRQUARTOIDSYSTE
