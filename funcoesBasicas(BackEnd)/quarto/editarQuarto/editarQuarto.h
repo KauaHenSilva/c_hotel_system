@@ -6,7 +6,6 @@
 #include "../AdicionarQuarto/_adicionar_TipoDoQuarto.h"
 #include "../AdicionarQuarto/_adicionar_ValorQuarto.h"
 
-static void editarStatusQuarto(stDbQuarto *dbQuarto, int id);
 static void editarTipoQuarto(stDbQuarto *dbQuarto, int id);
 static void editarValorQuarto(stDbQuarto *dbQuarto, int id);
 
@@ -16,30 +15,27 @@ void editarQuarto(stDbQuarto *dbQuarto, int numQuartos)
 
   int opcao;
   printf("O que deseja editar?\n");  
-  printf("1 - Status do quarto\n");
-  printf("2 - Tipo do quarto\n");
-  printf("3 - Valor do quarto\n");
+  printf("1 - Tipo do quarto\n");
+  printf("2 - Valor do quarto\n");
   printf("0 - Sair do modo edicao\n");
 
   Utils.Inputs.getNumeroInt(&opcao, "Selecione uma opcao: ");
   if (opcao == 0) return;
 
   Utils.ExibirOnly.exibirOnlyIdQuarto(dbQuarto, numQuartos);
+  
   int id;
   Utils.Inputs.getQuartoId(dbQuarto, numQuartos, &id);
+  if(id == -1) return;
 
   switch (opcao)
   {
     case 1:
-      editarStatusQuarto(dbQuarto, id);
-      editarQuarto(dbQuarto, numQuartos);
-      break;
-    case 2:
       editarTipoQuarto(dbQuarto, id);
       editarValorQuarto(dbQuarto, id);
       editarQuarto(dbQuarto, numQuartos);
       break;
-    case 3:
+    case 2:
       editarValorQuarto(dbQuarto, id);
       editarQuarto(dbQuarto, numQuartos);
       break;
@@ -50,10 +46,6 @@ void editarQuarto(stDbQuarto *dbQuarto, int numQuartos)
   }
 }
 
-static void editarStatusQuarto(stDbQuarto *dbQuarto, int id)
-{
-  adicionarStatusQuarto(dbQuarto, id);
-}
 
 static void editarTipoQuarto(stDbQuarto *dbQuarto, int id)
 {

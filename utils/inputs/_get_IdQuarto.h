@@ -12,7 +12,7 @@ void getQuartoId(stDbQuarto *dbQuarto, int numQuartos, int *idQuarto)
 {
     if (numQuartos == 0)
     {
-        printf("\nNao ha quartos cadastrados\n");
+        (*idQuarto) = -1;
         return;
     }
     

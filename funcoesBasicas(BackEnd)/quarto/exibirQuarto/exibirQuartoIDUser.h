@@ -17,13 +17,20 @@ void exibirQuartoId(stDbQuarto *quarto, int numQuartos){
   clearTela();
 
   Utils.ExibirOnly.exibirOnlyIdQuarto(quarto, numQuartos);
-  
   int id;
+
   Utils.Inputs.getQuartoId(quarto, numQuartos, &id);
+  if(id == -1){
+    printf("Nenhum quarto cadrastrado!\n");
+    Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
+    return;
+  };
+
   exibirIdDoQuarto(quarto, id);
   exibirStatusDoQuarto(quarto, id);
   exibirTipoDoQuarto(quarto, id);
   exibirValorDoQuarto(quarto, id);
+  
   Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
 }
 

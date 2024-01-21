@@ -3,13 +3,16 @@
 
 #include "../../../db/model.h"
 #include "./exibirQuartoAll.h"
-#include "./exibirQuartoID.h"
+#include "./exibirQuartoIDUser.h"
+#include "./exibirQuartoStatus.h"
+#include "./exibirQuartoTipo.h"
 
 typedef struct 
 {
-  void (*exibirAllQuarto)(stDbQuarto *dbQuartos, int numQuartos);
-  void (*exibirIdQuarto)(stDbQuarto *dbQuartos, int numQuartos);
-
+  void (*exibirQuartoAll)(stDbQuarto *dbQuartos, int numQuartos);
+  void (*exibirQuartoId)(stDbQuarto *dbQuartos, int numQuartos);
+  void (*exibirQuartoStatus)(stDbQuarto *dbQuartos, int numQuartos);
+  void (*exibirQuartoTipo)(stDbQuarto *dbQuartos, int numQuartos);
 } stExibirQuarto;
 
 #endif // QUARTO
