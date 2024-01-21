@@ -8,27 +8,28 @@ int getConfirmacao()
 {
   char temp;
   printf("Voce confirma? [S]im [N]ao: ");
-
-  if (scanf("%c", &temp) != 1)
+  limparBuffer();
+  if (scanf("%c", &temp) == 1)
   {
-    printf("\nEntrada invalida. Por favor, insira um caracter valido: \n");
-    limparBuffer();
-    getConfirmacao();
+    if (temp != 'S' && temp != 's' && temp != 'N' && temp != 'n')
+    {
+      printf("\nEntrada invalida. Por favor, insira Somente [S] ou [N]!! \n");
+    }
+    else
+    {
+      printf("\n");
+      if (temp == 'S' || temp == 's')
+        return 1;
+      if (temp == 'N' || temp == 'n')
+        return 0;
+    }
   }
-
-  if(temp != 'S' && temp != 's' && temp != 'N' && temp != 'n'){
-    printf("\nEntrada invalida. Por favor, insira Somente [S] ou [N]: \n");
-    limparBuffer();
-    getConfirmacao();
+  else 
+  {
+    printf("\nEntrada invalida. Por favor, insira Valores Aceitos! \n");
   }
   
-  limparBuffer();
-  printf("\n");
-
-  if(temp == 'S' || temp == 's')
-    return 1;
-
-  return 0;
+  return getConfirmacao();
 }
 
 #endif // _GETCONFIRMACAO

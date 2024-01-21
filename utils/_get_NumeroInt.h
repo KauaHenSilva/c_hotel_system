@@ -10,27 +10,19 @@ void getNumeroInt(int *numero, const char *msg)
   int temp;
 
   printf("\n%s", msg);
-  if (scanf("%d", &temp) != 1)
+  limparBuffer();
+  if (scanf("%d", &temp) == 1)
   {
-    printf("\nEntrada invalida. Por favor, insira um numero valido!!\n");
-    limparBuffer();
+    printf("Voce digitou %d\n", temp);
+    if(!getConfirmacao())
+      getNumeroInt(numero, msg);
+    *numero = temp;
+  }
+  else
+  {
+    printf("\nEntrada invalida. Por favor, insira um valor Valido!!\n");
     getNumeroInt(numero, msg);
   }
-  if (temp < 0)
-  {
-    printf("\nEntrada invalida. Por favor, insira um numero maior que 0!!\n");
-    limparBuffer();
-    getNumeroInt(numero, msg);
-  }
-  
-  limparBuffer();
-
-  printf("Voce digitou %d\n", temp);
-  if(!getConfirmacao())
-    getNumeroInt(numero, msg);
-
-  *numero = temp;
-  limparBuffer();
 
 }
 
