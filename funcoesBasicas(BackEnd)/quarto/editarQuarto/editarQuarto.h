@@ -1,18 +1,19 @@
-#if !defined(EDITARQUARTO)
+#ifndef EDITARQUARTO
 #define EDITARQUARTO
 
 #include "../../../utils/utilis.h"
-
 #include "../AdicionarQuarto/_adicionar_StatusQuarto.h"
 #include "../AdicionarQuarto/_adicionar_TipoDoQuarto.h"
 #include "../AdicionarQuarto/_adicionar_ValorQuarto.h"
 
-static void _editarStatusQuarto(stDbQuarto *dbQuarto, int numQuartos, int id);
-static void _editarTipoQuarto(stDbQuarto *dbQuarto, int numQuartos, int id);
-static void _editarValorQuarto(stDbQuarto *dbQuarto, int numQuartos, int id);
+static void editarStatusQuarto(stDbQuarto *dbQuarto, int id);
+static void editarTipoQuarto(stDbQuarto *dbQuarto, int id);
+static void editarValorQuarto(stDbQuarto *dbQuarto, int id);
 
 void editarQuarto(stDbQuarto *dbQuarto, int numQuartos)
 {
+  Utils.SystemComand.clearTela();
+
   int opcao;
   printf("O que deseja editar?\n");  
   printf("1 - Status do quarto\n");
@@ -20,46 +21,48 @@ void editarQuarto(stDbQuarto *dbQuarto, int numQuartos)
   printf("3 - Valor do quarto\n");
   printf("0 - Sair do modo edicao\n");
 
-  Utils.Inputs.getNumeroInt(&opcao, "Digite uma opcao valida: ");
+  Utils.Inputs.getNumeroInt(&opcao, "Selecione uma opcao: ");
+  if (opcao == 0) return;
 
-  int id;
   Utils.ExibirOnly.exibirOnlyIdQuarto(dbQuarto, numQuartos);
+  int id;
   Utils.Inputs.getQuartoId(dbQuarto, numQuartos, &id);
 
   switch (opcao)
   {
-    case 0:
-      return;
     case 1:
-      _editarStatusQuarto(dbQuarto, numQuartos, id);
+      editarStatusQuarto(dbQuarto, id);
+      editarQuarto(dbQuarto, numQuartos);
       break;
     case 2:
-      _editarTipoQuarto(dbQuarto, numQuartos, id);
+      editarTipoQuarto(dbQuarto, id);
+      editarValorQuarto(dbQuarto, id);
+      editarQuarto(dbQuarto, numQuartos);
       break;
     case 3:
-      _editarValorQuarto(dbQuarto, numQuartos, id);
+      editarValorQuarto(dbQuarto, id);
+      editarQuarto(dbQuarto, numQuartos);
       break;
     default:
-      printf("Opcao invalida\n");
+      printf("Opção inválida\n");
+      editarQuarto(dbQuarto, numQuartos);
       break;
   }
 }
 
-static void _editarStatusQuarto(stDbQuarto *dbQuarto, int numQuartos, int id)
+static void editarStatusQuarto(stDbQuarto *dbQuarto, int id)
 {
   adicionarStatusQuarto(dbQuarto, id);
-  editarQuarto(dbQuarto, numQuartos);
 }
-static void _editarTipoQuarto(stDbQuarto *dbQuarto, int numQuartos, int id)
+
+static void editarTipoQuarto(stDbQuarto *dbQuarto, int id)
 {
   adicionarTipoQuarto(dbQuarto, id);
-  editarQuarto(dbQuarto, numQuartos);
 }
-static void _editarValorQuarto(stDbQuarto *dbQuarto, int numQuartos, int id)
+
+static void editarValorQuarto(stDbQuarto *dbQuarto, int id)
 {
   adicionarValorQuarto(dbQuarto, id);
-  editarQuarto(dbQuarto, numQuartos);
 }
 
 #endif // EDITARQUARTO
-

@@ -8,6 +8,7 @@
 void systemPause(const char *msg){
   printf("\n%s", msg);
   getch();
+  printf("\n");
 }
 
 #endif // SYSTEMPAUSE

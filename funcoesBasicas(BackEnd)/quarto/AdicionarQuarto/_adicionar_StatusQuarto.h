@@ -56,10 +56,10 @@ static void adicionarStatusQuartoUser(stDbQuarto *dbQuarto, int posicaoMemoria)
       dbQuarto[posicaoMemoria].statusQuarto = LIVRE;
       break;
     case 2:
-      dbQuarto[posicaoMemoria].tipoQuarto = RESERVADO;
+      dbQuarto[posicaoMemoria].statusQuarto = RESERVADO;
       break;
     case 3:
-      dbQuarto[posicaoMemoria].tipoQuarto = OCUPADO;
+      dbQuarto[posicaoMemoria].statusQuarto = OCUPADO;
       break;
     default:
       printf("Status do quarto invalido\n");
