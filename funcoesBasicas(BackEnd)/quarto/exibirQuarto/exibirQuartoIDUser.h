@@ -6,7 +6,7 @@
 
 #include "./../../../utils/utilis.h"
 #include "./exibirOnlyQuarto/exibirOnlyQuarto.h"
-#include "../get/getQuartoId.h"
+#include "../util/getQuartoId.h"
 
 
 void exibirQuartoId(stDbQuarto *quarto, int numQuartos){

@@ -6,7 +6,7 @@
 #include "../AdicionarQuarto/inputsOnly/_adicionar_TipoDoQuarto.h"
 #include "../AdicionarQuarto/inputsOnly/_adicionar_ValorQuarto.h"
 #include "../exibirQuarto/exibirOnlyQuarto/exibirOnlyQuarto.h"
-#include "../get/getQuartoId.h"
+#include "../util/getQuartoId.h"
 
 static void editarTipoQuarto(stDbQuarto *dbQuarto, int id);
 static void editarValorQuarto(stDbQuarto *dbQuarto, int id);

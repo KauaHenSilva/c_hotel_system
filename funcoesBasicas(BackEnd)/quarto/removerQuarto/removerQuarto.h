@@ -4,7 +4,7 @@
 #include "../../../db/model.h"
 #include "../../../utils/utilis.h"
 #include <stdio.h>
-#include "../get/getQuartoId.h"
+#include "../util/getQuartoId.h"
 #include "../exibirQuarto/exibirOnlyQuarto/exibirOnlyQuarto.h"
 
 void removerQuarto(stDbQuarto **dbQuartos, int *numQuartos) {
