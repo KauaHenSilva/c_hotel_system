@@ -4,14 +4,16 @@
 #include "../../../db/model.h"
 #include "../../../utils/utilis.h"
 #include <stdio.h>
+#include "../get/getQuartoId.h"
+#include "../exibirQuarto/exibirOnlyQuarto/exibirOnlyQuarto.h"
 
 void removerQuarto(stDbQuarto **dbQuartos, int *numQuartos) {
 
   for(int x  = 0 ; x < *numQuartos ; x++)
-    Utils.ExibirSystem.exibirQuartoIdSystem(*dbQuartos, x);
+    exibirOnlyQuarto(*dbQuartos, x);
   
   int id;
-  Utils.Inputs.getQuartoId(*dbQuartos, *numQuartos, &id);
+  getQuartoId(*dbQuartos, *numQuartos, &id);
   if(id == -1) return;
 
   for (int i = id; i < *numQuartos - 1; i++) 

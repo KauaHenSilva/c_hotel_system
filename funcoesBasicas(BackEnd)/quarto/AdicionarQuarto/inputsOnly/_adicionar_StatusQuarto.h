@@ -1,8 +1,7 @@
 #if !defined(_ADICIONARSTATUSQUARTO)
 #define _ADICIONARSTATUSQUARTO
 
-#include "../../../db/model.h"
-#include "../../../utils/utilis.h"
+#include "../../../../utils/utilis.h"
 
 static void initStatusQuarto(stDbQuarto *dbQuarto, int posicaoMemoria);
 static void adicionarStatusQuartoUser(stDbQuarto *dbQuarto, int posicaoMemoria);
@@ -15,7 +14,7 @@ void adicionarStatusQuarto(stDbQuarto *dbQuarto, int posicaoMemoria)
   printf("1 - status Padrao (Padrao: Livre)\n");
   printf("2 - status Personalizado\n");
   
-  Utils.Inputs.getNumeroInt(&ver, "Digite o modelo de status do quarto: ");
+  Utils.InputsBasic.getNumeroInt(&ver, "Digite o modelo de status do quarto: ");
 
   switch (ver)
   {
@@ -48,7 +47,7 @@ static void adicionarStatusQuartoUser(stDbQuarto *dbQuarto, int posicaoMemoria)
   printf("2 - Reservado\n");
   printf("3 - Ocupado\n");
 
-  Utils.Inputs.getNumeroInt(&status, "Digite o status do quarto: ");
+  Utils.InputsBasic.getNumeroInt(&status, "Digite o status do quarto: ");
 
   switch (status)
   {

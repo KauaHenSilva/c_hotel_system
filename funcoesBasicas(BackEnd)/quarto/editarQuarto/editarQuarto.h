@@ -2,9 +2,11 @@
 #define EDITARQUARTO
 
 #include "../../../utils/utilis.h"
-#include "../AdicionarQuarto/_adicionar_StatusQuarto.h"
-#include "../AdicionarQuarto/_adicionar_TipoDoQuarto.h"
-#include "../AdicionarQuarto/_adicionar_ValorQuarto.h"
+#include "../AdicionarQuarto/inputsOnly/_adicionar_StatusQuarto.h"
+#include "../AdicionarQuarto/inputsOnly/_adicionar_TipoDoQuarto.h"
+#include "../AdicionarQuarto/inputsOnly/_adicionar_ValorQuarto.h"
+#include "../exibirQuarto/exibirOnlyQuarto/exibirOnlyQuarto.h"
+#include "../get/getQuartoId.h"
 
 static void editarTipoQuarto(stDbQuarto *dbQuarto, int id);
 static void editarValorQuarto(stDbQuarto *dbQuarto, int id);
@@ -19,13 +21,13 @@ void editarQuarto(stDbQuarto *dbQuarto, int numQuartos)
   printf("2 - Valor do quarto\n");
   printf("0 - Sair do modo edicao\n");
 
-  Utils.Inputs.getNumeroInt(&opcao, "Selecione uma opcao: ");
+  Utils.InputsBasic.getNumeroInt(&opcao, "Selecione uma opcao: ");
   if (opcao == 0) return;
 
-  Utils.ExibirSystem.exibirQuartoIdSystem(dbQuarto, numQuartos);
+  exibirOnlyQuarto(dbQuarto, numQuartos);
 
   int id;
-  Utils.Inputs.getQuartoId(dbQuarto, numQuartos, &id);
+  getQuartoId(dbQuarto, numQuartos, &id);
   if(id == -1) return;
 
   switch (opcao)

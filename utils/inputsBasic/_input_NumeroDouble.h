@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 #include "../systemComand/_clear_buffer.h"
-#include "_get_confirmacao.h"
+#include "_input_confirmacao.h"
 
 void getNumeroDouble(double *numero, const char *msg)
 {

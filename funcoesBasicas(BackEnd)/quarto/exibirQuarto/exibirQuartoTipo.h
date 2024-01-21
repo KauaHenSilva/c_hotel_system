@@ -4,7 +4,9 @@
 
 #include "../../../db/model.h"
 #include "../../../utils/utilis.h"
+#include "./exibirOnlyQuarto/exibirOnlyQuarto.h"
 #include <stdio.h>
+
 
 static void exibirQuartoSimples(stDbQuarto *quarto, int numQuartos);
 static void exibirQuartoDuplo(stDbQuarto *quarto, int numQuartos);
@@ -20,7 +22,7 @@ void exibirQuartoTipo(stDbQuarto *quarto, int numQuartos)
   printf("3 - Suite\n");
 
   int opc;
-  Utils.Inputs.getNumeroInt(&opc, "Digite o numero correspodente: ");
+  Utils.InputsBasic.getNumeroInt(&opc, "Digite o numero correspodente: ");
 
   switch (opc)
   {
@@ -47,7 +49,7 @@ static void exibirQuartoSimples(stDbQuarto *quarto, int numQuartos)
     if (quarto[x].tipoQuarto == SIMPLES)
     {
       existe = 1;
-      Utils.ExibirSystem.exibirQuartoIdSystem(quarto, x);
+      exibirOnlyQuarto(quarto, x);
     }
   }
   if(!existe)
@@ -61,7 +63,7 @@ static void exibirQuartoDuplo(stDbQuarto *quarto, int numQuartos)
   {
     existe = 1;
     if (quarto[x].tipoQuarto == DUPLO)
-      Utils.ExibirSystem.exibirQuartoIdSystem(quarto, x);
+      exibirOnlyQuarto(quarto, x);
   }
   if(!existe)
     printf("Nao existe quartos do tipo Duplo\n");
@@ -73,7 +75,7 @@ static void exibirQuartoSuite(stDbQuarto *quarto, int numQuartos)
   for (int x = 0; x < numQuartos; x++)
   {
     if (quarto[x].tipoQuarto == SUITE)
-      Utils.ExibirSystem.exibirQuartoIdSystem(quarto, x);
+    exibirOnlyQuarto(quarto, x);
   }
   if(!existe)
     printf("Nao existe quartos do tipo Suite\n");

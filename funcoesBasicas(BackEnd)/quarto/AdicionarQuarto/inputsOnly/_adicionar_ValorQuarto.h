@@ -1,8 +1,7 @@
 #if !defined(_ADICIONARVALORQUARTO)
 #define _ADICIONARVALORQUARTO
 
-#include "../../../db/model.h"
-#include "../../../utils/utilis.h"
+#include "../../../../utils/utilis.h"
 
 static void adicionarValorPersonalizadoQuarto(stDbQuarto *dbQuarto, int posicaoMemoria);
 static void adicionarValorPadraoQuarto(stDbQuarto *dbQuarto, int posicaoMemoria);
@@ -14,7 +13,7 @@ void adicionarValorQuarto(stDbQuarto *dbQuarto, int posicaoMemoria)
     printf("Digite o tipo do valor do quarto [%d]: \n", dbQuarto[posicaoMemoria].numero);
     printf("1 - Valor Padrao(SIMPLES: 100R$, DUPLO: 200R$, SUITE 300R$)\n");
     printf("2 - Valor Personalizado\n");
-    Utils.Inputs.getNumeroInt(&ver, "Digite o tipo do valor do quarto: ");
+    Utils.InputsBasic.getNumeroInt(&ver, "Digite o tipo do valor do quarto: ");
 
     switch (ver)
     {
@@ -31,7 +30,7 @@ void adicionarValorQuarto(stDbQuarto *dbQuarto, int posicaoMemoria)
 
 static void adicionarValorPersonalizadoQuarto(stDbQuarto *dbQuarto, int posicaoMemoria)
 {
-    Utils.Inputs.getNumeroDouble( \
+    Utils.InputsBasic.getNumeroDouble( \
     &dbQuarto[posicaoMemoria].valorDiaria, \
     "Digite o valor a ser pago no quarto: ");
 }

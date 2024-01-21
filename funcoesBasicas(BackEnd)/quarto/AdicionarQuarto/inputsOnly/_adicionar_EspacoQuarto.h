@@ -1,7 +1,6 @@
 #if !defined(_ADICIONARQUARTO)
 #define _ADICIONARQUARTO
 
-#include "../../../db/model.h"
 #include <stdio.h>
 #include <stdlib.h>
 

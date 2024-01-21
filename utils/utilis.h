@@ -6,19 +6,16 @@
 #include "./systemComand/_clear_tela.h"
 #include "./systemComand/_system_pause.h"
 
-#include "./inputs/inputs.h"
-#include "./inputs/_get_NumeroInt.h"
-#include "./inputs/_get_NumeroDouble.h"
-#include "./inputs/_get_IdQuarto.h"
-#include "./inputs/_get_confirmacao.h"
+#include "./inputsBasic/inputsBasic.h"
+#include "./inputsBasic/_input_NumeroInt.h"
+#include "./inputsBasic/_input_NumeroDouble.h"
+#include "./inputsBasic/_input_confirmacao.h"
 
-#include "./exibirSystem/exibirSystem.h"
 
 struct stUtils
 {
   stSystemComand SystemComand;
-  stInputs Inputs;
-  stExibir ExibirSystem;
+  stInputsBasic InputsBasic;
 
 } Utils = {
   { 
@@ -28,14 +25,9 @@ struct stUtils
   },
   {
     (void (*)()) getConfirmacao,
-    (void (*)(stDbQuarto *, int, int *)) getQuartoId,
     (void (*)(int *, const char *)) getNumeroInt,
     (void (*)(double *, const char *)) getNumeroDouble,
-  },
-  {
-    (void (*)(stDbQuarto *, int)) exibirQuartoIdSystem,
   }
-
 };
 
 #endif // UTILS

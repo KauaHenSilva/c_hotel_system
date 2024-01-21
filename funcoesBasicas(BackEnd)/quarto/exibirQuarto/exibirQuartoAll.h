@@ -3,6 +3,7 @@
 
 #include "../../../db/model.h"
 #include "../../../utils/utilis.h"
+#include "./exibirOnlyQuarto/exibirOnlyQuarto.h"
 
 void exibirQuartoAll(stDbQuarto *quarto, int numQuartos){
 
@@ -15,7 +16,7 @@ void exibirQuartoAll(stDbQuarto *quarto, int numQuartos){
 
   for(int x = 0 ; x < numQuartos ; x++)
   {
-    Utils.ExibirSystem.exibirQuartoIdSystem(quarto, x);
+    exibirOnlyQuarto(quarto, x);
   }
   Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
 }

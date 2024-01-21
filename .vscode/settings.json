@@ -21,6 +21,12 @@
     "_clear_tela.h": "c",
     "_clear_buffer.h": "c",
     "_exibir_iddoquarto.h": "c",
-    "_get_confirmacao.h": "c"
+    "_get_confirmacao.h": "c",
+    "editarquarto.h": "c",
+    "exibirquartoiduser.h": "c",
+    "exibirquartotipo.h": "c",
+    "_exibir_statusdoquarto.h": "c",
+    "_system_pause.h": "c",
+    "_input_numerodouble.h": "c"
   }
 }

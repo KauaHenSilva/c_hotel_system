@@ -2,7 +2,7 @@
 #define _EXIBIRSTATUSDOQUARTO
 
 #include <stdio.h>
-#include "../../../db/model.h"
+#include "../../../../db/model.h"
 
 void exibirStatusDoQuarto(stDbQuarto *quartos, int id)
 {

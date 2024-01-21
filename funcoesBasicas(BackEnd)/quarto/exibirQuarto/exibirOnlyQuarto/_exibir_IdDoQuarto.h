@@ -1,7 +1,7 @@
 #if !defined(_EXIBIRIDDOQUARTO)
 #define _EXIBIRIDDOQUARTO
 
-#include "../../../db/model.h"
+#include "../../../../db/model.h"
 
 void exibirIdDoQuarto(stDbQuarto *quartos, int id)
 {

@@ -2,11 +2,9 @@
 #define _USERQUARTOID
 
 #include <stdio.h>
-#include "../../db/model.h"
+#include "../../../db/model.h"
+#include "../../../utils/utilis.h"
 
-#include "./_get_NumeroInt.h"
-#include "../systemComand/_clear_buffer.h"
-#include "./_get_Confirmacao.h"
 
 void getQuartoId(stDbQuarto *dbQuarto, int numQuartos, int *idQuarto)
 {
@@ -16,7 +14,7 @@ void getQuartoId(stDbQuarto *dbQuarto, int numQuartos, int *idQuarto)
         return;
     }
     
-    getNumeroInt(idQuarto, "Digite o id do quarto: ");
+    Utils.InputsBasic.getNumeroInt(idQuarto, "Digite o id do quarto: ");
     (*idQuarto)--;
 
     if (*idQuarto > numQuartos - 1 || *idQuarto < 0)

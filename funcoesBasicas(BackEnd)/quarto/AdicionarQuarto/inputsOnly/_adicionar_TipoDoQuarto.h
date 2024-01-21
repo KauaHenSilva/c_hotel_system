@@ -1,8 +1,7 @@
 #if !defined(_ADICIONARTIPODOQUARTO)
 #define _ADICIONARTIPODOQUARTO
 
-#include "../../../db/model.h"
-#include "../../../utils/utilis.h"
+#include "../../../../utils/utilis.h"
 
 static void adicionarTipoPersonalizadoQuarto(stDbQuarto *dbQuarto, int posicaoMemoria);
 static void adicionarTipoPadraoQuarto(stDbQuarto *dbQuarto, int posicaoMemoria);
@@ -14,7 +13,7 @@ void adicionarTipoQuarto(stDbQuarto *dbQuarto, int posicaoMemoria)
   printf("Digite o tipo do quarto [%d]: \n", dbQuarto[posicaoMemoria].numero);
   printf("1 - Tipo Padrao(Tipo: Simples)\n");
   printf("2 - Tipo Personalizado\n");
-  Utils.Inputs.getNumeroInt(&ver, "Digite o tipo do quarto: ");
+  Utils.InputsBasic.getNumeroInt(&ver, "Digite o tipo do quarto: ");
 
   switch (ver)
   {
@@ -40,7 +39,7 @@ static void adicionarTipoPersonalizadoQuarto(stDbQuarto *dbQuarto, int posicaoMe
   printf("2 - Duplo\n");
   printf("3 - Suite\n");
   
-  Utils.Inputs.getNumeroInt(&tipo, "Digite o tipo do quarto: ");
+  Utils.InputsBasic.getNumeroInt(&tipo, "Digite o tipo do quarto: ");
 
   switch (tipo)
   {

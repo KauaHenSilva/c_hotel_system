@@ -1,13 +1,13 @@
-#include "../../../db/model.h"
-#include "_adicionar_EspacoQuarto.h"
 
 #if !defined(ADICIONARQUARTO)
 #define ADICIONARQUARTO
 
-#include "_adicionar_idQuarto.h"
-#include "_adicionar_TipoDoQuarto.h"
-#include "_adicionar_ValorQuarto.h"
-#include "_adicionar_StatusQuarto.h"
+#include "../../../db/model.h"
+#include "./inputsOnly/_adicionar_EspacoQuarto.h"
+#include "./inputsOnly/_adicionar_idQuarto.h"
+#include "./inputsOnly/_adicionar_TipoDoQuarto.h"
+#include "./inputsOnly/_adicionar_ValorQuarto.h"
+#include "./inputsOnly/_adicionar_StatusQuarto.h"
 #include "./../../../utils/utilis.h"
 
 

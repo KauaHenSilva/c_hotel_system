@@ -4,7 +4,9 @@
 
 #include "../../../db/model.h"
 #include "../../../utils/utilis.h"
+#include "./exibirOnlyQuarto/exibirOnlyQuarto.h"
 #include <stdio.h>
+
 
 static void exibirQuartoLivre(stDbQuarto *quarto, int id);
 static void exibirQuartoOcupado(stDbQuarto *quarto, int id);
@@ -20,7 +22,7 @@ void exibirQuartoStatus(stDbQuarto *quarto, int numQuartos)
   printf("2 - Ocupado\n");
 
   int opc;
-  Utils.Inputs.getNumeroInt(&opc, "Digite o numero correspodente: ");
+  Utils.InputsBasic.getNumeroInt(&opc, "Digite o numero correspodente: ");
 
   switch (opc)
   {
@@ -47,7 +49,7 @@ static void exibirQuartoLivre(stDbQuarto *quarto, int numQuartos)
     if (quarto[x].statusQuarto == LIVRE)
     {
       existe = 1;
-      Utils.ExibirSystem.exibirQuartoIdSystem(quarto, x);
+      exibirOnlyQuarto(quarto, x);
     }
   }
   if(!existe)
@@ -62,7 +64,7 @@ static void exibirQuartoOcupado(stDbQuarto *quarto, int numQuartos)
     if (quarto[x].statusQuarto == OCUPADO)
     {
       existe = 1;
-      Utils.ExibirSystem.exibirQuartoIdSystem(quarto, x);
+      exibirOnlyQuarto(quarto, x);
     }
   }
   if(!existe)
@@ -77,7 +79,7 @@ static void exibirQuartoResevado(stDbQuarto *quarto, int numQuartos)
     if (quarto[x].statusQuarto == RESERVADO)
     {
       existe = 1;
-      Utils.ExibirSystem.exibirQuartoIdSystem(quarto, x);
+      exibirOnlyQuarto(quarto, x);
     }
   }
   if(!existe)
