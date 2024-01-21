@@ -2,11 +2,12 @@
 #define EDITARQUARTO
 
 #include "../../../utils/utilis.h"
+#include "../util/getQuartoId.h"
+
 #include "../AdicionarQuarto/inputsOnly/_adicionar_StatusQuarto.h"
 #include "../AdicionarQuarto/inputsOnly/_adicionar_TipoDoQuarto.h"
 #include "../AdicionarQuarto/inputsOnly/_adicionar_ValorQuarto.h"
 #include "../exibirQuarto/exibirOnlyQuarto/exibirOnlyQuarto.h"
-#include "../util/getQuartoId.h"
 
 static void editarTipoQuarto(stDbQuarto *dbQuarto, int id);
 static void editarValorQuarto(stDbQuarto *dbQuarto, int id);

@@ -40,16 +40,16 @@ static void initStatusQuarto(stDbQuarto *dbQuarto, int posicaoMemoria)
 static void adicionarStatusQuartoUser(stDbQuarto *dbQuarto, int posicaoMemoria)
 {
 
-  int status;
+  int opc;
 
-  printf("Selecione o status do quarto [%d]: \n",dbQuarto[posicaoMemoria].numero + 1);
+  printf("Selecione o status do quarto [%d]: \n",dbQuarto[posicaoMemoria].numero);
   printf("1 - Livre\n");
   printf("2 - Reservado\n");
   printf("3 - Ocupado\n");
 
-  Utils.InputsBasic.getNumeroInt(&status, "Digite o status do quarto: ");
+  Utils.InputsBasic.getNumeroInt(&opc, "Digite o status do quarto: ");
 
-  switch (status)
+  switch (opc)
   {
     case 1:
       dbQuarto[posicaoMemoria].statusQuarto = LIVRE;

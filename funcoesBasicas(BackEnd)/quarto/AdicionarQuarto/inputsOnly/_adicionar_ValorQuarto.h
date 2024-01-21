@@ -8,14 +8,15 @@ static void adicionarValorPadraoQuarto(stDbQuarto *dbQuarto, int posicaoMemoria)
 
 void adicionarValorQuarto(stDbQuarto *dbQuarto, int posicaoMemoria)
 {
-    int ver;
+    int opc;
 
     printf("Digite o tipo do valor do quarto [%d]: \n", dbQuarto[posicaoMemoria].numero);
     printf("1 - Valor Padrao(SIMPLES: 100R$, DUPLO: 200R$, SUITE 300R$)\n");
     printf("2 - Valor Personalizado\n");
-    Utils.InputsBasic.getNumeroInt(&ver, "Digite o tipo do valor do quarto: ");
 
-    switch (ver)
+    Utils.InputsBasic.getNumeroInt(&opc, "Digite o tipo do valor do quarto: ");
+
+    switch (opc)
     {
     case 1:
         adicionarValorPadraoQuarto(dbQuarto, posicaoMemoria);
