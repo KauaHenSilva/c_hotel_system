@@ -3,12 +3,12 @@
 #define ADICIONARQUARTO
 
 #include "../../../db/model.h"
+#include "./../../../utils/utilis.h"
 #include "./inputsOnly/_adicionar_EspacoQuarto.h"
 #include "./inputsOnly/_adicionar_idQuarto.h"
 #include "./inputsOnly/_adicionar_TipoDoQuarto.h"
 #include "./inputsOnly/_adicionar_ValorQuarto.h"
 #include "./inputsOnly/_adicionar_StatusQuarto.h"
-#include "./../../../utils/utilis.h"
 
 
 void adicionarQuarto(stDbQuarto **dbQuartos, int *numQuartos)
