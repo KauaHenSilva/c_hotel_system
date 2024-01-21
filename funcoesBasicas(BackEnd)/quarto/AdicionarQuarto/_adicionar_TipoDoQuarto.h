@@ -4,66 +4,64 @@
 #include "../../../db/model.h"
 #include "../../../utils/utilis.h"
 
-static void adicionarTipoPersonalizadoQuarto(stDbQuarto *dbQuarto, int numQuartos);
-static void adicionarTipoPadraoQuarto(stDbQuarto *dbQuarto, int numQuartos);
+static void adicionarTipoPersonalizadoQuarto(stDbQuarto *dbQuarto, int posicaoMemoria);
+static void adicionarTipoPadraoQuarto(stDbQuarto *dbQuarto, int posicaoMemoria);
 
-void adicionarTipoQuarto(stDbQuarto *dbQuarto, int numQuartos)
+void adicionarTipoQuarto(stDbQuarto *dbQuarto, int posicaoMemoria)
 {
-  numQuartos -= 1;
-
   int ver;
-
-  printf("Digite o tipo do quarto [%d]: \n", dbQuarto[numQuartos].numero);
+  
+  printf("Digite o tipo do quarto [%d]: \n", dbQuarto[posicaoMemoria].numero);
   printf("1 - Tipo Padrao(Tipo: Simples)\n");
   printf("2 - Tipo Personalizado\n");
-  Utils.getNumeroInt(&ver, "Digite o tipo do quarto: ");
+  Utils.Inputs.getNumeroInt(&ver, "Digite o tipo do quarto: ");
 
   switch (ver)
   {
     case 1:
-      adicionarTipoPadraoQuarto(dbQuarto, numQuartos);
+      adicionarTipoPadraoQuarto(dbQuarto, posicaoMemoria);
       break;
     case 2:
-      adicionarTipoPersonalizadoQuarto(dbQuarto, numQuartos);
+      adicionarTipoPersonalizadoQuarto(dbQuarto, posicaoMemoria);
       break;
     
     default:
-      adicionarTipoQuarto(dbQuarto, numQuartos + 1);
+      adicionarTipoQuarto(dbQuarto, posicaoMemoria);
       break;
   }
 
 }
 
-static void adicionarTipoPersonalizadoQuarto(stDbQuarto *dbQuarto, int numQuartos)
+static void adicionarTipoPersonalizadoQuarto(stDbQuarto *dbQuarto, int posicaoMemoria)
 {
   int tipo;
-  printf("Digite o Tipo do quarto [%d]: \n", dbQuarto[numQuartos].numero);
+  printf("Digite o Tipo do quarto [%d]: \n", dbQuarto[posicaoMemoria].numero);
   printf("1 - Simples\n");
   printf("2 - Duplo\n");
   printf("3 - Suite\n");
   
-  Utils.getNumeroInt(&tipo, "Digite o tipo do quarto: ");
+  Utils.Inputs.getNumeroInt(&tipo, "Digite o tipo do quarto: ");
 
   switch (tipo)
   {
     case 1:
-      dbQuarto[numQuartos].tipoQuarto = SIMPLES;
+      dbQuarto[posicaoMemoria].tipoQuarto = SIMPLES;
       break;
     case 2:
-      dbQuarto[numQuartos].tipoQuarto = DUPLO;
+      dbQuarto[posicaoMemoria].tipoQuarto = DUPLO;
       break;
     case 3:
-      dbQuarto[numQuartos].tipoQuarto = SUITE;
+      dbQuarto[posicaoMemoria].tipoQuarto = SUITE;
       break;
     default:
       printf("Tipo de quarto invalido\n");
-      adicionarTipoPersonalizadoQuarto(dbQuarto, numQuartos);
+      adicionarTipoPersonalizadoQuarto(dbQuarto, posicaoMemoria);
   }
 }
 
-static void adicionarTipoPadraoQuarto(stDbQuarto *dbQuarto, int numQuartos)
+static void adicionarTipoPadraoQuarto(stDbQuarto *dbQuarto, int posicaoMemoria)
 {
-  dbQuarto[numQuartos].tipoQuarto = SIMPLES;
+  dbQuarto[posicaoMemoria].tipoQuarto = SIMPLES;
 }
 
 #endif // PEGARTIPODOQUARTO

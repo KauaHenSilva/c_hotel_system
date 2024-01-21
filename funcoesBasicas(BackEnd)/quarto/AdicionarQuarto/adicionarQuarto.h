@@ -14,15 +14,15 @@
 void adicionarQuarto(stDbQuarto **dbQuartos, int *numQuartos)
 {
   adicionarEspacoQuarto(dbQuartos, numQuartos);
-  Utils.clearTela();
-  adicionarIdQuarto(*dbQuartos, *numQuartos);
-  Utils.clearTela();
-  adicionarTipoQuarto(*dbQuartos, *numQuartos);
-  Utils.clearTela();
-  adicionarValorQuarto(*dbQuartos, *numQuartos);
-  Utils.clearTela();
-  adicionarStatusQuarto(*dbQuartos, *numQuartos);
-  Utils.clearTela();
+  Utils.SystemComand.clearTela();
+  adicionarIdQuarto(*dbQuartos, *numQuartos, *numQuartos - 1);
+  Utils.SystemComand.clearTela();
+  adicionarTipoQuarto(*dbQuartos, *numQuartos - 1);
+  Utils.SystemComand.clearTela();
+  adicionarValorQuarto(*dbQuartos, *numQuartos - 1);
+  Utils.SystemComand.clearTela();
+  adicionarStatusQuarto(*dbQuartos, *numQuartos - 1);
+  Utils.SystemComand.clearTela();
 };
 
 #endif // ADICIONARQUARTO

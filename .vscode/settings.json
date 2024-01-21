@@ -8,6 +8,19 @@
     "quarto.h": "c",
     "adicionarquarto.h": "c",
     "exibirquarto.h": "c",
-    "exibirquartoall.h": "c"
+    "exibirquartoall.h": "c",
+    "_get_idquarto.h": "c",
+    "_exibir_tipodoquarto.h": "c",
+    "_get_numerodouble.h": "c",
+    "stdio.h": "c",
+    "_adicionar_statusquarto.h": "c",
+    "utilis.h": "c",
+    "model.h": "c",
+    "inputs.h": "c",
+    "_get_numeroint.h": "c",
+    "_clear_tela.h": "c",
+    "_clear_buffer.h": "c",
+    "_exibir_iddoquarto.h": "c",
+    "_get_confirmacao.h": "c"
   }
 }

@@ -4,67 +4,66 @@
 #include "../../../db/model.h"
 #include "../../../utils/utilis.h"
 
-static void initStatusQuarto(stDbQuarto *dbQuarto, int numQuartos);
-static void adicionarStatusQuartoUser(stDbQuarto *dbQuarto, int numQuartos);
+static void initStatusQuarto(stDbQuarto *dbQuarto, int posicaoMemoria);
+static void adicionarStatusQuartoUser(stDbQuarto *dbQuarto, int posicaoMemoria);
 
-void adicionarStatusQuarto(stDbQuarto *dbQuarto, int numQuartos)
+void adicionarStatusQuarto(stDbQuarto *dbQuarto, int posicaoMemoria)
 {
-  numQuartos -= 1;
 
   int ver;
-  printf("Digite o modelo de status do quarto [%d]: \n", dbQuarto[numQuartos].numero);
+  printf("Digite o modelo de status do quarto [%d]: \n", dbQuarto[posicaoMemoria].numero);
   printf("1 - status Padrao (Padrao: Livre)\n");
   printf("2 - status Personalizado\n");
   
-  Utils.getNumeroInt(&ver, "Digite o modelo de status do quarto: ");
+  Utils.Inputs.getNumeroInt(&ver, "Digite o modelo de status do quarto: ");
 
   switch (ver)
   {
     case 1:
-      initStatusQuarto(dbQuarto, numQuartos);
+      initStatusQuarto(dbQuarto, posicaoMemoria);
       break;
     case 2:
-      adicionarStatusQuartoUser(dbQuarto, numQuartos);
+      adicionarStatusQuartoUser(dbQuarto, posicaoMemoria);
       break;
     default:
-      Utils.clearTela();
+      Utils.SystemComand.clearTela();
       printf("Opcao anterior invalida!!\n");
-      adicionarStatusQuarto(dbQuarto, numQuartos + 1);
+      adicionarStatusQuarto(dbQuarto, posicaoMemoria);
       break;
   }
 }
 
-static void initStatusQuarto(stDbQuarto *dbQuarto, int numQuartos)
+static void initStatusQuarto(stDbQuarto *dbQuarto, int posicaoMemoria)
 {
-  dbQuarto[numQuartos].statusQuarto = LIVRE;
+  dbQuarto[posicaoMemoria].statusQuarto = LIVRE;
 }
 
-static void adicionarStatusQuartoUser(stDbQuarto *dbQuarto, int numQuartos)
+static void adicionarStatusQuartoUser(stDbQuarto *dbQuarto, int posicaoMemoria)
 {
 
   int status;
 
-  printf("Selecione o status do quarto [%d]: \n",dbQuarto[numQuartos].numero + 1);
+  printf("Selecione o status do quarto [%d]: \n",dbQuarto[posicaoMemoria].numero + 1);
   printf("1 - Livre\n");
   printf("2 - Reservado\n");
   printf("3 - Ocupado\n");
 
-  Utils.getNumeroInt(&status, "Digite o status do quarto: ");
+  Utils.Inputs.getNumeroInt(&status, "Digite o status do quarto: ");
 
   switch (status)
   {
     case 1:
-      dbQuarto[numQuartos].statusQuarto = LIVRE;
+      dbQuarto[posicaoMemoria].statusQuarto = LIVRE;
       break;
     case 2:
-      dbQuarto[numQuartos].tipoQuarto = RESERVADO;
+      dbQuarto[posicaoMemoria].tipoQuarto = RESERVADO;
       break;
     case 3:
-      dbQuarto[numQuartos].tipoQuarto = OCUPADO;
+      dbQuarto[posicaoMemoria].tipoQuarto = OCUPADO;
       break;
     default:
       printf("Status do quarto invalido\n");
-      adicionarStatusQuartoUser(dbQuarto, numQuartos);
+      adicionarStatusQuartoUser(dbQuarto, posicaoMemoria);
   }
 }
 

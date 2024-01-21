@@ -3,10 +3,9 @@
 
 #include "../../../db/model.h"
 
-void adicionarIdQuarto(stDbQuarto *dbQuarto, int numQuartos)
+void adicionarIdQuarto(stDbQuarto *dbQuarto, int numQuartos, int posicaoMemoria)
 {
-  numQuartos -= 1;
-  dbQuarto[numQuartos].numero = numQuartos + 1;
+  dbQuarto[posicaoMemoria].numero = numQuartos;
 }
 
 #endif // ADICIONARIDQUARTO
