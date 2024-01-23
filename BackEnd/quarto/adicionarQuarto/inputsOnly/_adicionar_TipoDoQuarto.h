@@ -10,7 +10,7 @@ void adicionarTipoQuarto(StDbQuartos *dbQuarto, int posicaoMemoria)
 {
   Utils.SystemComand.clearTela();
 
-  printf("Adicionando Quarto [tipo]... \n");
+  printf("Adicionando Quarto [tipo]... \n\n");
 
   int opc;
   

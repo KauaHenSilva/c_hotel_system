@@ -8,7 +8,8 @@
 void adicionarEspacoQuarto(StDbQuartos **dbQuartos, int *numQuartos)
 {
   Utils.SystemComand.clearTela();
-  printf("Adicionando Quarto [espaco]... \n");
+  printf("Adicionando Quarto [espaco]... \n\n");
+  
   if (*dbQuartos == NULL)
   {
     *dbQuartos = (StDbQuartos *)malloc(sizeof(StDbQuartos));

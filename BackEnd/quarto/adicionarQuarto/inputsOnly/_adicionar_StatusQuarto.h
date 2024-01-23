@@ -10,7 +10,7 @@ void adicionarStatusQuarto(StDbQuartos *dbQuarto, int posicaoMemoria)
 {
   Utils.SystemComand.clearTela();
 
-  printf("Adicionando Quarto [Satus]... \n");
+  printf("Adicionando Quarto [Satus]... \n\n");
   // int ver;
   // printf("Digite o modelo de status do quarto [%d]: \n", dbQuarto[posicaoMemoria].numero);
   // printf("1 - status Padrao (Padrao: Livre)\n");
