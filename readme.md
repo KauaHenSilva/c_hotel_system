@@ -26,7 +26,7 @@ O objetivo deste projeto é criar um sistema de gerenciamento para um hotel de p
 - **Excluir quarto** (Feito)
 
 - **FrontEndQuarto** (Feito)
-- **DbQuarto**
+- **DbQuarto** (Feito)
 
 ### Controle de Clientes
 
@@ -36,7 +36,7 @@ O objetivo deste projeto é criar um sistema de gerenciamento para um hotel de p
 - **Excluir cliente** (Feito)
 
 - **FrontEndCliente** (Feito)
-- **DbCliente**
+- **DbCliente** (Feito)
 
 
 ### Gestão Financeira
