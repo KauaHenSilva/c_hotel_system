@@ -14,7 +14,6 @@
 
 #include "./inputsSv/inputsSv.h"
 #include "./inputsSv/_input_Cpf.h"
-#include "./inputsSv/_input_Name.h"
 #include "./inputsSv/_input_Rg.h"
 #include "./inputsSv/_input_Telefone.h"
 
@@ -38,7 +37,6 @@ struct stUtils
     (void (*)(char *, const char *)) getString,
   },
   {
-    (void (*)(char *, const char*)) getName,
     (void (*)(char *, const char*)) getCpf,
     (void (*)(char *, const char*)) getRg,
     (void (*)(char *)) getTelefone,

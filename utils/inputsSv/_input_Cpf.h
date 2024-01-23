@@ -14,16 +14,16 @@ bool validarCPF(const char* cpf) {
     cpfNumerico[i] = cpf[i] - '0';
   }
 
-  bool todosDigitosIguais = true;
+  int todosDigitosIguais = 1;
   for (i = 1; i < 11; i++) {
     if (cpfNumerico[i] != cpfNumerico[0]) {
-      todosDigitosIguais = false;
+      todosDigitosIguais = 0;
       break;
     }
   }
 
   if (todosDigitosIguais) {
-    return false;
+    return 0;
   }
 
   for (i = 0, j = 10; i < 9; i++, j--) {
@@ -39,10 +39,10 @@ bool validarCPF(const char* cpf) {
   digito2 = (digito2 % 11) < 2 ? 0 : 11 - (digito2 % 11);
 
   if (cpfNumerico[9] != digito1 || cpfNumerico[10] != digito2) {
-    return false;
+    return 0;
   }
 
-  return true;
+  return 1;
 }
 
 void removerCaracteresEspeciais(char* cpf) {
@@ -60,26 +60,34 @@ void removerCaracteresEspeciais(char* cpf) {
 void getCpf(char *cpfUser, const char *msg) {
   char *cpf = malloc(15 * sizeof(char));
 
-  printf("%s", msg);
-
-  fflush(stdin);
-  scanf("%s", cpf);
-  fflush(stdin);
-
-  removerCaracteresEspeciais(cpf);
-  
-  cpf = realloc(cpf, strlen(cpf) + 1);
-
-  if(validarCPF(cpf))
-    printf("CPF valido\n");
-  else
+  while (1)
   {
-    printf("CPF invalido\n");
-    getCpf(cpfUser, msg);
-  }
+    printf("%s", msg);
 
-  strcpy(cpfUser, cpf);
-  free(cpf);
+    fflush(stdin);
+    scanf("%s", cpf);
+    fflush(stdin);
+
+    removerCaracteresEspeciais(cpf);
+    
+    cpf = realloc(cpf, strlen(cpf) + 1);
+
+    if(validarCPF(cpf))
+    {
+      printf("CPF valido\n");
+    }
+    else
+    {
+      printf("CPF invalido\n");
+      continue;
+    }
+
+    strcpy(cpfUser, cpf);
+    free(cpf);
+
+  }
+  
+
 }
 
 

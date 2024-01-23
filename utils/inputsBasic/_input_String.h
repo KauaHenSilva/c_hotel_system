@@ -10,29 +10,27 @@
 void getString(char *string, const char *msg)
 {
   char *stringTemp = (char *)malloc(sizeof(char) * 100) ;
-
-  limparBuffer();
-  printf("\n%s", msg);
-  if (scanf("%[^\n]s", stringTemp) == 1)
+  while (1)
   {
     limparBuffer();
-    printf("Voce digitou %s\n", stringTemp);
-    if(!getConfirmacao())
+    printf("\n%s", msg);
+    if (scanf("%[^\n]s", stringTemp) == 1)
     {
+      limparBuffer();
+      printf("Voce digitou %s\n", stringTemp);
+      if(!getConfirmacao())
+        continue;
+      strcpy(string, stringTemp);
       free(stringTemp);
-      getString(string, msg);
+      return;
     }
-    strcpy(string, stringTemp);
+    else
+    {
+      limparBuffer();
+      printf("\nEntrada invalida. Por favor, insira um valor Valido!!\n");
+    }
   }
-  else
-  {
-    limparBuffer();
-    printf("\nEntrada invalida. Por favor, insira um valor Valido!!\n");
-    free(stringTemp);
-    limparBuffer();
-
-    getString(string, msg);
-  }
+  
 
 
 }

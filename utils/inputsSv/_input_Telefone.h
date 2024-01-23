@@ -7,16 +7,21 @@
 void getTelefone(char *telefone)
 {
   char telefoneTemp[11];
-  printf("Digite o telefone [89981280128]: ");
-  scanf("%s", telefoneTemp);
-
-  if(strlen(telefoneTemp) != 11)
+  while (1)
   {
-    printf("Telefone inválido!\n");
-    getTelefone(telefone);
-  }
+    printf("Digite o telefone [89981280128]: ");
+    scanf("%s", telefoneTemp);
 
-  strcpy(telefone, telefoneTemp);
+    if(strlen(telefoneTemp) != 11)
+    {
+      printf("Telefone inválido!\n");
+      continue;
+    }
+
+    strcpy(telefone, telefoneTemp);
+    return;
+  }
+  
 
 }
 

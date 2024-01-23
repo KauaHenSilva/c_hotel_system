@@ -8,22 +8,25 @@
 void getNumeroInt(int *numero, const char *msg)
 {
   int temp;
-
-  printf("\n%s", msg);
-  limparBuffer();
-  if (scanf("%d", &temp) == 1)
+  while (1)
   {
-    printf("Voce digitou %d\n", temp);
-    if(!getConfirmacao())
+    printf("\n%s", msg);
+    limparBuffer();
+    if (scanf("%d", &temp) == 1)
+    {
+      limparBuffer();
+      printf("Voce digitou %d\n", temp);
+      if (!getConfirmacao())
+        continue;
+      *numero = temp;
+      return;
+    }
+    else
+    {
+      printf("\nEntrada invalida. Por favor, insira um valor Valido!!\n");
       getNumeroInt(numero, msg);
-    *numero = temp;
+    }
   }
-  else
-  {
-    printf("\nEntrada invalida. Por favor, insira um valor Valido!!\n");
-    getNumeroInt(numero, msg);
-  }
-
 }
 
 #endif // _OBTERNUMEROINT

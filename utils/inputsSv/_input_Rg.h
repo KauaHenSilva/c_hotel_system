@@ -8,28 +8,31 @@ void getRg(char *rg, const char *msg)
 {
   char rgTemp[9];
 
-  printf("%s:", msg);
-  fflush(stdin);
-  scanf("%[^\n]s", rgTemp);
-  fflush(stdin);
-
-  if (strlen(rgTemp) != 9)
+  while (1)
   {
-    printf("RG invalido\n");
-    getRg(rg, msg);
-  }
+    printf("%s", msg);
+    fflush(stdin);
+    scanf("%[^\n]s", rgTemp);
+    fflush(stdin);
 
-  for (int i = 0; i < 9; i++)
-  {
-    if (!isdigit(rgTemp[i]))
+    if (strlen(rgTemp) != 9)
     {
       printf("RG invalido\n");
-      getRg(rg, msg);
+      continue;
     }
+
+    for (int i = 0; i < 9; i++)
+    {
+      if (!isdigit(rgTemp[i]))
+      {
+        printf("RG invalido\n");
+        continue;
+      }
+    }
+
+    strcpy(rg, rgTemp);
+    return;
   }
-
-  strcpy(rg, rgTemp);
 }
-
 
 #endif // INPUTRG
