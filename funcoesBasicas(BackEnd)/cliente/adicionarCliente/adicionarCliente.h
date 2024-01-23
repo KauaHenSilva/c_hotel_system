@@ -1,10 +1,10 @@
 
-#include "_adicionar_EspacoCliente.h"
-#include "_adicionar_IdQuartoCliente.h"
-#include "_adicionar_NomeCliente.h"
-#include "_adicionar_CpfCliente.h"
-#include "_adicionar_RgCliente.h"
-#include "_adicionar_TelefoneCliente.h"
+#include "./inputsOnly/_adicionar_EspacoCliente.h"
+#include "./inputsOnly/_adicionar_IdQuartoCliente.h"
+#include "./inputsOnly/_adicionar_NomeCliente.h"
+#include "./inputsOnly/_adicionar_CpfCliente.h"
+#include "./inputsOnly/_adicionar_RgCliente.h"
+#include "./inputsOnly/_adicionar_TelefoneCliente.h"
 
 void adicionarCliente(StDbClintes **dbCliente, int *numClientes)
 {
