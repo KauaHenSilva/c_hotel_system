@@ -11,7 +11,7 @@
 #include "./inputsOnly/_adicionar_StatusQuarto.h"
 
 
-void adicionarQuarto(stDbQuarto **dbQuartos, int *numQuartos)
+void adicionarQuarto(stDbQuartos **dbQuartos, int *numQuartos)
 {
 
   adicionarEspacoQuarto(dbQuartos, numQuartos);

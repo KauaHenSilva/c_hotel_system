@@ -3,10 +3,10 @@
 
 // #include "../../../../utils/utilis.h"
 
-static void initStatusQuarto(stDbQuarto *dbQuarto, int posicaoMemoria);
-// static void adicionarStatusQuartoUser(stDbQuarto *dbQuarto, int posicaoMemoria);
+static void initStatusQuarto(stDbQuartos *dbQuarto, int posicaoMemoria);
+// static void adicionarStatusQuartoUser(stDbQuartos *dbQuarto, int posicaoMemoria);
 
-void adicionarStatusQuarto(stDbQuarto *dbQuarto, int posicaoMemoria)
+void adicionarStatusQuarto(stDbQuartos *dbQuarto, int posicaoMemoria)
 {
 
   // int ver;
@@ -32,12 +32,12 @@ void adicionarStatusQuarto(stDbQuarto *dbQuarto, int posicaoMemoria)
   // }
 }
 
-static void initStatusQuarto(stDbQuarto *dbQuarto, int posicaoMemoria)
+static void initStatusQuarto(stDbQuartos *dbQuarto, int posicaoMemoria)
 {
   dbQuarto[posicaoMemoria].statusQuarto = LIVRE;
 }
 
-// static void adicionarStatusQuartoUser(stDbQuarto *dbQuarto, int posicaoMemoria)
+// static void adicionarStatusQuartoUser(stDbQuartos *dbQuarto, int posicaoMemoria)
 // {
 
 //   int opc;
@@ -66,4 +66,4 @@ static void initStatusQuarto(stDbQuarto *dbQuarto, int posicaoMemoria)
 //   }
 // }
 
-// #endif // ADICIONARSTATUSQUARTO
+#endif // ADICIONARSTATUSQUARTO

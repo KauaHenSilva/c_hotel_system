@@ -3,10 +3,10 @@
 
 #include "../../../../utils/utilis.h"
 
-static void adicionarTipoPersonalizadoQuarto(stDbQuarto *dbQuarto, int posicaoMemoria);
-static void adicionarTipoPadraoQuarto(stDbQuarto *dbQuarto, int posicaoMemoria);
+static void adicionarTipoPersonalizadoQuarto(stDbQuartos *dbQuarto, int posicaoMemoria);
+static void adicionarTipoPadraoQuarto(stDbQuartos *dbQuarto, int posicaoMemoria);
 
-void adicionarTipoQuarto(stDbQuarto *dbQuarto, int posicaoMemoria)
+void adicionarTipoQuarto(stDbQuartos *dbQuarto, int posicaoMemoria)
 {
   int opc;
   
@@ -32,7 +32,7 @@ void adicionarTipoQuarto(stDbQuarto *dbQuarto, int posicaoMemoria)
 
 }
 
-static void adicionarTipoPersonalizadoQuarto(stDbQuarto *dbQuarto, int posicaoMemoria)
+static void adicionarTipoPersonalizadoQuarto(stDbQuartos *dbQuarto, int posicaoMemoria)
 {
   int tipo;
   printf("Digite o Tipo do quarto [%d]: \n", dbQuarto[posicaoMemoria].numero);
@@ -59,7 +59,7 @@ static void adicionarTipoPersonalizadoQuarto(stDbQuarto *dbQuarto, int posicaoMe
   }
 }
 
-static void adicionarTipoPadraoQuarto(stDbQuarto *dbQuarto, int posicaoMemoria)
+static void adicionarTipoPadraoQuarto(stDbQuartos *dbQuarto, int posicaoMemoria)
 {
   dbQuarto[posicaoMemoria].tipoQuarto = SIMPLES;
 }

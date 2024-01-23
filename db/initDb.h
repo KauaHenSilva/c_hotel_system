@@ -4,7 +4,7 @@
 #include "./model.h"
 
 
-stDbQuarto *dbQuartos = NULL;
+stDbQuartos *dbQuartos = NULL;
 StDbClintes *DbClintes = NULL;
 StDbFluxoFinanceiro *DbFluxoFinanceiro = NULL;
 

@@ -5,7 +5,7 @@
 #include "../../../utils/utilis.h"
 #include "./exibirOnlyQuarto/exibirOnlyQuarto.h"
 
-void exibirQuartoAll(stDbQuarto *quarto, int numQuartos){
+void exibirQuartoAll(stDbQuartos *quarto, int numQuartos){
 
   Utils.SystemComand.clearTela();
   if(numQuartos == 0){

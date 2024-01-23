@@ -3,7 +3,7 @@
 
 #include "../../../../db/model.h"
 
-void exibirTipoDoQuarto(stDbQuarto *quartos, int id)
+void exibirTipoDoQuarto(stDbQuartos *quartos, int id)
 {
     printf("Tipo do quarto: ");
     switch (quartos[id].tipoQuarto)

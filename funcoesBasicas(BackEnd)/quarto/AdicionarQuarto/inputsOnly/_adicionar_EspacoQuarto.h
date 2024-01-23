@@ -6,11 +6,11 @@
 
 static void errorAoAlocarMemoria();
 
-void adicionarEspacoQuarto(stDbQuarto **dbQuartos, int *numQuartos)
+void adicionarEspacoQuarto(stDbQuartos **dbQuartos, int *numQuartos)
 {
   if (*dbQuartos == NULL)
   {
-    *dbQuartos = (stDbQuarto *)malloc(sizeof(stDbQuarto));
+    *dbQuartos = (stDbQuartos *)malloc(sizeof(stDbQuartos));
 
     if(!dbQuartos)
       errorAoAlocarMemoria();
@@ -18,7 +18,7 @@ void adicionarEspacoQuarto(stDbQuarto **dbQuartos, int *numQuartos)
     (*numQuartos)++;
     return;
   }
-  *dbQuartos = (stDbQuarto *)realloc(*dbQuartos, (*numQuartos + 1) * sizeof(stDbQuarto));
+  *dbQuartos = (stDbQuartos *)realloc(*dbQuartos, (*numQuartos + 1) * sizeof(stDbQuartos));
 
     if(!dbQuartos)
       errorAoAlocarMemoria();

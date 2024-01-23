@@ -9,16 +9,16 @@ typedef struct  {
     EnTipoQuarto tipoQuarto;
     EnStatusQuarto statusQuarto;
     double valorDiaria; // valorDiaria = pegarValorQuarto(tipoQuarto);
-} stDbQuarto ;
+} stDbQuartos ;
 
 typedef struct  {
     int idCadrastro;
-    char nome[50];
-    char cpf[15];
-    char rg[15];  
+    char nome[100];
+    char endereco[100];
+    char email[100];
+    char cpf[12];
     char telefone[15];
-    char endereco[50];
-    char email[50];
+    char rg[15];  
 } StDbClintes ;
 
 typedef enum {PAGO, NAO_PAGO} EnStatusPagamento;

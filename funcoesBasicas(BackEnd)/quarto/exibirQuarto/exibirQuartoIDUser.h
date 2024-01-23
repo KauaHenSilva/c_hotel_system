@@ -9,7 +9,7 @@
 #include "../util/getQuartoId.h"
 
 
-void exibirQuartoId(stDbQuarto *quarto, int numQuartos){
+void exibirQuartoId(stDbQuartos *quarto, int numQuartos){
   clearTela();
 
   for(int x = 0 ; x < numQuartos ; x++)

@@ -3,7 +3,7 @@
 
 #include "../../../../db/model.h"
 
-void exibirIdDoQuarto(stDbQuarto *quartos, int id)
+void exibirIdDoQuarto(stDbQuartos *quartos, int id)
 {
     printf("Id do quarto: %d\n", quartos[id].numero);
 }

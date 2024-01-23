@@ -3,10 +3,10 @@
 
 #include "../../../../utils/utilis.h"
 
-static void adicionarValorPersonalizadoQuarto(stDbQuarto *dbQuarto, int posicaoMemoria);
-static void adicionarValorPadraoQuarto(stDbQuarto *dbQuarto, int posicaoMemoria);
+static void adicionarValorPersonalizadoQuarto(stDbQuartos *dbQuarto, int posicaoMemoria);
+static void adicionarValorPadraoQuarto(stDbQuartos *dbQuarto, int posicaoMemoria);
 
-void adicionarValorQuarto(stDbQuarto *dbQuarto, int posicaoMemoria)
+void adicionarValorQuarto(stDbQuartos *dbQuarto, int posicaoMemoria)
 {
     int opc;
 
@@ -29,14 +29,14 @@ void adicionarValorQuarto(stDbQuarto *dbQuarto, int posicaoMemoria)
     }
 }
 
-static void adicionarValorPersonalizadoQuarto(stDbQuarto *dbQuarto, int posicaoMemoria)
+static void adicionarValorPersonalizadoQuarto(stDbQuartos *dbQuarto, int posicaoMemoria)
 {
     Utils.InputsBasic.getNumeroDouble( \
     &dbQuarto[posicaoMemoria].valorDiaria, \
     "Digite o valor a ser pago no quarto: ");
 }
 
-static void adicionarValorPadraoQuarto(stDbQuarto *dbQuarto, int posicaoMemoria)
+static void adicionarValorPadraoQuarto(stDbQuartos *dbQuarto, int posicaoMemoria)
 {
     switch (dbQuarto[posicaoMemoria].tipoQuarto)
     {
