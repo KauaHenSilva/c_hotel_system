@@ -15,20 +15,27 @@ void editarQuarto(StDbQuartos *dbQuarto, int numQuartos)
 {
   Utils.SystemComand.clearTela();
 
-  int opcao;
-  printf("O que deseja editar?\n");  
-  printf("1 - Tipo do quarto\n");
-  printf("2 - Valor do quarto\n");
-  printf("0 - Sair do modo edicao\n");
+  printf("Editar quarto\n\n");
 
-  Utils.InputsBasic.getNumeroInt(&opcao, "Selecione uma opcao: ");
-  if (opcao == 0) return;
+  printf("Possiveis Quartos para editar:\n");
+  for(int x  = 0 ; x < numQuartos ; x++)
+    exibirOnlyQuarto(dbQuarto, x);
 
-  exibirOnlyQuarto(dbQuarto, numQuartos);
+  printf("Você deseja Editar.\n");
+  if(!Utils.InputsBasic.getConfirmacao())
+    return;
 
   int id;
   getQuartoId(dbQuarto, numQuartos, &id);
   if(id == -1) return;
+
+  int opcao;
+  printf("O que deseja editar?\n");  
+  printf("1 - Tipo do quarto\n");
+  printf("2 - Valor do quarto\n");
+
+  Utils.InputsBasic.getNumeroInt(&opcao, "Selecione uma opcao: ");
+  if (opcao == -1) return;
 
   switch (opcao)
   {

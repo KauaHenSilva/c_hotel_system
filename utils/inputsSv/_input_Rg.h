@@ -9,6 +9,7 @@ void getRg(char *rg, const char *msg)
   char rgTemp[9];
 
   printf("%s:", msg);
+  fflush(stdin);
   scanf("%[^\n]s", rgTemp);
   fflush(stdin);
 

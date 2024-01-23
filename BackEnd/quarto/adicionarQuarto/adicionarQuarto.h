@@ -24,7 +24,6 @@ void adicionarQuarto(StDbQuartos **dbQuartos, int *numQuartos)
   Utils.SystemComand.clearTela();
 
   printf("Quarto adicionado com sucesso!\n");
-  Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
 
 };
 

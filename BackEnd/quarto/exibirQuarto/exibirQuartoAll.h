@@ -13,7 +13,6 @@ void exibirQuartoAll(StDbQuartos *quarto, int numQuartos){
 
   if(numQuartos == 0){
     printf("Nenhum quarto cadrastrado!\n");
-    Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
     return;
   };
 

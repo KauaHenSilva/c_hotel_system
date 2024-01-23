@@ -9,6 +9,10 @@
 
 void removerQuarto(StDbQuartos **dbQuartos, int *numQuartos) {
 
+  Utils.SystemComand.clearTela();
+  printf("Removendo quarto...\n\n");
+
+  printf("Todos os Quartos:\n\n");
   for(int x  = 0 ; x < *numQuartos ; x++)
     exibirOnlyQuarto(*dbQuartos, x);
   
@@ -22,6 +26,10 @@ void removerQuarto(StDbQuartos **dbQuartos, int *numQuartos) {
     return;
   }
 
+  printf("O quarto selecionado foi:\n");
+  exibirOnlyQuarto(*dbQuartos, id);
+  printf("O Quarto Foi removido!\n");
+
   for (int i = id; i < *numQuartos - 1; i++) 
   {
     (*dbQuartos)[i] = (*dbQuartos)[i + 1];
@@ -29,6 +37,7 @@ void removerQuarto(StDbQuartos **dbQuartos, int *numQuartos) {
 
   *dbQuartos = realloc(*dbQuartos, (*numQuartos - 1) * sizeof(StDbQuartos));
   (*numQuartos)--;
+
 }
 
 

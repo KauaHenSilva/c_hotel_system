@@ -6,7 +6,7 @@
 #include "./_input_NumeroDouble.h"
 
 typedef struct {
-  void (*getConfirmacao)(const char *msg);
+  int (*getConfirmacao)();
   void (*getNumeroInt)(int *numero, const char *msg);
   void (*getNumeroDouble)(double *numero, const char *msg);
   void (*getString)(char *numero, const char *msg);

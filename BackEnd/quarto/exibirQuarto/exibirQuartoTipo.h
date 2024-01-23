@@ -41,7 +41,6 @@ void exibirQuartoTipo(StDbQuartos *quarto, int numQuartos)
     printf("Alternativa invalida\n");
     exibirQuartoTipo(quarto, numQuartos);
   }
-  Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
 }
 static void exibirQuartoSimples(StDbQuartos *quarto, int numQuartos)
 {

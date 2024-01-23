@@ -49,6 +49,7 @@ void frontEndCliente(StDbClientes **dbClientes, int *qtdClientes)
       printf("Alternativa invalida\n");
       break;
   }
+  Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
   frontEndCliente(dbClientes, qtdClientes);
 }
 

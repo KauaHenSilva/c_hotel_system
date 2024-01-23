@@ -24,7 +24,6 @@ void exibirQuartoId(StDbQuartos *quarto, int numQuartos){
 
   if(id == -1){
     printf("Nenhum quarto cadrastrado!\n");
-    Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
     return;
   };
 
