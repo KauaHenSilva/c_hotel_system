@@ -1,5 +1,5 @@
-#if !defined(_EXIBIRIDDOCLIENTE)
-#define _EXIBIRIDDOCLIENTE
+#if !defined(EXIBIRONLYCLIENTE)
+#define EXIBIRONLYCLIENTE
 
 #include "../../../../db/model.h"
 
@@ -13,6 +13,5 @@ void exibirOnlyCliente(StDbClintes *cliente, int id)
     printf("Endereco do CLiente: %s\n", cliente[id].endereco);
     printf("Email do CLiente: %s\n", cliente[id].email);
 }
-
-#endif // _EXIBIRIDDOCLIENTE
+#endif // EXIBIRONLYCLIENTE
 
