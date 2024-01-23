@@ -4,7 +4,14 @@
 #include "frontEnd/frontEnd.h"
 #include "./utils/utilis.h"
 
+void exec();
 int main()
+{
+  exec();
+  return 0;
+}
+
+void exec()
 {
   printf("Bem vindo ao sistema de gerenciamento de hotel!\n");
   printf("Escolha uma das opcoes abaixo:\n");
@@ -23,7 +30,4 @@ int main()
       FrontEnd.frontEndCliente(&dbClintes, &quantidadeDeQuarto);
       break;
   }
-
-
-  return 0;
 }

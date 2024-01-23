@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void salvarQuartos(StDbQuartos *quartos, int quantidadeQuartos) {
+void saveQuartos(StDbQuartos *quartos, int quantidadeQuartos) {
     FILE *arquivo = fopen("C:/Meus-Estudos-Global/Desktop/C/C_Hotel_System/db/quartos/dbQuarto.bin", "wb");
 
     if (!arquivo) {
