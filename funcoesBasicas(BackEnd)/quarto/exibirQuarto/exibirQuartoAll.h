@@ -16,7 +16,7 @@ void exibirQuartoAll(StDbQuartos *quarto, int numQuartos){
 
   for(int x = 0 ; x < numQuartos ; x++)
   {
-    exibirOnlyQuarto(quarto, x);
+    exibirOnlyCliente(quarto, x);
   }
   Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
 }

@@ -49,7 +49,7 @@ static void exibirQuartoLivre(StDbQuartos *quarto, int numQuartos)
     if (quarto[x].statusQuarto == LIVRE)
     {
       existe = 1;
-      exibirOnlyQuarto(quarto, x);
+      exibirOnlyCliente(quarto, x);
     }
   }
   if(!existe)
@@ -64,7 +64,7 @@ static void exibirQuartoOcupado(StDbQuartos *quarto, int numQuartos)
     if (quarto[x].statusQuarto == OCUPADO)
     {
       existe = 1;
-      exibirOnlyQuarto(quarto, x);
+      exibirOnlyCliente(quarto, x);
     }
   }
   if(!existe)
@@ -79,7 +79,7 @@ static void exibirQuartoResevado(StDbQuartos *quarto, int numQuartos)
     if (quarto[x].statusQuarto == RESERVADO)
     {
       existe = 1;
-      exibirOnlyQuarto(quarto, x);
+      exibirOnlyCliente(quarto, x);
     }
   }
   if(!existe)

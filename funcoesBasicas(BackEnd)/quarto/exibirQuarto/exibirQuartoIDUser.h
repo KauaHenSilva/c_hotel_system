@@ -13,7 +13,7 @@ void exibirQuartoId(StDbQuartos *quarto, int numQuartos){
   clearTela();
 
   for(int x = 0 ; x < numQuartos ; x++)
-    exibirOnlyQuarto(quarto, x);
+    exibirOnlyCliente(quarto, x);
 
   int id;
   getQuartoId(quarto, numQuartos, &id);
@@ -24,7 +24,7 @@ void exibirQuartoId(StDbQuartos *quarto, int numQuartos){
     return;
   };
 
-  exibirOnlyQuarto(quarto, id);
+  exibirOnlyCliente(quarto, id);
   
   Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
 }

@@ -4,7 +4,7 @@
 #include "../../../../db/model.h"
 #include "../../../../utils/utilis.h"
 
-void adiconarCpfCliente(StDbClintes *dbCliente, int posicaoMemoria)
+void adicionarCpfCliente(StDbClintes *dbCliente, int posicaoMemoria)
 {
   Utils.InputsSavin.getCpf(dbCliente[posicaoMemoria].cpf, "Digite o cpf Ex.[123.123.123-00]:");
 }

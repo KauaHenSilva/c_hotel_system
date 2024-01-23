@@ -20,7 +20,7 @@ void getClienteId(StDbClintes *dbCliente, int numClientes, int *idCliente)
     if (*idCliente > numClientes - 1 || *idCliente < 0)
     {
         printf("Item nao encontrado\n");
-        getQuartoId(dbCliente, numClientes, idCliente);
+        getClienteId(dbCliente, numClientes, idCliente);
     }
 }
 
