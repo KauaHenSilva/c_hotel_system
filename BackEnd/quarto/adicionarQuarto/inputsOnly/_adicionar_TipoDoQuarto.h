@@ -8,6 +8,10 @@ static void adicionarTipoPadraoQuarto(StDbQuartos *dbQuarto, int posicaoMemoria)
 
 void adicionarTipoQuarto(StDbQuartos *dbQuarto, int posicaoMemoria)
 {
+  Utils.SystemComand.clearTela();
+
+  printf("Adicionando Quarto [tipo]... \n");
+
   int opc;
   
   printf("Digite o tipo do quarto [%d]: \n", dbQuarto[posicaoMemoria].numero);
@@ -24,11 +28,12 @@ void adicionarTipoQuarto(StDbQuartos *dbQuarto, int posicaoMemoria)
     case 2:
       adicionarTipoPersonalizadoQuarto(dbQuarto, posicaoMemoria);
       break;
-    
     default:
       adicionarTipoQuarto(dbQuarto, posicaoMemoria);
       break;
   }
+
+  printf("[tipo] adicionado com sucesso!... \n");
 
 }
 

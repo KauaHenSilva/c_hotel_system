@@ -13,12 +13,15 @@
 
 void adicionarQuarto(StDbQuartos **dbQuartos, int *numQuartos)
 {
+  Utils.SystemComand.clearTela();
 
   adicionarEspacoQuarto(dbQuartos, numQuartos);
   adicionarIdQuarto(*dbQuartos, *numQuartos, *numQuartos - 1);
   adicionarTipoQuarto(*dbQuartos, *numQuartos - 1);
   adicionarValorQuarto(*dbQuartos, *numQuartos - 1);
   adicionarStatusQuarto(*dbQuartos, *numQuartos - 1);
+
+  Utils.SystemComand.clearTela();
 
   printf("Quarto adicionado com sucesso!\n");
   Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");

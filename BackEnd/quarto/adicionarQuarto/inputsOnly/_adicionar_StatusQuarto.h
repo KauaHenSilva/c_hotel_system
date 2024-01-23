@@ -8,7 +8,9 @@ static void initStatusQuarto(StDbQuartos *dbQuarto, int posicaoMemoria);
 
 void adicionarStatusQuarto(StDbQuartos *dbQuarto, int posicaoMemoria)
 {
+  Utils.SystemComand.clearTela();
 
+  printf("Adicionando Quarto [Satus]... \n");
   // int ver;
   // printf("Digite o modelo de status do quarto [%d]: \n", dbQuarto[posicaoMemoria].numero);
   // printf("1 - status Padrao (Padrao: Livre)\n");
@@ -19,7 +21,9 @@ void adicionarStatusQuarto(StDbQuartos *dbQuarto, int posicaoMemoria)
   // switch (ver)
   // {
   //   case 1:
+      printf("Adicionando o [status] padrao! \n");
       initStatusQuarto(dbQuarto, posicaoMemoria);
+      printf("o [status] foi definido como LIVRE! \n");
       // break;
     // case 2:
     //   adicionarStatusQuartoUser(dbQuarto, posicaoMemoria);
@@ -30,6 +34,7 @@ void adicionarStatusQuarto(StDbQuartos *dbQuarto, int posicaoMemoria)
   //     adicionarStatusQuarto(dbQuarto, posicaoMemoria);
   //     break;
   // }
+  printf("[status] adicionado com sucesso!... \n");
 }
 
 static void initStatusQuarto(StDbQuartos *dbQuarto, int posicaoMemoria)
