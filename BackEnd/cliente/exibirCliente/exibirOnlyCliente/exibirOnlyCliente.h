@@ -3,7 +3,7 @@
 
 #include "../../../../db/model.h"
 
-void exibirOnlyCliente(StDbClintes *cliente, int id)
+void exibirOnlyCliente(StDbClientes *cliente, int id)
 {
     printf("Id do CLiente: %d\n", cliente[id].idCadrastro);
     printf("Nome do CLiente: %s\n", cliente[id].nome);

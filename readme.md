@@ -24,15 +24,18 @@ O objetivo deste projeto é criar um sistema de gerenciamento para um hotel de p
 - **Excluir quarto** (feito)
 
 - **FrontEndQuarto**
+- **DbQuarto**
 
 ### Controle de Clientes
 
 - **Cadastrar cliente** (feito)
 - **Consultar cliente** (feito)
 - **Editar cliente** (feito)
-- **Excluir cliente**
+- **Excluir cliente** (feito)
 
 - **FrontEndCliente**
+- **DbCliente**
+
 
 ### Gestão Financeira
 
@@ -56,7 +59,3 @@ O objetivo deste projeto é criar um sistema de gerenciamento para um hotel de p
 - **Realizar check-in:** Possibilita o cadastro de dados adicionais nos arquivos dos quartos e das reservas, alterando o status do quarto para ocupado e registrando data e hora de entrada do cliente.
 - **Realizar pagamento:** Apresenta o valor a ser pago pelo cliente, atualizando o status do quarto e registrando o valor pago no arquivo de controle financeiro.
 - **Valores recebidos:** Permite a consulta de todos os valores recebidos durante um intervalo de tempo definido pelo usuário.
-
-## Entrega e Apresentação
-
-Os programadores devem enviar o código-fonte do programa em uma tarefa específica via turma virtual no SIGAA até o dia 29/01. A apresentação do programa será realizada no dia 01/02. Lembre-se de seguir as recomendações do professor quanto à colaboração, plágio e simplicidade do código-fonte. Boa sorte!

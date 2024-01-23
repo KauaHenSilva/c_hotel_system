@@ -1,11 +1,11 @@
-#if !defined(EXIBIRCLIENTENAME)
-#define EXIBIRCLIENTENAME
+#if !defined(EXIBIRCLIENTEID)
+#define EXIBIRCLIENTEID
 
 #include "../../../db/model.h"
 #include "../../../utils/utilis.h"
 #include "./exibirOnlyCliente/exibirOnlyCliente.h"
 
-void exibirClienteNome(StDbClintes *cliente, int numClientes){
+void exibirClienteId(StDbClientes *cliente, int numClientes){
 
   Utils.SystemComand.clearTela();
   if(numClientes == 0){
@@ -14,21 +14,21 @@ void exibirClienteNome(StDbClintes *cliente, int numClientes){
     return;
   };
 
-  int existe = 0; char nome[100];
-  Utils.InputsSavin.getName(nome, "Digite o nome do cliente para busca: ");
+  int existe = 0; char rg[15];
+  Utils.InputsSavin.getRg(rg, "Digite o Rg para buscar o cliente Ex.[123456789]: ");
 
   for(int x = 0 ; x < numClientes ; x++)
   {
-    if(cliente[x].nome == nome){
+    if(cliente[x].rg == rg){
       existe = 1;
       exibirOnlyCliente(cliente, x);
     }
   }
 
   if(!existe)
-    printf("Nao existe cliente com esse nome\n");
+    printf("Nao existe cliente com esse rg\n");
 
   Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
 }
 
-#endif // EXIBIRCLIENTENAME
+#endif // EXIBIRCLIENTEID

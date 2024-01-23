@@ -4,7 +4,7 @@
 #include "../../../../db/model.h"
 #include "../../../../utils/utilis.h"
 
-void adicionarEmailCliente(StDbClintes *dbCliente, int posicaoMemoria)
+void adicionarEmailCliente(StDbClientes *dbCliente, int posicaoMemoria)
 {
   Utils.InputsBasic.getString(dbCliente[posicaoMemoria].email, "Digite o email:");
 } 

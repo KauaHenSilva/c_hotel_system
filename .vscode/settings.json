@@ -27,6 +27,7 @@
     "exibirquartotipo.h": "c",
     "_exibir_statusdoquarto.h": "c",
     "_system_pause.h": "c",
-    "_input_numerodouble.h": "c"
+    "_input_numerodouble.h": "c",
+    "getclienteid.h": "c"
   }
 }

@@ -1,7 +1,7 @@
 #if !defined(ADICONARTELEFONECLIENTE)
 #define ADICONARTELEFONECLIENTE
 
-void adicionarTelefoneCliente(StDbClintes *dbCliente, int posicaoMemoria)
+void adicionarTelefoneCliente(StDbClientes *dbCliente, int posicaoMemoria)
 {
   Utils.InputsSavin.getTelefone(dbCliente[posicaoMemoria].telefone);
 }

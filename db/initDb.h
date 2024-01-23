@@ -5,7 +5,7 @@
 
 
 StDbQuartos *dbQuartos = NULL;
-StDbClintes *DbClintes = NULL;
+StDbClientes *DbClintes = NULL;
 StDbFluxoFinanceiro *DbFluxoFinanceiro = NULL;
 
 int quantidadeDeQuarto = 0;

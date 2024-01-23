@@ -10,7 +10,7 @@
 #include "../AdicionarCliente/inputsOnly/_adicionar_RgCliente.h"
 #include "../AdicionarCliente/inputsOnly/_adicionar_TelefoneCliente.h"
 
-void editarQuarto(StDbClintes *dbCliente, int numQuartos)
+void editarQuarto(StDbClientes *dbCliente, int numQuartos)
 {
   Utils.SystemComand.clearTela();
 

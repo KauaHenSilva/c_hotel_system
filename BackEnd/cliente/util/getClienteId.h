@@ -1,12 +1,12 @@
-#if !defined(_USERQUARTOID)
-#define _USERQUARTOID
+#if !defined(_USERGETCLIENTETOID)
+#define _USERGETCLIENTETOID
 
 #include <stdio.h>
 #include "../../../db/model.h"
 #include "../../../utils/utilis.h"
 
 
-void getClienteId(StDbClintes *dbCliente, int numClientes, int *idCliente)
+void getClienteId(StDbClientes *dbCliente, int numClientes, int *idCliente)
 {
     if (numClientes == 0)
     {
@@ -24,4 +24,4 @@ void getClienteId(StDbClintes *dbCliente, int numClientes, int *idCliente)
     }
 }
 
-#endif // _USERQUARTOID
+#endif // _USERGETCLIENTETOID

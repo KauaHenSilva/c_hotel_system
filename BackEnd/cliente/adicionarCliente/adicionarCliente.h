@@ -10,7 +10,7 @@
 #include "./inputsOnly/_adicionar_RgCliente.h"
 #include "./inputsOnly/_adicionar_TelefoneCliente.h"
 
-void adicionarCliente(StDbClintes **dbCliente, int *numClientes)
+void adicionarCliente(StDbClientes **dbCliente, int *numClientes)
 {
   adicionarEspacoCliente(dbCliente, numClientes);
   adicionarIdCliente(*dbCliente, *numClientes, *numClientes - 1);

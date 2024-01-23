@@ -4,7 +4,7 @@
 #include "../../../../db/model.h"
 #include "../../../../utils/utilis.h"
 
-void adicionarRgCliente(StDbClintes *dbCliente, int posicaoMemoria)
+void adicionarRgCliente(StDbClientes *dbCliente, int posicaoMemoria)
 {
   Utils.InputsSavin.getRg(dbCliente[posicaoMemoria].rg, "Digite o rg Ex.[123456789]:");
 }

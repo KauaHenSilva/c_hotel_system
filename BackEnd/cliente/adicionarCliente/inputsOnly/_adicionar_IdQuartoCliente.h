@@ -4,7 +4,7 @@
 #include "../../../../db/model.h"
 #include "../../../../utils/utilis.h"
 
-void adicionarIdCliente(StDbClintes *dbCliente, int numCliente, int posicaoMemoria)
+void adicionarIdCliente(StDbClientes *dbCliente, int numCliente, int posicaoMemoria)
 {
   dbCliente[posicaoMemoria].idCadrastro = numCliente;
 }

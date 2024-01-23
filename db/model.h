@@ -19,7 +19,7 @@ typedef struct  {
     char cpf[12];
     char telefone[15];
     char rg[15];  
-} StDbClintes ;
+} StDbClientes ;
 
 typedef enum {PAGO, NAO_PAGO} EnStatusPagamento;
 typedef struct  {

@@ -5,7 +5,7 @@
 #include "../../../utils/utilis.h"
 #include "./exibirOnlyCliente/exibirOnlyCliente.h"
 
-void exibirClienteAll(StDbClintes *cliente, int numClientes){
+void exibirClienteAll(StDbClientes *cliente, int numClientes){
 
   Utils.SystemComand.clearTela();
   if(numClientes == 0){

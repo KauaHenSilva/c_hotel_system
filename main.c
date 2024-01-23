@@ -9,6 +9,7 @@ int main()
 
   Cliente.adicionarCliente(&DbClintes, &quantidadeDeCLientes);
   Cliente.Exibir.exibirClienteAll(DbClintes, quantidadeDeCLientes);
+  Cliente.removerCliente(&DbClintes, &quantidadeDeCLientes);
 
   return 0;
 }

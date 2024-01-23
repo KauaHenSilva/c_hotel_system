@@ -7,12 +7,12 @@
 
 static void errorAoAlocarMemoria();
 
-void adicionarEspacoCliente(StDbClintes **dbCliente, int *numClientes)
+void adicionarEspacoCliente(StDbClientes **dbCliente, int *numClientes)
 {
 
   if (*dbCliente == NULL)
   {
-    *dbCliente = (StDbClintes *)malloc(sizeof(StDbClintes));
+    *dbCliente = (StDbClientes *)malloc(sizeof(StDbClientes));
 
     if(!dbCliente)
       errorAoAlocarMemoria();
@@ -20,7 +20,7 @@ void adicionarEspacoCliente(StDbClintes **dbCliente, int *numClientes)
     (*numClientes)++;
     return;
   }
-  *dbCliente = (StDbClintes *)realloc(*dbCliente, (*numClientes + 1) * sizeof(StDbClintes));
+  *dbCliente = (StDbClientes *)realloc(*dbCliente, (*numClientes + 1) * sizeof(StDbClientes));
 
     if(!dbCliente)
       errorAoAlocarMemoria();
