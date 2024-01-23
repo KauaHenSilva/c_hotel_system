@@ -16,6 +16,12 @@ void removerQuarto(StDbQuartos **dbQuartos, int *numQuartos) {
   getQuartoId(*dbQuartos, *numQuartos, &id);
   if(id == -1) return;
 
+  if((*dbQuartos)[id].statusQuarto == 1){
+    printf("Quarto ocupado, impossivel remover\n");
+    Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
+    return;
+  }
+
   for (int i = id; i < *numQuartos - 1; i++) 
   {
     (*dbQuartos)[i] = (*dbQuartos)[i + 1];

@@ -10,10 +10,14 @@
 
 
 void exibirQuartoId(StDbQuartos *quarto, int numQuartos){
-  clearTela();
+  Utils.SystemComand.clearTela();
 
+
+  printf("Exibindo todos os quarto que possui ID...\n\n");
   for(int x = 0 ; x < numQuartos ; x++)
+  {
     exibirOnlyQuarto(quarto, x);
+  }
 
   int id;
   getQuartoId(quarto, numQuartos, &id);
@@ -24,9 +28,9 @@ void exibirQuartoId(StDbQuartos *quarto, int numQuartos){
     return;
   };
 
+  printf("O quarto selecionado foi:\n");
   exibirOnlyQuarto(quarto, id);
   
-  Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
 }
 
 

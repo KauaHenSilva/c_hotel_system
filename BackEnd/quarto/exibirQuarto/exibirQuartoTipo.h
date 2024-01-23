@@ -16,6 +16,8 @@ void exibirQuartoTipo(StDbQuartos *quarto, int numQuartos)
 {
   Utils.SystemComand.clearTela();
 
+  printf("Exibindo todos os quarto que possui Tipo...\n\n");
+
   printf("Qual o tipo do quarto deseja Listar?\n");
   printf("1 - Simples\n"); 
   printf("2 - Duplo\n");

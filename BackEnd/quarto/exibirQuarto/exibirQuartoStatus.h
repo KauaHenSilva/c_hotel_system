@@ -16,6 +16,8 @@ void exibirQuartoStatus(StDbQuartos *quarto, int numQuartos)
 {
   Utils.SystemComand.clearTela();
 
+  printf("Exibindo todos os quarto que possui Status...\n\n");
+
   printf("Qual o status do quarto deseja Listar?\n");
   printf("1 - Livre\n");
   printf("3 - Resevado\n");
@@ -39,7 +41,6 @@ void exibirQuartoStatus(StDbQuartos *quarto, int numQuartos)
     printf("Alternativa invalida\n");
     exibirQuartoStatus(quarto, numQuartos);
   }
-  Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
 }
 static void exibirQuartoLivre(StDbQuartos *quarto, int numQuartos)
 {
