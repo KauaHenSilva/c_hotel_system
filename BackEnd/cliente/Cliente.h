@@ -7,6 +7,8 @@
 
 #include "./removerCliente/removerCliente.h"
 
+#include "./editarCliente/editarCliente.h" 
+
 #include "./exibirCliente/exibirCliente.h"
 #include "./exibirCliente/exibirClienteAll.h"
 #include "./exibirCliente/exibirClienteCpf.h"
@@ -17,10 +19,12 @@ struct stCliente
 {
   void (*adicionarCliente)(StDbClientes **dbCliente, int *numClienes);
   void (*removerCliente)(StDbClientes **dbCliente, int *numClienes);
+  void (*editarCliente)(StDbClientes *dbCliente, int numClienes);
   StExibirCliente Exibir;
 } Cliente = {
     (void (*)(StDbClientes **, int *)) adicionarCliente,
     (void (*)(StDbClientes **, int *)) removerCliente,
+    (void (*)(StDbClientes *, int )) editarCliente,
     {
       (void (*)(StDbClientes *, int)) exibirClienteAll,
       (void (*)(StDbClientes *, int)) exibirClienteCpf,

@@ -1,8 +1,8 @@
-#ifndef EDITARQUARTO
-#define EDITARQUARTO
+#ifndef EDITARCLINTE
+#define EDITARCLINTE
 
 #include "../../../utils/utilis.h"
-#include "../util/getQuartoId.h"
+#include "../util/getClienteId.h"
 #include "../AdicionarCliente/inputsOnly/_adicionar_CpfCliente.h"
 #include "../AdicionarCliente/inputsOnly/_adicionar_EmailCliente.h"
 #include "../AdicionarCliente/inputsOnly/_adicionar_enderecoCliente.h"
@@ -10,7 +10,7 @@
 #include "../AdicionarCliente/inputsOnly/_adicionar_RgCliente.h"
 #include "../AdicionarCliente/inputsOnly/_adicionar_TelefoneCliente.h"
 
-void editarQuarto(StDbClientes *dbCliente, int numQuartos)
+void editarCliente(StDbClientes *dbCliente, int numQuartos)
 {
   Utils.SystemComand.clearTela();
 
@@ -37,34 +37,34 @@ void editarQuarto(StDbClientes *dbCliente, int numQuartos)
   {
     case 1:
       adicionarCpfCliente(dbCliente, id);
-      editarQuarto(dbCliente, numQuartos);
+      editarCliente(dbCliente, numQuartos);
       break;
     case 2:
       adicionarEmailCliente(dbCliente, id);
-      editarQuarto(dbCliente, numQuartos);
+      editarCliente(dbCliente, numQuartos);
       break;
     case 3:
       adicionarEnderecoCliente(dbCliente, id);
-      editarQuarto(dbCliente, numQuartos);
+      editarCliente(dbCliente, numQuartos);
       break;
     case 4:
-      adiconarNomeCliente(dbCliente, id);
-      editarQuarto(dbCliente, numQuartos);
+      adicionarNomeCliente(dbCliente, id);
+      editarCliente(dbCliente, numQuartos);
       break;
     case 5:
-      adiconarRgCliente(dbCliente, id);
-      editarQuarto(dbCliente, numQuartos);
+      adicionarRgCliente(dbCliente, id);
+      editarCliente(dbCliente, numQuartos);
       break;
     case 6:
       adicionarTelefoneCliente(dbCliente, id);
-      editarQuarto(dbCliente, numQuartos);
+      editarCliente(dbCliente, numQuartos);
       break;
     default:
       printf("Opção inválida\n");
-      editarQuarto(dbCliente, numQuartos);
+      editarCliente(dbCliente, numQuartos);
       break;
   }
 }
 
 
-#endif // EDITARQUARTO
+#endif // EDITARCLINTE

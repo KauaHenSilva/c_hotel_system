@@ -10,7 +10,7 @@
 void removerQuarto(StDbQuartos **dbQuartos, int *numQuartos) {
 
   for(int x  = 0 ; x < *numQuartos ; x++)
-    exibirOnlyCliente(*dbQuartos, x);
+    exibirOnlyQuarto(*dbQuartos, x);
   
   int id;
   getQuartoId(*dbQuartos, *numQuartos, &id);
