@@ -3,6 +3,7 @@
 
 #include "./model.h"
 
+#include <stdlib.h> 
 
 StDbQuartos *dbQuartos = NULL;
 StDbClientes *DbClintes = NULL;

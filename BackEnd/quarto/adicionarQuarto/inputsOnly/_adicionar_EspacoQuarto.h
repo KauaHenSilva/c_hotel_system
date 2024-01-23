@@ -4,7 +4,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-static void errorAoAlocarMemoria();
 
 void adicionarEspacoQuarto(StDbQuartos **dbQuartos, int *numQuartos)
 {
@@ -13,7 +12,10 @@ void adicionarEspacoQuarto(StDbQuartos **dbQuartos, int *numQuartos)
     *dbQuartos = (StDbQuartos *)malloc(sizeof(StDbQuartos));
 
     if(!dbQuartos)
-      errorAoAlocarMemoria();
+    {
+        printf("Erro ao alocar memoria");
+        exit(1);
+    }
 
     (*numQuartos)++;
     return;
@@ -21,15 +23,12 @@ void adicionarEspacoQuarto(StDbQuartos **dbQuartos, int *numQuartos)
   *dbQuartos = (StDbQuartos *)realloc(*dbQuartos, (*numQuartos + 1) * sizeof(StDbQuartos));
 
     if(!dbQuartos)
-      errorAoAlocarMemoria();
+    {
+        printf("Erro ao alocar memoria");
+        exit(1);
+    }
 
   (*numQuartos)++;
-}
-
-static void errorAoAlocarMemoria()
-{
-  printf("Erro ao alocar memoria");
-  exit(1);
 }
 
 #endif // ADICIONARQUARTO

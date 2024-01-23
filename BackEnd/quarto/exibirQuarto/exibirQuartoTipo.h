@@ -49,7 +49,7 @@ static void exibirQuartoSimples(StDbQuartos *quarto, int numQuartos)
     if (quarto[x].tipoQuarto == SIMPLES)
     {
       existe = 1;
-      exibirOnlyCliente(quarto, x);
+      exibirOnlyQuarto(quarto, x);
     }
   }
   if(!existe)
@@ -63,7 +63,7 @@ static void exibirQuartoDuplo(StDbQuartos *quarto, int numQuartos)
   {
     existe = 1;
     if (quarto[x].tipoQuarto == DUPLO)
-      exibirOnlyCliente(quarto, x);
+      exibirOnlyQuarto(quarto, x);
   }
   if(!existe)
     printf("Nao existe quartos do tipo Duplo\n");
@@ -75,7 +75,7 @@ static void exibirQuartoSuite(StDbQuartos *quarto, int numQuartos)
   for (int x = 0; x < numQuartos; x++)
   {
     if (quarto[x].tipoQuarto == SUITE)
-    exibirOnlyCliente(quarto, x);
+    exibirOnlyQuarto(quarto, x);
   }
   if(!existe)
     printf("Nao existe quartos do tipo Suite\n");

@@ -5,8 +5,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-static void errorAoAlocarMemoria();
-
 void adicionarEspacoCliente(StDbClientes **dbCliente, int *numClientes)
 {
 
@@ -15,7 +13,10 @@ void adicionarEspacoCliente(StDbClientes **dbCliente, int *numClientes)
     *dbCliente = (StDbClientes *)malloc(sizeof(StDbClientes));
 
     if(!dbCliente)
-      errorAoAlocarMemoria();
+    {
+        printf("Erro ao alocar memoria");
+        exit(1);
+    }
 
     (*numClientes)++;
     return;
@@ -23,7 +24,10 @@ void adicionarEspacoCliente(StDbClientes **dbCliente, int *numClientes)
   *dbCliente = (StDbClientes *)realloc(*dbCliente, (*numClientes + 1) * sizeof(StDbClientes));
 
     if(!dbCliente)
-      errorAoAlocarMemoria();
+    {
+        printf("Erro ao alocar memoria");
+        exit(1);
+    }
 
   (*numClientes)++;
 }
