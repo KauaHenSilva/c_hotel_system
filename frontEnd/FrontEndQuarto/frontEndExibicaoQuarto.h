@@ -8,8 +8,10 @@
 
 void frontEndExibicaoQuarto(StDbQuartos *quartos, int qtdQuarto)
 {
+  Utils.SystemComand.clearTela();
+
   int opc;
-  printf("Exibicao de quarto\n");
+  printf("Exibir quarto!\n");
   printf("1 - Exibir todos os quartos\n");
   printf("2 - Exibir quarto por ID\n");
   printf("3 - Exibir quarto por Status\n");

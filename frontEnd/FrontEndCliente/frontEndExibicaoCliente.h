@@ -10,8 +10,10 @@
 
 void frontEndExibicaoCliente(StDbClientes *Clientes, int qtdCliente)
 {
+  Utils.SystemComand.clearTela();
+
   int opc;
-  printf("Exibicao de Cliente\n");
+  printf("Exibir de Cliente\n");
   printf("1 - Exibir todos os Clientes\n");
   printf("2 - Exibir Cliente por Cpf\n");
   printf("3 - Exibir Cliente por Id\n");
