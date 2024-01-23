@@ -30,6 +30,10 @@ void getRg(char *rg, const char *msg)
       }
     }
 
+    printf("Voce digitou %s\n", rgTemp);
+    if (!getConfirmacao())
+      continue;
+
     strcpy(rg, rgTemp);
     return;
   }

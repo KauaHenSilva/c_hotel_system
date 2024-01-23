@@ -32,10 +32,10 @@ void frontEndExibicaoCliente(StDbClientes *Clientes, int qtdCliente)
       Cliente.Exibir.exibirClienteAll(Clientes, qtdCliente);
       break;
     case 2:
-      Cliente.Exibir.exibirClienteId(Clientes, qtdCliente);
+      Cliente.Exibir.exibirClienteCpf(Clientes, qtdCliente);
       break;
     case 3:
-      Cliente.Exibir.exibirClienteCpf(Clientes, qtdCliente);
+      Cliente.Exibir.exibirClienteId(Clientes, qtdCliente);
       break;
     case 4:
       Cliente.Exibir.exibirClienteNome(Clientes, qtdCliente);

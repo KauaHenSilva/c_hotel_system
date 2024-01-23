@@ -6,7 +6,10 @@
 
 void adicionarCpfCliente(StDbClientes *dbCliente, int posicaoMemoria)
 {
-  Utils.InputsSavin.getCpf(dbCliente[posicaoMemoria].cpf, "Digite o cpf Ex.[123.123.123-00]:");
+  Utils.SystemComand.clearTela();
+  printf("Adicionando Clinte [Cpf]... \n\n");
+  Utils.InputsSavin.getCpf(dbCliente[posicaoMemoria].cpf, "Digite o cpf Ex.[123.123.123-00]: ");
+  printf("Clinte [Cpf] Adicionado... \n");
 }
 
 #endif // ADDCPFUSER

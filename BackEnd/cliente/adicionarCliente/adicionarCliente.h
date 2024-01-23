@@ -12,6 +12,7 @@
 
 void adicionarCliente(StDbClientes **dbCliente, int *numClientes)
 {
+  Utils.SystemComand.clearTela();
   adicionarEspacoCliente(dbCliente, numClientes);
   adicionarIdCliente(*dbCliente, *numClientes, *numClientes - 1);
   adicionarNomeCliente(*dbCliente, *numClientes - 1);
@@ -20,6 +21,9 @@ void adicionarCliente(StDbClientes **dbCliente, int *numClientes)
   adicionarTelefoneCliente(*dbCliente, *numClientes - 1);
   adicionarEmailCliente(*dbCliente, *numClientes - 1);
   adicionarEnderecoCliente(*dbCliente, *numClientes - 1);
+  Utils.SystemComand.clearTela();
+
+  printf("Cliente adicionado com sucesso!\n");
 }
 
 

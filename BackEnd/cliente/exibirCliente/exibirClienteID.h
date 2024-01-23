@@ -8,27 +8,24 @@
 void exibirClienteId(StDbClientes *cliente, int numClientes){
 
   Utils.SystemComand.clearTela();
-  if(numClientes == 0){
-    printf("Nenhum cliente cadrastrado!\n");
-    Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
+
+  printf("Exibindo todos os clientes que possui ID...\n\n");
+  for(int x = 0 ; x < numClientes ; x++)
+  {
+    printf("Cliente numero [%d]\n", x + 1);
+    exibirOnlyCliente(cliente, x);
+  }
+
+  int id;
+  getClienteId(cliente, numClientes, &id);
+  if(id == -1){
+    printf("Nenhum quarto cadrastrado!\n");
     return;
   };
 
-  int existe = 0; char rg[15];
-  Utils.InputsSavin.getRg(rg, "Digite o Rg para buscar o cliente Ex.[123456789]: ");
+  printf("O Cliente selecionado foi:\n");
+  exibirOnlyCliente(cliente, id);
 
-  for(int x = 0 ; x < numClientes ; x++)
-  {
-    if(cliente[x].rg == rg){
-      existe = 1;
-      exibirOnlyCliente(cliente, x);
-    }
-  }
-
-  if(!existe)
-    printf("Nao existe cliente com esse rg\n");
-
-  Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
 }
 
 #endif // EXIBIRCLIENTEID

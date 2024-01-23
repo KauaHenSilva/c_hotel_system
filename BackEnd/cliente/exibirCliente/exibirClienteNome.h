@@ -10,12 +10,11 @@ void exibirClienteNome(StDbClientes *cliente, int numClientes){
   Utils.SystemComand.clearTela();
   if(numClientes == 0){
     printf("Nenhum cliente cadrastrado!\n");
-    Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
     return;
   };
 
   int existe = 0; char nome[100];
-  Utils.InputsSavin.getName(nome, "Digite o nome do cliente para busca: ");
+  Utils.InputsBasic.getString(nome, "Digite o nome do cliente para busca: ");
 
   for(int x = 0 ; x < numClientes ; x++)
   {
@@ -28,7 +27,6 @@ void exibirClienteNome(StDbClientes *cliente, int numClientes){
   if(!existe)
     printf("Nao existe cliente com esse nome\n");
 
-  Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
 }
 
 #endif // EXIBIRCLIENTENAME

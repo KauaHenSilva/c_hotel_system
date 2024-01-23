@@ -24,7 +24,6 @@ void getNumeroInt(int *numero, const char *msg)
     else
     {
       printf("\nEntrada invalida. Por favor, insira um valor Valido!!\n");
-      getNumeroInt(numero, msg);
     }
   }
 }

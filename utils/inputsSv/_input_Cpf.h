@@ -6,59 +6,72 @@
 #include <string.h>
 #include <stdbool.h>
 
-bool validarCPF(const char* cpf) {
+bool validarCPF(const char *cpf)
+{
   int i, j, digito1 = 0, digito2 = 0;
   int cpfNumerico[11];
 
-  for (i = 0; i < 11; i++) {
+  for (i = 0; i < 11; i++)
+  {
     cpfNumerico[i] = cpf[i] - '0';
   }
 
   int todosDigitosIguais = 1;
-  for (i = 1; i < 11; i++) {
-    if (cpfNumerico[i] != cpfNumerico[0]) {
+  for (i = 1; i < 11; i++)
+  {
+    if (cpfNumerico[i] != cpfNumerico[0])
+    {
       todosDigitosIguais = 0;
       break;
     }
   }
 
-  if (todosDigitosIguais) {
+  if (todosDigitosIguais)
+  {
     return 0;
   }
 
-  for (i = 0, j = 10; i < 9; i++, j--) {
+  for (i = 0, j = 10; i < 9; i++, j--)
+  {
     digito1 += cpfNumerico[i] * j;
   }
 
   digito1 = (digito1 % 11) < 2 ? 0 : 11 - (digito1 % 11);
 
-  for (i = 0, j = 11; i < 10; i++, j--) {
+  for (i = 0, j = 11; i < 10; i++, j--)
+  {
     digito2 += cpfNumerico[i] * j;
   }
-  
+
   digito2 = (digito2 % 11) < 2 ? 0 : 11 - (digito2 % 11);
 
-  if (cpfNumerico[9] != digito1 || cpfNumerico[10] != digito2) {
+  if (cpfNumerico[9] != digito1 || cpfNumerico[10] != digito2)
+  {
     return 0;
   }
 
   return 1;
 }
 
-void removerCaracteresEspeciais(char* cpf) {
-  char* posicao;
-  
-  while ((posicao = strchr(cpf, '.')) != NULL) {
+void removerCaracteresEspeciais(char *cpf)
+{
+  char *posicao;
+
+  while ((posicao = strchr(cpf, '.')) != NULL)
+  {
     strcpy(posicao, posicao + 1);
   }
-  
-  while ((posicao = strchr(cpf, '-')) != NULL) {
+
+  while ((posicao = strchr(cpf, '-')) != NULL)
+  {
     strcpy(posicao, posicao + 1);
   }
 }
 
-void getCpf(char *cpfUser, const char *msg) {
+void getCpf(char *cpfUser, const char *msg)
+{
   char *cpf = malloc(15 * sizeof(char));
+  char *cpfFormatado = malloc(12 * sizeof(char));
 
   while (1)
   {
@@ -68,11 +81,12 @@ void getCpf(char *cpfUser, const char *msg) {
     scanf("%s", cpf);
     fflush(stdin);
 
-    removerCaracteresEspeciais(cpf);
-    
+    strcpy(cpfFormatado, cpf);
+    removerCaracteresEspeciais(cpfFormatado);
+
     cpf = realloc(cpf, strlen(cpf) + 1);
 
-    if(validarCPF(cpf))
+    if (validarCPF(cpf))
     {
       printf("CPF valido\n");
     }
@@ -82,15 +96,15 @@ void getCpf(char *cpfUser, const char *msg) {
       continue;
     }
 
-    strcpy(cpfUser, cpf);
+    printf("Voce digitou %s\n", cpf);
+    if (!getConfirmacao())
+      continue;
+
+    strcpy(cpfUser, cpfFormatado);
     free(cpf);
-
+    free(cpfFormatado);
+    return;
   }
-  
-
 }
 
-
 #endif // INPUTCPF
-
-

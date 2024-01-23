@@ -6,7 +6,10 @@
 
 void adicionarIdCliente(StDbClientes *dbCliente, int numCliente, int posicaoMemoria)
 {
+  Utils.SystemComand.clearTela();
+  printf("Adicionando Clinte [id]... \n");
   dbCliente[posicaoMemoria].idCadrastro = numCliente;
+  printf("Clinte [Id] Adicionado... \n");
 }
 
 #endif // _ADICIONARIDCLIENTE

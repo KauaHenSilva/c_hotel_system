@@ -18,6 +18,10 @@ void getTelefone(char *telefone)
       continue;
     }
 
+    printf("Voce digitou %s\n", telefoneTemp);
+    if (!getConfirmacao())
+      continue;
+
     strcpy(telefone, telefoneTemp);
     return;
   }
