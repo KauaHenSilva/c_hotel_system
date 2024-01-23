@@ -7,9 +7,9 @@
 #include "./_input_Telefone.h"
 
 typedef struct {
-  void (*getName)(char *name);
-  void (*getCpf)(char *cpf);
-  void (*getRg)(char *rg);
+  void (*getName)(char *name, const char *msg);
+  void (*getCpf)(char *cpf, const char *msg);
+  void (*getRg)(char *rg, const char *msg);
   void (*getTelefone)(char *telefone);
 
 } stInputsSv;

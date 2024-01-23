@@ -38,9 +38,9 @@ struct stUtils
     (void (*)(char *, const char *)) getString,
   },
   {
-    (void (*)(char *)) getName,
-    (void (*)(char *)) getCpf,
-    (void (*)(char *)) getRg,
+    (void (*)(char *, const char*)) getName,
+    (void (*)(char *, const char*)) getCpf,
+    (void (*)(char *, const char*)) getRg,
     (void (*)(char *)) getTelefone,
   }
 };

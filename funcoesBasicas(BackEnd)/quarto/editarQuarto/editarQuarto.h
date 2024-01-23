@@ -8,10 +8,10 @@
 #include "../AdicionarQuarto/inputsOnly/_adicionar_ValorQuarto.h"
 #include "../exibirQuarto/exibirOnlyQuarto/exibirOnlyQuarto.h"
 
-static void editarTipoQuarto(stDbQuartos *dbQuarto, int id);
-static void editarValorQuarto(stDbQuartos *dbQuarto, int id);
+static void editarTipoQuarto(StDbQuartos *dbQuarto, int id);
+static void editarValorQuarto(StDbQuartos *dbQuarto, int id);
 
-void editarQuarto(stDbQuartos *dbQuarto, int numQuartos)
+void editarQuarto(StDbQuartos *dbQuarto, int numQuartos)
 {
   Utils.SystemComand.clearTela();
 
@@ -49,12 +49,12 @@ void editarQuarto(stDbQuartos *dbQuarto, int numQuartos)
 }
 
 
-static void editarTipoQuarto(stDbQuartos *dbQuarto, int id)
+static void editarTipoQuarto(StDbQuartos *dbQuarto, int id)
 {
   adicionarTipoQuarto(dbQuarto, id);
 }
 
-static void editarValorQuarto(stDbQuartos *dbQuarto, int id)
+static void editarValorQuarto(StDbQuartos *dbQuarto, int id)
 {
   adicionarValorQuarto(dbQuarto, id);
 }

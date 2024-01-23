@@ -7,7 +7,7 @@
 #include "../util/getQuartoId.h"
 #include "../exibirQuarto/exibirOnlyQuarto/exibirOnlyQuarto.h"
 
-void removerQuarto(stDbQuartos **dbQuartos, int *numQuartos) {
+void removerQuarto(StDbQuartos **dbQuartos, int *numQuartos) {
 
   for(int x  = 0 ; x < *numQuartos ; x++)
     exibirOnlyQuarto(*dbQuartos, x);
@@ -21,7 +21,7 @@ void removerQuarto(stDbQuartos **dbQuartos, int *numQuartos) {
     (*dbQuartos)[i] = (*dbQuartos)[i + 1];
   }
 
-  *dbQuartos = realloc(*dbQuartos, (*numQuartos - 1) * sizeof(stDbQuartos));
+  *dbQuartos = realloc(*dbQuartos, (*numQuartos - 1) * sizeof(StDbQuartos));
   (*numQuartos)--;
 }
 

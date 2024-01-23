@@ -6,7 +6,7 @@
 #include "../../../utils/utilis.h"
 
 
-void getQuartoId(stDbQuartos *dbQuarto, int numQuartos, int *idQuarto)
+void getQuartoId(StDbQuartos *dbQuarto, int numQuartos, int *idQuarto)
 {
     if (numQuartos == 0)
     {

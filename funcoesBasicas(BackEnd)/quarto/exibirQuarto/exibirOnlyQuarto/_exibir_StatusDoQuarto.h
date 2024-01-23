@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include "../../../../db/model.h"
 
-void exibirStatusDoQuarto(stDbQuartos *quartos, int id)
+void exibirStatusDoQuarto(StDbQuartos *quartos, int id)
 {
     printf("Status do quarto: ");
     switch (quartos[id].statusQuarto)

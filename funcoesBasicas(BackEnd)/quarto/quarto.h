@@ -9,20 +9,20 @@
 
 struct stQuarto
 {
-  void (*adicionarQuarto)(stDbQuartos **dbQuartos, int *numQuartos);
-  void (*editarQuarto)(stDbQuartos *dbQuartos, int numQuartos);
-  void (*removerQuarto)(stDbQuartos **dbQuartos, int *numQuartos);
-  stExibirQuarto ExibirQuarto;
+  void (*adicionarQuarto)(StDbQuartos **dbQuartos, int *numQuartos);
+  void (*editarQuarto)(StDbQuartos *dbQuartos, int numQuartos);
+  void (*removerQuarto)(StDbQuartos **dbQuartos, int *numQuartos);
+  StExibirQuarto ExibirQuarto;
 
 } Quarto = {
-    (void (*)(stDbQuartos **, int *)) adicionarQuarto,
-    (void (*)(stDbQuartos *, int )) editarQuarto,
-    (void (*)(stDbQuartos **, int *)) removerQuarto,
+    (void (*)(StDbQuartos **, int *)) adicionarQuarto,
+    (void (*)(StDbQuartos *, int )) editarQuarto,
+    (void (*)(StDbQuartos **, int *)) removerQuarto,
     {
-      (void (*)(stDbQuartos *, int )) exibirQuartoAll,
-      (void (*)(stDbQuartos *, int )) exibirQuartoId,
-      (void (*)(stDbQuartos *, int )) exibirQuartoStatus,
-      (void (*)(stDbQuartos *, int )) exibirQuartoTipo,
+      (void (*)(StDbQuartos *, int )) exibirQuartoAll,
+      (void (*)(StDbQuartos *, int )) exibirQuartoId,
+      (void (*)(StDbQuartos *, int )) exibirQuartoStatus,
+      (void (*)(StDbQuartos *, int )) exibirQuartoTipo,
     },
 };
 

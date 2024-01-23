@@ -8,11 +8,11 @@
 #include <stdio.h>
 
 
-static void exibirQuartoLivre(stDbQuartos *quarto, int id);
-static void exibirQuartoOcupado(stDbQuartos *quarto, int id);
-static void exibirQuartoResevado(stDbQuartos *quarto, int id);
+static void exibirQuartoLivre(StDbQuartos *quarto, int id);
+static void exibirQuartoOcupado(StDbQuartos *quarto, int id);
+static void exibirQuartoResevado(StDbQuartos *quarto, int id);
 
-void exibirQuartoStatus(stDbQuartos *quarto, int numQuartos)
+void exibirQuartoStatus(StDbQuartos *quarto, int numQuartos)
 {
   Utils.SystemComand.clearTela();
 
@@ -41,7 +41,7 @@ void exibirQuartoStatus(stDbQuartos *quarto, int numQuartos)
   }
   Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
 }
-static void exibirQuartoLivre(stDbQuartos *quarto, int numQuartos)
+static void exibirQuartoLivre(StDbQuartos *quarto, int numQuartos)
 {
   int existe = 0;
   for (int x = 0; x < numQuartos; x++)
@@ -56,7 +56,7 @@ static void exibirQuartoLivre(stDbQuartos *quarto, int numQuartos)
     printf("Nao existe quarto Livre\n");
 }
 
-static void exibirQuartoOcupado(stDbQuartos *quarto, int numQuartos)
+static void exibirQuartoOcupado(StDbQuartos *quarto, int numQuartos)
 {
   int existe = 0;
   for (int x = 0; x < numQuartos; x++)
@@ -71,7 +71,7 @@ static void exibirQuartoOcupado(stDbQuartos *quarto, int numQuartos)
     printf("Nao existe quarto Ocupado\n");
 }
 
-static void exibirQuartoResevado(stDbQuartos *quarto, int numQuartos)
+static void exibirQuartoResevado(StDbQuartos *quarto, int numQuartos)
 {
   int existe = 0;
   for (int x = 0; x < numQuartos; x++)

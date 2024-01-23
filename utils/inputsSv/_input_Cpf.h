@@ -57,11 +57,11 @@ void removerCaracteresEspeciais(char* cpf) {
   }
 }
 
-void getCpf(char *cpfUser) {
+void getCpf(char *cpfUser, const char *msg) {
   char *cpf = malloc(15 * sizeof(char));
 
-  printf("Digite um CPF [122.123.123-00]: ");
-  
+  printf("%s", msg);
+
   fflush(stdin);
   scanf("%s", cpf);
   fflush(stdin);
@@ -75,7 +75,7 @@ void getCpf(char *cpfUser) {
   else
   {
     printf("CPF invalido\n");
-    getCpf(cpfUser);
+    getCpf(cpfUser, msg);
   }
 
   strcpy(cpfUser, cpf);

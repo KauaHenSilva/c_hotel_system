@@ -8,11 +8,11 @@
 #include <stdio.h>
 
 
-static void exibirQuartoSimples(stDbQuartos *quarto, int numQuartos);
-static void exibirQuartoDuplo(stDbQuartos *quarto, int numQuartos);
-static void exibirQuartoSuite(stDbQuartos *quarto, int numQuartos);
+static void exibirQuartoSimples(StDbQuartos *quarto, int numQuartos);
+static void exibirQuartoDuplo(StDbQuartos *quarto, int numQuartos);
+static void exibirQuartoSuite(StDbQuartos *quarto, int numQuartos);
 
-void exibirQuartoTipo(stDbQuartos *quarto, int numQuartos)
+void exibirQuartoTipo(StDbQuartos *quarto, int numQuartos)
 {
   Utils.SystemComand.clearTela();
 
@@ -41,7 +41,7 @@ void exibirQuartoTipo(stDbQuartos *quarto, int numQuartos)
   }
   Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
 }
-static void exibirQuartoSimples(stDbQuartos *quarto, int numQuartos)
+static void exibirQuartoSimples(StDbQuartos *quarto, int numQuartos)
 {
   int existe = 0;
   for (int x = 0; x < numQuartos; x++)
@@ -56,7 +56,7 @@ static void exibirQuartoSimples(stDbQuartos *quarto, int numQuartos)
     printf("Nao existe quartos do tipo Simples\n");
 }
 
-static void exibirQuartoDuplo(stDbQuartos *quarto, int numQuartos)
+static void exibirQuartoDuplo(StDbQuartos *quarto, int numQuartos)
 {
   int existe = 0;
   for (int x = 0; x < numQuartos; x++)
@@ -69,7 +69,7 @@ static void exibirQuartoDuplo(stDbQuartos *quarto, int numQuartos)
     printf("Nao existe quartos do tipo Duplo\n");
 }
 
-static void exibirQuartoSuite(stDbQuartos *quarto, int numQuartos)
+static void exibirQuartoSuite(StDbQuartos *quarto, int numQuartos)
 {
   int existe = 0;
   for (int x = 0; x < numQuartos; x++)

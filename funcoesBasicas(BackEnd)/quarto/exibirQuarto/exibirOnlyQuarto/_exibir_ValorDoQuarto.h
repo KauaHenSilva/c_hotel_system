@@ -2,7 +2,7 @@
 #define _EXIBIRVALORDOQUARTO
 
 #include "../../../../db/model.h"
-void exibirValorDoQuarto(stDbQuartos *quartos, int id)
+void exibirValorDoQuarto(StDbQuartos *quartos, int id)
 {
   printf("Valor do quarto: %.2f\n", quartos[id].valorDiaria);
 }

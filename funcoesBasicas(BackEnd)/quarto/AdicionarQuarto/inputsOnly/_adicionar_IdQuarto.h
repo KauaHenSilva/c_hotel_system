@@ -2,7 +2,7 @@
 #define _ADICIONARIDQUARTO
 
 
-void adicionarIdQuarto(stDbQuartos *dbQuarto, int numQuartos, int posicaoMemoria)
+void adicionarIdQuarto(StDbQuartos *dbQuarto, int numQuartos, int posicaoMemoria)
 {
   dbQuarto[posicaoMemoria].numero = numQuartos;
 }

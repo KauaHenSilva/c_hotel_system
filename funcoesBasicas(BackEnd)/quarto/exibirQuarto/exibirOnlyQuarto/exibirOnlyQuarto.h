@@ -9,7 +9,7 @@
 #include "./_exibir_TipoDoQuarto.h"
 #include "./_exibir_ValorDoQuarto.h"
 
-void exibirOnlyQuarto(stDbQuartos *quarto, int id){
+void exibirOnlyQuarto(StDbQuartos *quarto, int id){
   exibirIdDoQuarto(quarto, id);
   exibirStatusDoQuarto(quarto, id);
   exibirTipoDoQuarto(quarto, id);

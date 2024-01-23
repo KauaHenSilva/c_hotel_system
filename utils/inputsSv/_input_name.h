@@ -3,9 +3,9 @@
 
 #include <stdio.h>
 
-void getName(char *nome)
+void getName(char *nome, const char* msg)
 {
-  printf("Digite o nome: ");
+  printf("%s", msg);
   scanf("%[^\n]", nome);
   fflush(stdin);
 }

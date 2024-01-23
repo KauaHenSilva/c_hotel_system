@@ -9,10 +9,10 @@
 
 typedef struct 
 {
-  void (*exibirQuartoAll)(stDbQuartos *dbQuartos, int numQuartos);
-  void (*exibirQuartoId)(stDbQuartos *dbQuartos, int numQuartos);
-  void (*exibirQuartoStatus)(stDbQuartos *dbQuartos, int numQuartos);
-  void (*exibirQuartoTipo)(stDbQuartos *dbQuartos, int numQuartos);
-} stExibirQuarto;
+  void (*exibirQuartoAll)(StDbQuartos *dbQuartos, int numQuartos);
+  void (*exibirQuartoId)(StDbQuartos *dbQuartos, int numQuartos);
+  void (*exibirQuartoStatus)(StDbQuartos *dbQuartos, int numQuartos);
+  void (*exibirQuartoTipo)(StDbQuartos *dbQuartos, int numQuartos);
+} StExibirQuarto;
 
 #endif // QUARTO

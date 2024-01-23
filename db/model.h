@@ -9,7 +9,7 @@ typedef struct  {
     EnTipoQuarto tipoQuarto;
     EnStatusQuarto statusQuarto;
     double valorDiaria; // valorDiaria = pegarValorQuarto(tipoQuarto);
-} stDbQuartos ;
+} StDbQuartos ;
 
 typedef struct  {
     int idCadrastro;

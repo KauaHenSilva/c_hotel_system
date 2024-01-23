@@ -1,12 +1,12 @@
 #if !defined(ADICONAREMAIL)
 #define ADICONAREMAIL
 
-#include "../../../db/model.h"
-#include "../../../utils/utilis.h"
+#include "../../../../db/model.h"
+#include "../../../../utils/utilis.h"
 
-void adicionarEnderecoCliente(stDbCliente *dbCliente, int posicaoMemoria)
+void adicionarEmailCliente(StDbClintes *dbCliente, int posicaoMemoria)
 {
-  Utils.InputsBasic.getString(dbCliente[posicaoMemoria].endereco, "Digite o email:");
+  Utils.InputsBasic.getString(dbCliente[posicaoMemoria].email, "Digite o email:");
 } 
 
 

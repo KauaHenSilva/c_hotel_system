@@ -2,10 +2,10 @@
 #define ADICIONARENDERECO
 
 
-#include "../../../db/model.h"
-#include "../../../utils/utilis.h"
+#include "../../../../db/model.h"
+#include "../../../../utils/utilis.h"
 
-void adicionarEnderecoCliente(stDbCliente *dbCliente, int posicaoMemoria)
+void adicionarEnderecoCliente(StDbClintes *dbCliente, int posicaoMemoria)
 {
   Utils.InputsBasic.getString(dbCliente[posicaoMemoria].endereco, "Digite o endereco:");
 } 
