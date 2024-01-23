@@ -6,7 +6,7 @@
 #include <stdlib.h> 
 
 StDbQuartos *dbQuartos = NULL;
-StDbClientes *DbClintes = NULL;
+StDbClientes *dbClintes = NULL;
 StDbFluxoFinanceiro *DbFluxoFinanceiro = NULL;
 
 int quantidadeDeQuarto = 0;

@@ -20,7 +20,7 @@ int main()
       FrontEnd.frontEndQuarto(&dbQuartos, &quantidadeDeQuarto);
       break;
     case 2:
-      FrontEnd.frontEndCliente(&dbQuartos, &quantidadeDeQuarto);
+      FrontEnd.frontEndCliente(&dbClintes, &quantidadeDeQuarto);
       break;
   }
 
