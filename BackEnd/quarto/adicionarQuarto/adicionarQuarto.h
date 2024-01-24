@@ -20,10 +20,12 @@ void adicionarQuarto(StDbQuartos **dbQuartos, int *numQuartos, int *idQuarto)
   adicionarTipoQuarto(*dbQuartos, *numQuartos - 1);
   adicionarValorQuarto(*dbQuartos, *numQuartos - 1);
   adicionarStatusQuarto(*dbQuartos, *numQuartos - 1);
-
+  
   Utils.SystemComand.clearTela();
 
+
   printf("Quarto adicionado com sucesso!\n");
+  Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
 
 };
 

@@ -8,7 +8,6 @@
 void adicionarEspacoCliente(StDbClientes **dbCliente, int *numClientes)
 {
   Utils.SystemComand.clearTela();
-  printf("Adicionando Clinte [Memoria]... \n");
 
   if (*dbCliente == NULL)
   {
@@ -34,7 +33,6 @@ void adicionarEspacoCliente(StDbClientes **dbCliente, int *numClientes)
   (*numClientes)++;
 
 
-  printf("Clinte [Memoria] Adicionado... \n");
 }
 
 #endif // _ADICIONARESPACOCLIENTE

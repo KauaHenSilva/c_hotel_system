@@ -1,16 +1,19 @@
 #include <stdio.h>
 
 void saveQuartos(StDbQuartos *quartos, int quantidadeQuartos, int idQuarto) {
-    FILE *arquivo = fopen("C:/Meus-Estudos-Global/Desktop/C/C_Hotel_System/db/quartos/dbQuarto.bin", "wb");
+    FILE *fldbQuarto = fopen("dbQuarto.bin", "wb");
+    FILE *flQuantidadeQuarto = fopen("dbQuantidadeQuarto.bin", "wb");
+    FILE *flIdQuarto = fopen("dbIdQuarto.bin", "wb");
 
-    if (!arquivo) {
+    if (!fldbQuarto || !flQuantidadeQuarto || !flIdQuarto) {
         return;
     }
 
-    fwrite(&quantidadeQuartos, sizeof(int), 1, arquivo);
-    fwrite(&idQuarto, sizeof(int), 1, arquivo);
+    fwrite(&idQuarto, sizeof(int), 1, flIdQuarto);
+    fwrite(&quantidadeQuartos, sizeof(int), 1, flQuantidadeQuarto);
+    fwrite(quartos, sizeof(StDbQuartos), quantidadeQuartos, fldbQuarto);
 
-    fwrite(quartos, sizeof(StDbQuartos), quantidadeQuartos, arquivo);
-
-    fclose(arquivo);
+    fclose(flQuantidadeQuarto);
+    fclose(fldbQuarto);
+    fclose(flIdQuarto);
 }

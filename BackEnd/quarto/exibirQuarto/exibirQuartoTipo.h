@@ -76,7 +76,10 @@ static void exibirQuartoSuite(StDbQuartos *quarto, int numQuartos)
   for (int x = 0; x < numQuartos; x++)
   {
     if (quarto[x].tipoQuarto == SUITE)
-    exibirOnlyQuarto(quarto, x);
+    {
+      existe = 1;
+      exibirOnlyQuarto(quarto, x);
+    }
   }
   if(!existe)
     printf("Nao existe quartos do tipo Suite\n");

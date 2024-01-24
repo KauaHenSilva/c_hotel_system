@@ -37,6 +37,7 @@ void adicionarStatusQuartoUP(StDbQuartos *dbQuarto, int posicaoMemoria)
 
 static void adicionarStatusQuartoUser(StDbQuartos *dbQuarto, int posicaoMemoria)
 {
+  Utils.SystemComand.clearTela();
 
   int opc;
 

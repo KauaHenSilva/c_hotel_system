@@ -12,7 +12,6 @@ void adicionarValorQuarto(StDbQuartos *dbQuarto, int posicaoMemoria)
 
     while (1)
     {
-        printf("Adicionando Quarto [valor]... \n\n");
 
         int opc;
 
@@ -37,7 +36,6 @@ void adicionarValorQuarto(StDbQuartos *dbQuarto, int posicaoMemoria)
         break;;
     }
 
-    printf("[valor] adicionado com sucesso!... \n");
 
 }
 

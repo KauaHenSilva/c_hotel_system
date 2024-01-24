@@ -1,16 +1,19 @@
 #include <stdio.h>
 
 void saveCliente(StDbClientes *Cliente, int quantidadeClientes,int idCliente) {
-    FILE *arquivo = fopen("C:/Meus-Estudos-Global/Desktop/C/C_Hotel_System/db/Clientes/dbClientes.bin", "wb");
+    FILE *flIdClientes = fopen("idClientes.bin", "wb");
+    FILE *flQuantidadeDeClintes = fopen("qtClientes.bin", "wb");
+    FILE *flDbClientes = fopen("dbClientes.bin", "wb");
 
-    if (!arquivo) {
+    if (!flIdClientes || !flQuantidadeDeClintes || !flDbClientes) {
         return;
     }
 
-    fwrite(&quantidadeClientes, sizeof(int), 1, arquivo);
-    fwrite(&idCliente, sizeof(int), 1, arquivo);
+    fwrite(&idCliente, sizeof(int), 1, flIdClientes);
+    fwrite(&quantidadeClientes, sizeof(int), 1, flQuantidadeDeClintes);
+    fwrite(Cliente, sizeof(StDbClientes), quantidadeClientes, flDbClientes);
 
-    fwrite(Cliente, sizeof(StDbClientes), quantidadeClientes, arquivo);
-
-    fclose(arquivo);
+    fclose(flIdClientes);
+    fclose(flQuantidadeDeClintes);
+    fclose(flDbClientes);
 }
