@@ -1,6 +1,8 @@
 #if !defined(ADICONARTELEFONECLIENTE)
 #define ADICONARTELEFONECLIENTE
 
+#include "../../../../utils/utilis.h"
+
 void adicionarTelefoneCliente(StDbClientes *dbCliente, int posicaoMemoria)
 {
   Utils.SystemComand.clearTela();

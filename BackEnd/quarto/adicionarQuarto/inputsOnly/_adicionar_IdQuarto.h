@@ -2,11 +2,11 @@
 #define _ADICIONARIDQUARTO
 
 
-void adicionarIdQuarto(StDbQuartos *dbQuarto, int numQuartos, int posicaoMemoria)
+void adicionarIdQuarto(StDbQuartos *dbQuarto, int posicaoMemoria, int *idQuarto)
 {
   Utils.SystemComand.clearTela();
   printf("Adicionando Quarto [posicao]... \n\n");
-  dbQuarto[posicaoMemoria].numero = numQuartos;
+  dbQuarto[posicaoMemoria].numero = ++(*idQuarto);
   printf("[posicao] adicionado com sucesso!... \n");
 
 }

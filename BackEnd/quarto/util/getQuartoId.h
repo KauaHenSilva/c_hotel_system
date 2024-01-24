@@ -8,20 +8,30 @@
 
 void getQuartoId(StDbQuartos *dbQuarto, int numQuartos, int *idQuarto)
 {
-    if (numQuartos == 0)
+    while (1)
     {
-        (*idQuarto) = -1;
-        return;
+        if (numQuartos == 0)
+        {
+            (*idQuarto) = -1;
+            return;
+        }
+        
+        Utils.InputsBasic.getNumeroInt(idQuarto, "Digite o id do quarto: ");
+
+        for(int x = 0 ; x < numQuartos ; x++)
+        {
+            if(dbQuarto[x].numero == (*idQuarto))
+            {
+                (*idQuarto) = x;
+                return;
+            }
+        }
+
+        printf("Quarto nao encontrado\n");
+
+        continue;
     }
     
-    Utils.InputsBasic.getNumeroInt(idQuarto, "Digite o id do quarto: ");
-    (*idQuarto)--;
-
-    if (*idQuarto > numQuartos - 1 || *idQuarto < 0)
-    {
-        printf("Item nao encontrado\n");
-        getQuartoId(dbQuarto, numQuartos, idQuarto);
-    }
 }
 
 #endif // _USERQUARTOID

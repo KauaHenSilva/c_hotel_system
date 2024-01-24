@@ -5,22 +5,28 @@
 #include "../../../db/model.h"
 #include "../../../utils/utilis.h"
 
-
 void getClienteId(StDbClientes *dbCliente, int numClientes, int *idCliente)
 {
-    if (numClientes == 0)
+    while (1)
     {
-        (*idCliente) = -1;
-        return;
-    }
-    
-    Utils.InputsBasic.getNumeroInt(idCliente, "Digite o id do quarto: ");
-    (*idCliente)--;
+        if (numClientes == 0)
+        {
+            (*idCliente) = -1;
+            return;
+        }
 
-    if (*idCliente > numClientes - 1 || *idCliente < 0)
-    {
-        printf("Item nao encontrado\n");
-        getClienteId(dbCliente, numClientes, idCliente);
+        Utils.InputsBasic.getNumeroInt(idCliente, "Digite o id do cliente: ");
+
+        for (int x = 0; x < numClientes; x++)
+        {
+            if (dbCliente[x].idCadrastro == (*idCliente))
+            {
+                (*idCliente) = x;
+                return;
+            }
+        }
+
+        printf("Cliente nao encontrado\n");
     }
 }
 

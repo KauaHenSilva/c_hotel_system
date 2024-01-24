@@ -7,6 +7,7 @@
 void adicionarNomeCliente(StDbClientes *dbCliente, int posicaoMemoria)
 {
   Utils.SystemComand.clearTela();
+  
   printf("Adicionando Clinte [Nome]... \n");
   Utils.InputsBasic.getString(dbCliente[posicaoMemoria].nome, "Digite o nome: ");
   printf("Clinte [Nome] Adicionado... \n");

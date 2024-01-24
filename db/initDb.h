@@ -11,5 +11,7 @@ StDbFluxoFinanceiro *DbFluxoFinanceiro = NULL;
 
 int quantidadeDeQuarto = 0;
 int quantidadeDeCLientes = 0;
+int idQuarto = 0;
+int idCliente = 0;
 
 #endif // INITDB

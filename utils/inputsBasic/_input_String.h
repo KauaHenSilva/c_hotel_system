@@ -9,7 +9,7 @@
 
 void getString(char *string, const char *msg)
 {
-  char *stringTemp = (char *)malloc(sizeof(char) * 100) ;
+  char stringTemp[100];
   while (1)
   {
     limparBuffer();
@@ -21,7 +21,6 @@ void getString(char *string, const char *msg)
       if(!getConfirmacao())
         continue;
       strcpy(string, stringTemp);
-      free(stringTemp);
       return;
     }
     else

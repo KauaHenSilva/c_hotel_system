@@ -17,12 +17,12 @@
 
 struct stCliente
 {
-  void (*adicionarCliente)(StDbClientes **dbCliente, int *numClienes);
+  void (*adicionarCliente)(StDbClientes **dbCliente, int *numClienes, int *idCliente);
   void (*removerCliente)(StDbClientes **dbCliente, int *numClienes);
   void (*editarCliente)(StDbClientes *dbCliente, int numClienes);
   StExibirCliente Exibir;
 } Cliente = {
-    (void (*)(StDbClientes **, int *)) adicionarCliente,
+    (void (*)(StDbClientes **, int *, int *)) adicionarCliente,
     (void (*)(StDbClientes **, int *)) removerCliente,
     (void (*)(StDbClientes *, int )) editarCliente,
     {

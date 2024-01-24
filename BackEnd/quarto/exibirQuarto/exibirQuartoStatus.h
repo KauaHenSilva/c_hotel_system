@@ -20,8 +20,8 @@ void exibirQuartoStatus(StDbQuartos *quarto, int numQuartos)
 
   printf("Qual o status do quarto deseja Listar?\n");
   printf("1 - Livre\n");
-  printf("3 - Resevado\n");
-  printf("2 - Ocupado\n");
+  printf("2 - Resevado\n");
+  printf("3 - Ocupado\n");
 
   int opc;
   Utils.InputsBasic.getNumeroInt(&opc, "Digite o numero correspodente: ");

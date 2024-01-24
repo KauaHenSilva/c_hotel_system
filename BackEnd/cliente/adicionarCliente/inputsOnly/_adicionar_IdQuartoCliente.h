@@ -4,11 +4,11 @@
 #include "../../../../db/model.h"
 #include "../../../../utils/utilis.h"
 
-void adicionarIdCliente(StDbClientes *dbCliente, int numCliente, int posicaoMemoria)
+void adicionarIdCliente(StDbClientes *dbCliente, int posicaoMemoria, int *idCliente)
 {
   Utils.SystemComand.clearTela();
   printf("Adicionando Clinte [id]... \n");
-  dbCliente[posicaoMemoria].idCadrastro = numCliente;
+  dbCliente[posicaoMemoria].idCadrastro = ++(*idCliente);
   printf("Clinte [Id] Adicionado... \n");
 }
 

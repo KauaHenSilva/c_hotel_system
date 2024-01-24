@@ -2,15 +2,15 @@
 
 #include "../../db/model.h"
 
-void loadCliente(StDbClientes **Clientes, int *quantidadeDeClientes) {
+void loadCliente(StDbClientes **Clientes, int *quantidadeDeClientes, int *idCliente) {
     FILE *arquivo = fopen("C:/Meus-Estudos-Global/Desktop/C/C_Hotel_System/db/Clientes/dbClientes.bin", "rb");
 
     if (!arquivo) {
-        printf("Erro ao abrir o arquivo\n");
         return;
     }
 
     fread(quantidadeDeClientes, sizeof(int), 1, arquivo);
+    fread(idCliente, sizeof(int), 1, arquivo);
 
     *Clientes = malloc(sizeof(StDbClientes) * (*quantidadeDeClientes));
 

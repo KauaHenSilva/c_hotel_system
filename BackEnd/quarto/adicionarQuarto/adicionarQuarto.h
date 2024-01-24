@@ -11,12 +11,12 @@
 #include "./inputsOnly/_adicionar_StatusQuarto.h"
 
 
-void adicionarQuarto(StDbQuartos **dbQuartos, int *numQuartos)
+void adicionarQuarto(StDbQuartos **dbQuartos, int *numQuartos, int *idQuarto)
 {
   Utils.SystemComand.clearTela();
 
   adicionarEspacoQuarto(dbQuartos, numQuartos);
-  adicionarIdQuarto(*dbQuartos, *numQuartos, *numQuartos - 1);
+  adicionarIdQuarto(*dbQuartos, *numQuartos - 1, idQuarto);
   adicionarTipoQuarto(*dbQuartos, *numQuartos - 1);
   adicionarValorQuarto(*dbQuartos, *numQuartos - 1);
   adicionarStatusQuarto(*dbQuartos, *numQuartos - 1);

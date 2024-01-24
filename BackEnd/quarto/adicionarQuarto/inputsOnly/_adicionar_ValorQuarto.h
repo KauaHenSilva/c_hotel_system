@@ -10,30 +10,34 @@ void adicionarValorQuarto(StDbQuartos *dbQuarto, int posicaoMemoria)
 {
     Utils.SystemComand.clearTela();
 
-  printf("Adicionando Quarto [valor]... \n\n");
-
-    int opc;
-
-    printf("Digite o tipo do valor do quarto [%d]: \n", dbQuarto[posicaoMemoria].numero);
-    printf("1 - Valor Padrao(SIMPLES: 100R$, DUPLO: 200R$, SUITE 300R$)\n");
-    printf("2 - Valor Personalizado\n");
-
-    Utils.InputsBasic.getNumeroInt(&opc, "Digite o tipo do valor do quarto: ");
-
-    switch (opc)
+    while (1)
     {
-    case 1:
-        adicionarValorPadraoQuarto(dbQuarto, posicaoMemoria);
-        break;
-    case 2:
-        adicionarValorPersonalizadoQuarto(dbQuarto, posicaoMemoria);
-        break;
-    default:
-        printf("Alternativa Invalida\n");
-        adicionarValorQuarto(dbQuarto, posicaoMemoria);
+        printf("Adicionando Quarto [valor]... \n\n");
+
+        int opc;
+
+        printf("Digite o tipo do valor do quarto [%d]: \n", dbQuarto[posicaoMemoria].numero);
+        printf("1 - Valor Padrao(SIMPLES: 100R$, DUPLO: 200R$, SUITE 300R$)\n");
+        printf("2 - Valor Personalizado\n");
+
+        Utils.InputsBasic.getNumeroInt(&opc, "Digite o tipo do valor do quarto: ");
+
+        switch (opc)
+        {
+        case 1:
+            adicionarValorPadraoQuarto(dbQuarto, posicaoMemoria);
+            break;
+        case 2:
+            adicionarValorPersonalizadoQuarto(dbQuarto, posicaoMemoria);
+            break;
+        default:
+            printf("Alternativa Invalida\n");
+            continue;
+        }
+        break;;
     }
 
-  printf("[valor] adicionado com sucesso!... \n");
+    printf("[valor] adicionado com sucesso!... \n");
 
 }
 
@@ -48,12 +52,15 @@ static void adicionarValorPadraoQuarto(StDbQuartos *dbQuarto, int posicaoMemoria
 {
     switch (dbQuarto[posicaoMemoria].tipoQuarto)
     {
-    case SIMPLES:
-        dbQuarto[posicaoMemoria].valorDiaria = 100.0;
-    case DUPLO:
-        dbQuarto[posicaoMemoria].valorDiaria = 200.0;
-    case SUITE:
-        dbQuarto[posicaoMemoria].valorDiaria = 300.0;
+        case SIMPLES:
+            dbQuarto[posicaoMemoria].valorDiaria = 100.0;
+            break;
+        case DUPLO:
+            dbQuarto[posicaoMemoria].valorDiaria = 200.0;
+            break;
+        case SUITE:
+            dbQuarto[posicaoMemoria].valorDiaria = 300.0;
+            break;
     }
 }
 

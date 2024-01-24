@@ -9,13 +9,13 @@
 
 struct stQuarto
 {
-  void (*adicionarQuarto)(StDbQuartos **dbQuartos, int *numQuartos);
+  void (*adicionarQuarto)(StDbQuartos **dbQuartos, int *numQuartos, int *idQuarto);
   void (*editarQuarto)(StDbQuartos *dbQuartos, int numQuartos);
   void (*removerQuarto)(StDbQuartos **dbQuartos, int *numQuartos);
   StExibirQuarto ExibirQuarto;
 
 } Quarto = {
-    (void (*)(StDbQuartos **, int *)) adicionarQuarto,
+    (void (*)(StDbQuartos **, int *, int *)) adicionarQuarto,
     (void (*)(StDbQuartos *, int )) editarQuarto,
     (void (*)(StDbQuartos **, int *)) removerQuarto,
     {

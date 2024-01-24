@@ -10,8 +10,8 @@
 void exec();
 int main()
 {
-  loadCliente(&dbClintes, &quantidadeDeCLientes);
-  loadQuartos(&dbQuartos, &quantidadeDeQuarto);
+  loadCliente(&dbClintes, &quantidadeDeCLientes, &idCliente);
+  loadQuartos(&dbQuartos, &quantidadeDeQuarto, &idQuarto);
   exec();
   return 0;
 }
@@ -35,10 +35,10 @@ void exec()
       return;
       break;
     case 1:
-      FrontEnd.frontEndQuarto(&dbQuartos, &quantidadeDeQuarto);
+      FrontEnd.frontEndQuarto(&dbQuartos, &quantidadeDeQuarto, &idQuarto);
       break;
     case 2:
-      FrontEnd.frontEndCliente(&dbClintes, &quantidadeDeQuarto);
+      FrontEnd.frontEndCliente(&dbClintes, &quantidadeDeQuarto, &idCliente);
       break;
   }
   exec();

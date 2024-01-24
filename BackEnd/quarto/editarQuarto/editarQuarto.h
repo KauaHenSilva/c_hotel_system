@@ -3,7 +3,7 @@
 
 #include "../../../utils/utilis.h"
 #include "../util/getQuartoId.h"
-#include "../AdicionarQuarto/inputsOnly/_adicionar_StatusQuarto.h"
+#include "../AdicionarQuarto/inputsOnly/_adicionar_StatusQuartoUP.h"
 #include "../AdicionarQuarto/inputsOnly/_adicionar_TipoDoQuarto.h"
 #include "../AdicionarQuarto/inputsOnly/_adicionar_ValorQuarto.h"
 #include "../exibirQuarto/exibirOnlyQuarto/exibirOnlyQuarto.h"

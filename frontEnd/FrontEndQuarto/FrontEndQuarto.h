@@ -11,7 +11,7 @@
 
 #include "./frontEndExibicaoQuarto.h"
 
-void frontEndQuarto(StDbQuartos **quartos, int *qtdQuartos)
+void frontEndQuarto(StDbQuartos **quartos, int *qtdQuartos, int *idQuarto)
 {
   Utils.SystemComand.clearTela();
 
@@ -31,25 +31,25 @@ void frontEndQuarto(StDbQuartos **quartos, int *qtdQuartos)
       return;
       break;
     case 1:
-      Quarto.adicionarQuarto(quartos, qtdQuartos);
-      saveQuartos(*quartos, *qtdQuartos);
+      Quarto.adicionarQuarto(quartos, qtdQuartos, idQuarto);
+      saveQuartos(*quartos, *qtdQuartos, *idQuarto);
       break;
     case 2:
       frontEndExibicaoQuarto(*quartos, *qtdQuartos);
       break;
     case 3:
       Quarto.editarQuarto(*quartos, *qtdQuartos);
-      saveQuartos(*quartos, *qtdQuartos);
+      saveQuartos(*quartos, *qtdQuartos, *idQuarto);
       break;
     case 4:
       Quarto.removerQuarto(quartos, qtdQuartos);
-      saveQuartos(*quartos, *qtdQuartos);
+      saveQuartos(*quartos, *qtdQuartos, *idQuarto);
       break;
     default:
       printf("Alternativa invalida\n");
       break;
   }
-  frontEndQuarto(quartos, qtdQuartos);
+  frontEndQuarto(quartos, qtdQuartos, idQuarto);
 }
 
 #endif // MENUQUARTO

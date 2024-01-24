@@ -8,6 +8,7 @@
 void adicionarEspacoQuarto(StDbQuartos **dbQuartos, int *numQuartos)
 {
   Utils.SystemComand.clearTela();
+
   printf("Adicionando Quarto [espaco]... \n\n");
   
   if (*dbQuartos == NULL)
@@ -21,8 +22,10 @@ void adicionarEspacoQuarto(StDbQuartos **dbQuartos, int *numQuartos)
     }
 
     (*numQuartos)++;
+    printf("[espaco] adicionado com sucesso!... \n");
     return;
   }
+
   *dbQuartos = (StDbQuartos *)realloc(*dbQuartos, (*numQuartos + 1) * sizeof(StDbQuartos));
 
     if(!dbQuartos)
@@ -32,6 +35,7 @@ void adicionarEspacoQuarto(StDbQuartos **dbQuartos, int *numQuartos)
     }
 
   (*numQuartos)++;
+
   printf("[espaco] adicionado com sucesso!... \n");
 }
 

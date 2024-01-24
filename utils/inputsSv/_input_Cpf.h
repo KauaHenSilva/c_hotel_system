@@ -71,7 +71,6 @@ void removerCaracteresEspeciais(char *cpf)
 void getCpf(char *cpfUser, const char *msg)
 {
   char *cpf = malloc(15 * sizeof(char));
-  char *cpfFormatado = malloc(12 * sizeof(char));
 
   while (1)
   {
@@ -81,28 +80,20 @@ void getCpf(char *cpfUser, const char *msg)
     scanf("%s", cpf);
     fflush(stdin);
 
-    strcpy(cpfFormatado, cpf);
-    removerCaracteresEspeciais(cpfFormatado);
+    printf("Voce digitou %s\n", cpf);
+    if (!getConfirmacao())
+      continue;
 
-    cpf = realloc(cpf, strlen(cpf) + 1);
+    removerCaracteresEspeciais(cpf);
 
-    if (validarCPF(cpf))
-    {
-      printf("CPF valido\n");
-    }
-    else
+    if (!validarCPF(cpf))
     {
       printf("CPF invalido\n");
       continue;
     }
 
-    printf("Voce digitou %s\n", cpf);
-    if (!getConfirmacao())
-      continue;
-
-    strcpy(cpfUser, cpfFormatado);
+    strcpy(cpfUser, cpf);
     free(cpf);
-    free(cpfFormatado);
     return;
   }
 }
