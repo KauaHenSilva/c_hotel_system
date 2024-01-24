@@ -3,22 +3,19 @@
 #include "../../db/model.h"
 
 void loadQuartos(StDbQuartos **quartos, int *quantidadeQuartos, int *idQuarto) {
-    FILE *flQuantidadeDeQuartos = fopen("dbQuantidadeDeQuarto.bin", "rb");
-    FILE *fldbQuarto = fopen("dbQuarto.bin", "rb");
-    FILE *flIdQuarto = fopen("dbIdQuarto.bin", "rb");
+    FILE *arquivo = fopen("C:/Meus-Estudos-Global/Desktop/C/C_Hotel_System/db/quartos/dbQuarto.bin", "rb");
 
-    if (!fldbQuarto ||flQuantidadeDeQuartos || flIdQuarto) {
+    if (!arquivo) {
+        printf("Erro ao abrir o arquivo\n");
         return;
     }
 
-    fread(quantidadeQuartos, sizeof(int), 1, flQuantidadeDeQuartos);
+    fread(idQuarto, sizeof(int), 1, arquivo);
+    fread(quantidadeQuartos, sizeof(int), 1, arquivo);
+
     *quartos = malloc(sizeof(StDbQuartos) * (*quantidadeQuartos));
 
-    fread(*quartos, sizeof(StDbQuartos), *quantidadeQuartos, fldbQuarto);
+    fread(*quartos, sizeof(StDbQuartos), *quantidadeQuartos, arquivo);
 
-    fread(idQuarto, sizeof(int), 1, flIdQuarto);
-
-    fclose(flQuantidadeDeQuartos);
-    fclose(fldbQuarto);
-    fclose(flIdQuarto);
+    fclose(arquivo);
 }

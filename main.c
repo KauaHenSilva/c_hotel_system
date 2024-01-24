@@ -38,7 +38,7 @@ void exec()
       FrontEnd.frontEndQuarto(&dbQuartos, &quantidadeDeQuarto, &idQuarto);
       break;
     case 2:
-      FrontEnd.frontEndCliente(&dbClintes, &quantidadeDeQuarto, &idCliente);
+      FrontEnd.frontEndCliente(&dbClintes, &quantidadeDeCLientes, &idCliente);
       break;
   }
   exec();
