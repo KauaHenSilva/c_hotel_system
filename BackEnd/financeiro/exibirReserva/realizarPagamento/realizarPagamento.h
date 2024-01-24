@@ -1,0 +1,6 @@
+#if !defined(REALIZARPAGAMENTO)
+#define REALIZARPAGAMENTO
+
+
+
+#endif // REALIZARPAGAMENTO
