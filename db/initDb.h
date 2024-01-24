@@ -14,4 +14,9 @@ int quantidadeDeCLientes = 0;
 int idQuarto = 0;
 int idCliente = 0;
 
+StDbControle controle = {
+  &quantidadeDeCLientes,
+  &quantidadeDeQuarto,
+};
+
 #endif // INITDB

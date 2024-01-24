@@ -5,6 +5,7 @@
 #include "db/quartos/loadQuartos.h"
 
 #include "frontEnd/frontEnd.h"
+
 #include "./utils/utilis.h"
 
 void exec();
@@ -24,6 +25,7 @@ void exec()
   printf("Escolha uma das opcoes abaixo:\n");
   printf("1 - Abrir menu Quarto\n");
   printf("2 - abrir menu Cliente\n");
+  printf("3 - abrir menu Financeiro\n");
   printf("0 - Sair\n");
 
   int opcao;
@@ -39,6 +41,9 @@ void exec()
       break;
     case 2:
       FrontEnd.frontEndCliente(&dbClintes, &quantidadeDeCLientes, &idCliente);
+      break;
+    case 3:
+      FrontEnd.frontEndFinanceiro(&DbFluxoFinanceiro, dbClintes, dbQuartos, &controle);
       break;
   }
   exec();

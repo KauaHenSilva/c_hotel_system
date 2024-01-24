@@ -33,4 +33,9 @@ typedef struct  {
     EnStatusPagamento statusPagamento;
 } StDbFluxoFinanceiro ;  
 
+typedef struct {
+    int *quantidadeDeQuarto;
+    int *quantidadeDeCLientes;
+} StDbControle;
+
 #endif // __MODELS
