@@ -5,7 +5,7 @@
 
 void exibirTipoDoQuarto(StDbQuartos *quartos, int id)
 {
-    printf("Tipo do quarto: ");
+    printf(" - Tipo do quarto: ");
     switch (quartos[id].tipoQuarto)
     {
         case SIMPLES:

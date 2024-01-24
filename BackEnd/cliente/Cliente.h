@@ -13,7 +13,7 @@
 #include "./exibirCliente/exibirClienteAll.h"
 #include "./exibirCliente/exibirClienteCpf.h"
 #include "./exibirCliente/exibirClienteID.h"
-#include "./exibirCliente/exibirClienteNome.h"
+#include "./exibirCliente/exibirClienteRg.h"
 
 struct stCliente
 {
@@ -29,7 +29,7 @@ struct stCliente
       (void (*)(StDbClientes *, int)) exibirClienteAll,
       (void (*)(StDbClientes *, int)) exibirClienteCpf,
       (void (*)(StDbClientes *, int)) exibirClienteId,
-      (void (*)(StDbClientes *, int)) exibirClienteNome,
+      (void (*)(StDbClientes *, int)) exibirClienteRg,
     }
 };
 

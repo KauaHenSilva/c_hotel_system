@@ -8,43 +8,43 @@
 
 void frontEndExibicaoQuarto(StDbQuartos *quartos, int qtdQuarto)
 {
-  Utils.SystemComand.clearTela();
-
   int opc;
-  printf("Exibir quarto!\n");
-  printf("1 - Exibir todos os quartos\n");
-  printf("2 - Exibir quarto por ID\n");
-  printf("3 - Exibir quarto por Status\n");
-  printf("4 - Exibir quarto por tipo\n");
-  printf("0 - Voltar\n");
-
-
-  Utils.InputsBasic.getNumeroInt(&opc, "Digite o numero correspodente: ");
-
-  switch (opc)
+  while (1)
   {
-    case 0:
-      return;
-      break;
-    case 1:
-      Quarto.ExibirQuarto.exibirQuartoAll(quartos, qtdQuarto);
-      break;
-    case 2:
-      Quarto.ExibirQuarto.exibirQuartoId(quartos, qtdQuarto);
-      break;
-    case 3:
-      Quarto.ExibirQuarto.exibirQuartoStatus(quartos, qtdQuarto);
-      break;
-    case 4:
-      Quarto.ExibirQuarto.exibirQuartoTipo(quartos, qtdQuarto);
-      break;
-    default:
-      printf("Alternativa invalida\n");
-      frontEndExibicaoQuarto(quartos, qtdQuarto);
-  }
+    Utils.SystemComand.clearTela();
 
-  Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
-  frontEndExibicaoQuarto(quartos, qtdQuarto);
+    printf("Exibir quarto!\n");
+    printf("1 - Exibir todos os quartos\n");
+    printf("2 - Exibir quarto por ID\n");
+    printf("3 - Exibir quarto por Status\n");
+    printf("4 - Exibir quarto por tipo\n");
+    printf("0 - Voltar\n");
+
+    Utils.InputsBasic.getNumeroInt(&opc, "Digite o numero correspodente: ");
+
+    switch (opc)
+    {
+      case 0:
+        return;
+        break;
+      case 1:
+        Quarto.ExibirQuarto.exibirQuartoAll(quartos, qtdQuarto);
+        break;
+      case 2:
+        Quarto.ExibirQuarto.exibirQuartoId(quartos, qtdQuarto);
+        break;
+      case 3:
+        Quarto.ExibirQuarto.exibirQuartoStatus(quartos, qtdQuarto);
+        break;
+      case 4:
+        Quarto.ExibirQuarto.exibirQuartoTipo(quartos, qtdQuarto);
+        break;
+      default:
+        printf("Alternativa invalida\n");
+    }
+
+    Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
+  }
 }
 
 #endif

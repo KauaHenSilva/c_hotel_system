@@ -6,7 +6,7 @@
 
 void exibirStatusDoQuarto(StDbQuartos *quartos, int id)
 {
-    printf("Status do quarto: ");
+    printf(" - Status do quarto: ");
     switch (quartos[id].statusQuarto)
     {
         case LIVRE:

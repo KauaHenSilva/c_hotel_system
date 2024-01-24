@@ -13,6 +13,7 @@
 
 void frontEndCliente(StDbClientes **dbClientes, int *qtdClientes, int *idCliente)
 {
+  int opc;
   while (1)
   {
     Utils.SystemComand.clearTela();
@@ -24,11 +25,13 @@ void frontEndCliente(StDbClientes **dbClientes, int *qtdClientes, int *idCliente
     printf("4 - Excluir Cliente\n");
     printf("0 - Voltar\n");
 
-    int opc;
     Utils.InputsBasic.getNumeroInt(&opc, "Digite o numero correspodente: ");
 
     switch (opc)
     {
+      case 0:
+        return;
+        break;
       case 1:
         Cliente.adicionarCliente(dbClientes, qtdClientes, idCliente);
         saveCliente(*dbClientes, *qtdClientes, *idCliente);
@@ -43,9 +46,6 @@ void frontEndCliente(StDbClientes **dbClientes, int *qtdClientes, int *idCliente
       case 4:
         Cliente.removerCliente(dbClientes, qtdClientes);
         saveCliente(*dbClientes, *qtdClientes, *idCliente);
-        break;
-      case 0:
-        return;
         break;
       default:
         printf("Alternativa invalida\n");

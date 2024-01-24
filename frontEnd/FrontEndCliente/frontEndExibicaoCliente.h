@@ -8,16 +8,16 @@
 
 void frontEndExibicaoCliente(StDbClientes *Clientes, int qtdCliente)
 {
+  int opc;
   while (1)
   {
     Utils.SystemComand.clearTela();
 
-    int opc;
     printf("Exibir de Cliente\n");
     printf("1 - Exibir todos os Clientes\n");
     printf("2 - Exibir Cliente por Cpf\n");
     printf("3 - Exibir Cliente por Id\n");
-    printf("4 - Exibir Cliente por Nome\n");
+    printf("4 - Exibir Cliente por RG\n");
     printf("0 - Voltar\n");
 
     Utils.InputsBasic.getNumeroInt(&opc, "Digite o numero correspodente: ");
@@ -37,7 +37,7 @@ void frontEndExibicaoCliente(StDbClientes *Clientes, int qtdCliente)
         Cliente.Exibir.exibirClienteId(Clientes, qtdCliente);
         break;
       case 4:
-        Cliente.Exibir.exibirClienteNome(Clientes, qtdCliente);
+        Cliente.Exibir.exibirClienteRg(Clientes, qtdCliente);
         break;
       default:
         printf("Alternativa invalida\n");

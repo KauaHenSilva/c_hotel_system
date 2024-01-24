@@ -19,12 +19,12 @@ void exibirClienteCpf(StDbClientes *cliente, int numClientes){
     exibirOnlyCliente(cliente, x);
   }
 
-  int existe = 0;char cpf[15];
+  int existe = 0; char cpf[15];
   Utils.InputsSavin.getCpf(cpf, "Digite o cpf para buscar o cliente Ex.[123.123.123-00]: ");
 
   for(int x = 0 ; x < numClientes ; x++)
   {
-    if(cliente[x].cpf == cpf){
+    if(!strcmp(cliente[x].cpf , cpf)){
       existe = 1;
       exibirOnlyCliente(cliente, x);
     }
