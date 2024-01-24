@@ -7,6 +7,9 @@
 #include "./reservaAux/verificandoReservaCliente.h"
 #include "./reservaAux/verificandoReservaQuarto.h"
 
+#include "./adicionarReserva/adicionarReserva.h"
+
+
 void realizarReserva(StDbFluxoFinanceiro **dbFluxoFinanceiro, StDbClientes *cliente, StDbQuartos *quarto, StDbControle *controle)
 {
 
@@ -21,7 +24,13 @@ void realizarReserva(StDbFluxoFinanceiro **dbFluxoFinanceiro, StDbClientes *clie
   if (idQuarto == -1 || idCliente == -1)
     return;
 
-  printf("Cliente[%d] Quarto[%d]\n", idCliente, idQuarto);
+  idUserQuarto idUserQuarto = {
+    idCliente,
+    idQuarto,
+  };
+
+  adicionarReserva(dbFluxoFinanceiro, controle, idUserQuarto, cliente, quarto);
+
 }
 
 

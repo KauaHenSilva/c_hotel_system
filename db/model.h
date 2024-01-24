@@ -23,13 +23,14 @@ typedef struct  {
 
 typedef enum {PAGO, NAO_PAGO} EnStatusPagamento;
 typedef struct  {
-    int idCadrastroUser;
-    char dataDeEntradaUser[100];
-    char dataDeSaidaUser[100];
-    char reserva[100];
-    int numeroDoQuarto;
-    char cpfUser[15];
-    double valorTotal;
+    int idReserva;
+    int idQuarto;
+    int idCliente;
+    // char dataEntradaUser[100];
+    // char dataSaidaUser[100];
+    char nomeCliente[100];
+    char cpfCliente[15];
+    double valorPagar;
     EnStatusPagamento statusPagamento;
 } StDbFluxoFinanceiro ;  
 
@@ -39,5 +40,11 @@ typedef struct {
     int *quantidadeDeReserva;
     int *idReserva;
 } StDbControle;
+
+
+typedef struct {
+  int idUser;
+  int idQuarto;
+}idUserQuarto;
 
 #endif // __MODELS

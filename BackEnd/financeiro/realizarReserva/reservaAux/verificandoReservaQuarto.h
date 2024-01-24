@@ -7,7 +7,6 @@ int verificarReservaQuarto(StDbQuartos *quarto, StDbControle *controle)
   {
     Utils.SystemComand.clearTela();
 
-    printf("Iniciando Reserva!\n\n");
 
     printf("Escolha um quarto Disponivel:\n\n");
     for (int x = 0; x < *(controle->quantidadeDeQuarto); x++)
