@@ -4,9 +4,9 @@
 #include "../../../../db/model.h"
 
 
-void adicionandoIdCliente(StDbFluxoFinanceiro *dbFluxoFinanceiro, int localfn, int idCliente)
+void adicionandoIdCliente(StDbFluxoFinanceiro *dbFluxoFinanceiro, int localfn, int idCliente, StDbClientes *cliente)
 {
-  dbFluxoFinanceiro[localfn].idCliente = idCliente;
+  dbFluxoFinanceiro[localfn].idCliente = cliente[idCliente].idCadrastro;
 } 
 
 #endif // ADICIONANDOIDCLIENTE

@@ -9,10 +9,14 @@ struct
 {
   void (*realizarReserva)(StDbFluxoFinanceiro **financeiro, StDbQuartos *quarto,
                           StDbClientes *cliente, StDbControle *controle);
-  void (*exibirReserva)(StDbFluxoFinanceiro *DbFluxoFinanceiro, StDbControle controler);
+  StExibirReserva ExibirReserva;
 } Financeiro = {
-    (void (*)(StDbFluxoFinanceiro **, StDbQuartos *, StDbClientes *, StDbControle*)) realizarReserva,
-    (void (*)(StDbFluxoFinanceiro *, StDbControle)) exibirReserva,
+    (void (*)(StDbFluxoFinanceiro **, StDbQuartos *, StDbClientes *, StDbControle *))realizarReserva,
+    {
+        (void (*)(StDbFluxoFinanceiro *, StDbControle ))exibirReservaAll,
+        (void (*)(StDbFluxoFinanceiro *, StDbControle ))exibirReservaId,
+        (void (*)(StDbFluxoFinanceiro *, StDbControle ))exibirReservaNome,
+    }
 };
 
 #endif // FINANCIERO

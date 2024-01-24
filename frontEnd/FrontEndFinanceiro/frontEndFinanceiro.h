@@ -4,6 +4,7 @@
 
 #include "../../db/model.h"
 #include "../../BackEnd/financeiro/financeiro.h"
+#include "./frontEndExibicaoFinanceiro.h"
 
 void frontEndFinanceiro(StDbFluxoFinanceiro **financeiro, StDbQuartos *quarto, StDbClientes *cliente, StDbControle *controle)
 {
@@ -29,7 +30,7 @@ void frontEndFinanceiro(StDbFluxoFinanceiro **financeiro, StDbQuartos *quarto, S
         Financeiro.realizarReserva(financeiro, quarto, cliente, controle);
         break;
       case 2:
-        Financeiro.exibirReserva(*financeiro, *controle);
+        frontEndExibicaoFinanceiro(*financeiro, *controle);
         break;
       default:
         printf("Alternativa invalida\n");

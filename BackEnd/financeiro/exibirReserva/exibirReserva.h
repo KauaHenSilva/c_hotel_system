@@ -1,32 +1,16 @@
-#if !defined(EXIBIRRESERVA)
-#define EXIBIRRESERVA
+#if !defined(EXIBIRFLUXOFINANCEIRO)
+#define EXIBIRFLUXOFINANCEIRO
 
 #include "../../../db/model.h"
+#include "./exibirReservaId.h"
+#include "./exibirReservaAll.h"
+#include "./exibirReservaName.h"
 
-void exibirReserva(StDbFluxoFinanceiro *dbFluxoFinanceiro, StDbControle controler)
+typedef struct 
 {
-  Utils.SystemComand.clearTela();
+  void (*exibirReservaAll)(StDbFluxoFinanceiro *dbReserva, StDbControle controle);
+  void (*exibirReservaId)(StDbFluxoFinanceiro *dbReserva, StDbControle controle);
+  void (*exibirReservaNome)(StDbFluxoFinanceiro *dbReserva, StDbControle controle);
+} StExibirReserva;
 
-  for(int x = 0 ; x < *(controler.quantidadeDeReserva) ; x++)
-  {
-    printf("Fluxo Financa [%d]: \n", x + 1);
-    printf(" - id da Reserva: %d\n", dbFluxoFinanceiro[x].idReserva);
-    printf(" - id do Cliente: %d\n", dbFluxoFinanceiro[x].idCliente);
-    printf(" - id do Quarto: %d\n", dbFluxoFinanceiro[x].idQuarto);
-    printf(" - Nome do Cliente: %s\n", dbFluxoFinanceiro[x].nomeCliente);
-    printf(" - Valor a pagar: %.2lf\n", dbFluxoFinanceiro[x].valorPagar);
-    switch (dbFluxoFinanceiro[x].statusPagamento)
-    {
-      case NAO_PAGO:
-        printf(" - Status do Pagamento: NAO PAGO\n");
-        break;
-      case PAGO:
-        printf(" - Status do Pagamento: PAGO\n");
-        break;
-    }
-  }
-  
-  Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
-}
-
-#endif // EXIBIRRESERVA
+#endif // EXIBIRCLIENTE
