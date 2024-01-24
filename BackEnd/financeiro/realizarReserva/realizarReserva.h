@@ -4,8 +4,8 @@
 #include "../../quarto/quarto.h"
 #include "../../cliente/Cliente.h"
 
-#include "./reservaAux/verificandoReservaCliente.h"
-#include "./reservaAux/verificandoReservaQuarto.h"
+#include "./adicionarReserva/reservaAux/verificandoReservaCliente.h"
+#include "./adicionarReserva/reservaAux/verificandoReservaQuarto.h"
 
 #include "./adicionarReserva/adicionarReserva.h"
 
@@ -14,6 +14,7 @@ void realizarReserva(StDbFluxoFinanceiro **dbFluxoFinanceiro, StDbClientes *clie
 {
 
   Utils.SystemComand.clearTela();
+  
   printf("voce deseja Realizar uma Reserva.\n");
   if (!Utils.InputsBasic.getConfirmacao())
     return;

@@ -13,13 +13,13 @@
 void adicionarReserva(StDbFluxoFinanceiro **dbFluxoFinanceiro, StDbControle *controler, idUserQuarto idUserQuarto, StDbClientes *cliente, StDbQuartos *quarto)
 {
   adicionandoEspaco(dbFluxoFinanceiro, controler->quantidadeDeReserva);
-  adicionandoIdReserva(*dbFluxoFinanceiro, *(controler->idReserva), *(controler->quantidadeDeReserva));
-  adicionandoIdCliente(*dbFluxoFinanceiro, *(controler->quantidadeDeReserva),  idUserQuarto.idUser);
-  adicionandoIdQuarto(*dbFluxoFinanceiro,*(controler->quantidadeDeCLientes), idUserQuarto.idQuarto);
-  adicionandoCpfCliente(*dbFluxoFinanceiro, *(controler->quantidadeDeReserva), idUserQuarto.idUser, cliente);
-  adicionandoValorQuarto(*dbFluxoFinanceiro, *(controler->quantidadeDeReserva), idUserQuarto.idQuarto, quarto);
-  adicionandoStatusPagamentoReserva(*dbFluxoFinanceiro, *(controler->quantidadeDeReserva));
-  adicionandoNomeCliente(cliente, *(controler->quantidadeDeCLientes), *dbFluxoFinanceiro, idUserQuarto.idUser);
+  adicionandoIdReserva(*dbFluxoFinanceiro, *(controler->idReserva), *(controler->quantidadeDeReserva) - 1);
+  adicionandoIdCliente(*dbFluxoFinanceiro, *(controler->quantidadeDeReserva) - 1,  idUserQuarto.idUser);
+  adicionandoIdQuarto(*dbFluxoFinanceiro,*(controler->quantidadeDeCLientes) - 1, idUserQuarto.idQuarto);
+  adicionandoCpfCliente(*dbFluxoFinanceiro, *(controler->quantidadeDeReserva) - 1, idUserQuarto.idUser, cliente);
+  adicionandoValorQuarto(*dbFluxoFinanceiro, *(controler->quantidadeDeReserva) - 1, idUserQuarto.idQuarto, quarto);
+  adicionandoStatusPagamentoReserva(*dbFluxoFinanceiro, *(controler->quantidadeDeReserva) - 1);
+  adicionandoNomeCliente(cliente, *(controler->quantidadeDeCLientes) - 1, *dbFluxoFinanceiro, idUserQuarto.idUser);
 }
 
 
