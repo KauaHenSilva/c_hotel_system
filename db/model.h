@@ -36,6 +36,8 @@ typedef struct  {
 typedef struct {
     int *quantidadeDeQuarto;
     int *quantidadeDeCLientes;
+    int *quantidadeDeReserva;
+    int *idReserva;
 } StDbControle;
 
 #endif // __MODELS

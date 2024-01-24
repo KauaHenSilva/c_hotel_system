@@ -2,20 +2,27 @@
 #define REALIZARRESERVA
 
 #include "../../quarto/quarto.h"
-#include "../../quarto/exibirQuarto/exibirOnlyQuarto/exibirOnlyQuarto.h"
 #include "../../cliente/Cliente.h"
 
-void realizarReserva(StDbFluxoFinanceiro **FluxoFinanceiro, StDbClientes *cliente, StDbQuartos *quarto, StDbControle *controle)
+#include "./reservaAux/verificandoReservaCliente.h"
+#include "./reservaAux/verificandoReservaQuarto.h"
+
+void realizarReserva(StDbFluxoFinanceiro **dbFluxoFinanceiro, StDbClientes *cliente, StDbQuartos *quarto, StDbControle *controle)
 {
 
-  printf("Quantidade de Clientes: %d\n", *(controle->quantidadeDeCLientes));
-  printf("Quantidade de Quartos: %d\n", *(controle->quantidadeDeQuarto));
+  Utils.SystemComand.clearTela();
+  printf("voce deseja Realizar uma Reserva.\n");
+  if (!Utils.InputsBasic.getConfirmacao())
+    return;
 
-  for (int x = 0; x < *(controle->quantidadeDeQuarto); x++)
-    exibirOnlyQuarto(quarto, x);
+  int idCliente = verificarReservaCliente(cliente, controle);
+  int idQuarto = verificarReservaQuarto(quarto, controle);
 
-  for (int x = 0; x < *(controle->quantidadeDeCLientes); x++)
-    exibirOnlyCliente(cliente, x);
+  if (idQuarto == -1 || idCliente == -1)
+    return;
+
+  printf("Cliente[%d] Quarto[%d]\n", idCliente, idQuarto);
 }
+
 
 #endif // REALIZARRESERVA

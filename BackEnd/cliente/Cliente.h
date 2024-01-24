@@ -22,13 +22,13 @@ struct stCliente
   void (*adicionarCliente)(StDbClientes **dbCliente, int *numClienes, int *idCliente);
   void (*removerCliente)(StDbClientes **dbCliente, int *numClienes);
   void (*editarCliente)(StDbClientes *dbCliente, int numClienes);
-  void (*getClienteId)(StDbClientes *dbCliente, int numClienes, int idCliente);
+  void (*getClienteId)(StDbClientes *dbCliente, int numClienes, int *idCliente);
   StExibirCliente Exibir;
 } Cliente = {
     (void (*)(StDbClientes **, int *, int *)) adicionarCliente,
     (void (*)(StDbClientes **, int *)) removerCliente,
     (void (*)(StDbClientes *, int )) editarCliente,
-    (void (*)(StDbClientes *, int, int)) getClienteId,
+    (void (*)(StDbClientes *, int, int*)) getClienteId,
     {
       (void (*)(StDbClientes *, int)) exibirClienteAll,
       (void (*)(StDbClientes *, int)) exibirClienteCpf,

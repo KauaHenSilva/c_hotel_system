@@ -11,12 +11,16 @@ StDbFluxoFinanceiro *DbFluxoFinanceiro = NULL;
 
 int quantidadeDeQuarto = 0;
 int quantidadeDeCLientes = 0;
+int quantidadeDeReserva = 0;
 int idQuarto = 0;
 int idCliente = 0;
+int idReserva = 0;
 
 StDbControle controle = {
   &quantidadeDeCLientes,
   &quantidadeDeQuarto,
+  &quantidadeDeReserva,
+  &idReserva,
 };
 
 #endif // INITDB
