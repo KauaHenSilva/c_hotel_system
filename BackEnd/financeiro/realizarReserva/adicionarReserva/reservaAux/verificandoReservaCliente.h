@@ -1,7 +1,7 @@
 #if !defined(VERIFICANDORESERVACLIENTE)
 #define VERIFICANDORESERVACLIENTE
 
-#include "../../../../db/model.h"
+#include "../../../../../db/model.h"
 
 int verificarReservaCliente(StDbClientes *cliente, StDbControle *controle)
 {
