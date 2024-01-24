@@ -81,7 +81,7 @@ void getCpf(char *cpfUser, const char *msg)
     fflush(stdin);
 
     printf("Voce digitou %s\n", cpf);
-    if (!getConfirmacao())
+    if (!getConfirmacao("Voce confirma a entrada? [S]im ou [N]ao: "))
       continue;
 
     removerCaracteresEspeciais(cpf);

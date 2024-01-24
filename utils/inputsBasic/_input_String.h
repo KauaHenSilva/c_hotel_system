@@ -18,7 +18,7 @@ void getString(char *string, const char *msg)
     {
       limparBuffer();
       printf("Voce digitou %s\n", stringTemp);
-      if(!getConfirmacao())
+      if(!getConfirmacao("Voce confirma a entrada? [S]im ou [N]ao: "))
         continue;
       strcpy(string, stringTemp);
       return;

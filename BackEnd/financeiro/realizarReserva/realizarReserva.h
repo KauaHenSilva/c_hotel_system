@@ -15,8 +15,7 @@ void realizarReserva(StDbFluxoFinanceiro **dbFluxoFinanceiro, StDbClientes *clie
 
   Utils.SystemComand.clearTela();
   
-  printf("voce deseja Realizar uma Reserva.\n");
-  if (!Utils.InputsBasic.getConfirmacao())
+  if (!Utils.InputsBasic.getConfirmacao("voce deseja Realizar uma Reserva? [S]im [N]ao: "))
     return;
 
   int idCliente = verificarReservaCliente(cliente, controle);

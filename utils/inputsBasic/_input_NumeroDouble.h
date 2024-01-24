@@ -16,7 +16,7 @@ void getNumeroDouble(double *numero, const char *msg)
     {
       limparBuffer();
       printf("Voce digitou %.2lf\n", temp);
-      if (!getConfirmacao())
+      if (!getConfirmacao("Voce confirma a entrada? [S]im ou [N]ao: "))
         continue;
       *numero = temp;
       return;

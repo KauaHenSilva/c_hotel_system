@@ -31,7 +31,7 @@ struct stUtils
     (void(*)())limparBuffer,
   },
   {
-    (int (*)()) getConfirmacao,
+    (int (*)(const char *)) getConfirmacao,
     (void (*)(int *, const char *)) getNumeroInt,
     (void (*)(double *, const char *)) getNumeroDouble,
     (void (*)(char *, const char *)) getString,

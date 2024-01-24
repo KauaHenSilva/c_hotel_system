@@ -16,7 +16,7 @@ void getNumeroInt(int *numero, const char *msg)
     {
       limparBuffer();
       printf("Voce digitou %d\n", temp);
-      if (!getConfirmacao())
+      if (!getConfirmacao("Voce confirma a entrada? [S]im ou [N]ao: "))
         continue;
       *numero = temp;
       return;

@@ -19,7 +19,7 @@ void getTelefone(char *telefone)
     }
 
     printf("Voce digitou %s\n", telefoneTemp);
-    if (!getConfirmacao())
+    if (!getConfirmacao("Voce confirma a entrada? [S]im ou [N]ao:"))
       continue;
 
     strcpy(telefone, telefoneTemp);

@@ -31,7 +31,7 @@ void getRg(char *rg, const char *msg)
     }
 
     printf("Voce digitou %s\n", rgTemp);
-    if (!getConfirmacao())
+    if (!getConfirmacao("Voce confirma a entrada? [S]im ou [N]ao: "))
       continue;
 
     strcpy(rg, rgTemp);

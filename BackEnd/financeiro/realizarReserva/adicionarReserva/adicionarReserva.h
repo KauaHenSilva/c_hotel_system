@@ -20,7 +20,7 @@ void adicionarReserva(StDbFluxoFinanceiro **dbFluxoFinanceiro, StDbControle *con
   adicionandoValorQuarto(*dbFluxoFinanceiro, *(controler->quantidadeDeReserva) - 1, idUserQuarto.idQuarto, quarto);
   adicionandoStatusPagamentoReserva(*dbFluxoFinanceiro, *(controler->quantidadeDeReserva) - 1);
   adicionandoNomeCliente(cliente, *(controler->quantidadeDeCLientes) - 1, *dbFluxoFinanceiro, idUserQuarto.idUser);
-  quarto[idUserQuarto.idQuarto].status = RESERVADO;
+  quarto[idUserQuarto.idQuarto].statusQuarto = RESERVADO;
 }
 
 

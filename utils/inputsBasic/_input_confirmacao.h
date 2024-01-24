@@ -4,12 +4,12 @@
 #include <stdio.h>
 #include "../systemComand/_clear_buffer.h"
 
-int getConfirmacao()
+int getConfirmacao(const char* msg)
 {
   char temp;
   while (1)
   {
-    printf("Voce confirma? [S]im [N]ao: ");
+    printf("%s", msg);
     limparBuffer();
     if (scanf("%c", &temp) == 1)
     {
