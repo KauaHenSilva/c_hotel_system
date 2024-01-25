@@ -1,6 +1,17 @@
 #if !defined(EXIVIRONLY)
 #define EXIVIRONLY
 
+
+void exibirData(struct tm* data, const char* msg)
+{
+    char buffer[20];
+        
+    strftime(buffer, sizeof(buffer), "%Y-%m-%d", data);
+
+    printf("%s%s\n",msg, buffer);
+
+}
+
 void exibirOnly(StDbFluxoFinanceiro *dbFluxoFinanceiro, int x)
 {
   printf("Fluxo Financa [%d]: \n", x + 1);
@@ -18,6 +29,9 @@ void exibirOnly(StDbFluxoFinanceiro *dbFluxoFinanceiro, int x)
     printf(" - Status do Pagamento: PAGO\n");
     break;
   }
+  exibirData(&dbFluxoFinanceiro[x].dataCadrastro.DataInicial, " - Data de inicial cadrastro: ");
+  exibirData(&dbFluxoFinanceiro[x].dataCadrastro.DataFinal, " - Data de final cadrastro: ");
+
   printf("\n");
 }
 

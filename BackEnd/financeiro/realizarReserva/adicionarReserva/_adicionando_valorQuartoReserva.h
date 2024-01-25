@@ -3,9 +3,20 @@
 
 #include "../../../../db/model.h"
 
+double diferencaDatasEmSegundos(struct tm* dataInicial, struct tm* dataFinal)
+{
+    time_t dataInicialSegundos = mktime(dataInicial);
+    time_t dataFinalSegundos = mktime(dataFinal);
+
+    return difftime(dataFinalSegundos, dataInicialSegundos);
+}
+
 void adicionandoValorQuarto(StDbFluxoFinanceiro *dbFluxoFinanceiro, int localfn, int localQ, StDbQuartos *quarto)
 {
-  dbFluxoFinanceiro[localfn].valorPagar = quarto[localQ].valorDiaria;
+  double diferencaSegundos = diferencaDatasEmSegundos(&(dbFluxoFinanceiro[localfn].dataCadrastro.DataInicial), &(dbFluxoFinanceiro[localfn].dataCadrastro.DataFinal));
+  int diferencaDias = (int)(diferencaSegundos / (60 * 60 * 24));
+
+  dbFluxoFinanceiro[localfn].valorPagar = quarto[localQ].valorDiaria * diferencaDias;
 } 
 
 #endif // ADICIONANDOVALORDARESERVA

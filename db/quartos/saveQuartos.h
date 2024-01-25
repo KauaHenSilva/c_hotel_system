@@ -10,7 +10,6 @@ void saveQuartos(StDbQuartos *quartos, int quantidadeQuartos, int idQuarto) {
 
     fwrite(&idQuarto, sizeof(int), 1, arquivo);
     fwrite(&quantidadeQuartos, sizeof(int), 1, arquivo);
-
     fwrite(quartos, sizeof(StDbQuartos), quantidadeQuartos, arquivo);
 
     fclose(arquivo);

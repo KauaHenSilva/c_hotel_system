@@ -24,11 +24,12 @@ typedef struct  {
 #include <time.h>
 
 typedef struct {
-    time_t DataInicial;
-    time_t DataFinal;
+    struct tm DataInicial;
+    struct tm DataFinal;
 } DataCadastroCheck;
 
 typedef enum {PAGO, NAO_PAGO} EnStatusPagamento;
+
 typedef struct  {
     int idReserva;
     int idQuarto;

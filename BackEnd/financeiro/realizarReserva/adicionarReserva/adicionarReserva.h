@@ -9,6 +9,7 @@
 #include "./_adicionando_nomeClienteReserva.h"
 #include "./_adicionando_statusPagamentoReserva.h"
 #include "./_adicionando_valorQuartoReserva.h"
+#include "./_adicionando_AdicionarDiaReserva.h"
 
 void adicionarReserva(StDbFluxoFinanceiro **dbFluxoFinanceiro, StDbControle *controler, idUserQuarto idUserQuarto, StDbClientes *cliente, StDbQuartos *quarto)
 {
@@ -17,9 +18,10 @@ void adicionarReserva(StDbFluxoFinanceiro **dbFluxoFinanceiro, StDbControle *con
   adicionandoIdCliente(*dbFluxoFinanceiro, *(controler->quantidadeDeReserva) - 1,  idUserQuarto.idUser, cliente);
   adicionandoIdQuarto(*dbFluxoFinanceiro,*(controler->quantidadeDeReserva) - 1, idUserQuarto.idQuarto, quarto);
   adicionandoCpfCliente(*dbFluxoFinanceiro, *(controler->quantidadeDeReserva) - 1, idUserQuarto.idUser, cliente);
-  adicionandoValorQuarto(*dbFluxoFinanceiro, *(controler->quantidadeDeReserva) - 1, idUserQuarto.idQuarto, quarto);
   adicionandoStatusPagamentoReserva(*dbFluxoFinanceiro, *(controler->quantidadeDeReserva) - 1);
   adicionandoNomeCliente(cliente, idUserQuarto.idUser, *dbFluxoFinanceiro, *(controler->quantidadeDeReserva) - 1);
+  adicionarDiaDaReserva(*dbFluxoFinanceiro, *(controler->quantidadeDeReserva) - 1);
+  adicionandoValorQuarto(*dbFluxoFinanceiro, *(controler->quantidadeDeReserva) - 1, idUserQuarto.idQuarto, quarto);
   quarto[idUserQuarto.idQuarto].statusQuarto = RESERVADO;
 }
 

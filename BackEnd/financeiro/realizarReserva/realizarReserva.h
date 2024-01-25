@@ -18,8 +18,8 @@ void realizarReserva(StDbFluxoFinanceiro **dbFluxoFinanceiro, StDbClientes *clie
   if (!Utils.InputsBasic.getConfirmacao("voce deseja Realizar uma Reserva? [S]im [N]ao: "))
     return;
 
-  int idCliente = verificarReservaCliente(cliente, *(controle->quantidadeDeCLientes) - 1);
-  int idQuarto = verificarReservaQuarto(quarto, *(controle->quantidadeDeCLientes) - 1);
+  int idCliente = verificarReservaCliente(cliente, *(controle->quantidadeDeCLientes));
+  int idQuarto = verificarReservaQuarto(quarto, *(controle->quantidadeDeCLientes));
 
   if (idQuarto == -1 || idCliente == -1)
     return;
