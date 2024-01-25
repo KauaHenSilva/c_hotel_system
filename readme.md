@@ -48,6 +48,9 @@ O objetivo deste projeto é criar um sistema de gerenciamento para um hotel de p
 - **Consultar reservas** (Parcial) - Falta exibir o Tempo
 - **Valores recebidos**
 
+- **FrontEndFinaça** 
+- **DbFinanca** 
+
 ## Comportamento das Funções
 
 - **Realizar reserva:** Permite a reserva de quartos, verificando disponibilidade e registrando dados como nome do cliente, número do quarto, datas, status de pagamento e valor total da reserva.

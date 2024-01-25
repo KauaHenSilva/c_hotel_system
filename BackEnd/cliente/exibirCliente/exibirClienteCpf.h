@@ -13,11 +13,14 @@ void exibirClienteCpf(StDbClientes *cliente, int numClientes){
     return;
   };
 
+  printf("Exibindo todos os CLiente que possui Cpf...\n\n");
+
   for(int x = 0 ; x < numClientes ; x++)
   {
-    printf("Cliente numero [%d]\n", x + 1);
     exibirOnlyCliente(cliente, x);
   }
+
+  printf("Todos os Clientes exibidos!\n\n");
 
   int existe = 0; char cpf[15];
   Utils.InputsSavin.getCpf(cpf, "Digite o cpf para buscar o cliente Ex.[123.123.123-00]: ");

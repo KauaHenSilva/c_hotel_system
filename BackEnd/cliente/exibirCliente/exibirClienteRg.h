@@ -13,6 +13,16 @@ void exibirClienteRg(StDbClientes *cliente, int numClientes){
     return;
   };
 
+  printf("Exibindo todos os quarto que possui Rg...\n\n");
+
+  for(int x = 0 ; x < numClientes ; x++)
+  {
+    exibirOnlyCliente(cliente, x);
+  }
+
+  printf("Todos os Cliente exibidos!\n\n");
+
+
   char rg[15];
   Utils.InputsSavin.getRg(rg, "Digite o Rg para buscar o cliente Ex.[123456789]: ");
 
@@ -26,7 +36,7 @@ void exibirClienteRg(StDbClientes *cliente, int numClientes){
   }
 
   if(!existe)
-    printf("Nao existe cliente com esse rg\n");
+    printf("Nao existe cliente com esse rg\n\n");
 
 }
 

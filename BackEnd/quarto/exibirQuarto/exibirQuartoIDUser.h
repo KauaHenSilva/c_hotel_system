@@ -19,11 +19,13 @@ void exibirQuartoId(StDbQuartos *quarto, int numQuartos){
     exibirOnlyQuarto(quarto, x);
   }
 
+  printf("Todos os quartos foram exibidos\n\n");
+
   int id;
   getQuartoId(quarto, numQuartos, &id);
 
   if(id == -1){
-    printf("Nenhum quarto cadrastrado!\n");
+    printf("Nenhum quarto cadrastrado!\n\n");
     return;
   };
 

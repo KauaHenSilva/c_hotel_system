@@ -12,17 +12,16 @@ void exibirClienteAll(StDbClientes *cliente, int numClientes){
   printf("Exibindo todos os Clientes...\n\n");
 
   if(numClientes == 0){
-    printf("Nenhum cliente cadrastrado!\n");
+    printf("Nenhum cliente cadrastrado!\n\n");
     return;
   };
 
   for(int x = 0 ; x < numClientes ; x++)
   {
-    printf("Cliente numero [%d]\n", x + 1);
     exibirOnlyCliente(cliente, x);
   }
 
-  printf("Todos os Clientes exibidos!\n");
+  printf("Todos os Clientes exibidos!\n\n");
 }
 
 #endif // EXIBIRCLIENTEALL

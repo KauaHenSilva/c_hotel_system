@@ -22,7 +22,7 @@ int getConfirmacao(const char *msg)
     }
     else
     {
-      printf("\n");
+      printf("\n\n");
       if (temp == 'S' || temp == 's')
         return 1;
       if (temp == 'N' || temp == 'n')

@@ -10,6 +10,7 @@
 #include "./_exibir_ValorDoQuarto.h"
 
 void exibirOnlyQuarto(StDbQuartos *quarto, int id){
+  printf("Dados do Quarto [%d]:\n", id);
   exibirIdDoQuarto(quarto, id);
   exibirStatusDoQuarto(quarto, id);
   exibirTipoDoQuarto(quarto, id);

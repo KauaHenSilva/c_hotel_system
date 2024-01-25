@@ -5,6 +5,7 @@
 
 void exibirOnlyCliente(StDbClientes *cliente, int id)
 {
+    printf("Dados do CLiente [%d]:\n", id);
     printf(" - Id do CLiente: %d\n", cliente[id].idCadrastro);
     printf(" - Nome do CLiente: %s\n", cliente[id].nome);
     printf(" - Cpf do CLiente: %s\n", cliente[id].cpf);

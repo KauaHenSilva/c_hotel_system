@@ -12,17 +12,16 @@ void exibirQuartoAll(StDbQuartos *quarto, int numQuartos){
   printf("Exibindo todos os quartos\n\n");
 
   if(numQuartos == 0){
-    printf("Nenhum quarto cadrastrado!\n");
+    printf("Nenhum quarto cadrastrado!\n\n");
     return;
   };
 
   for(int x = 0 ; x < numQuartos ; x++)
   {
-    printf("Quarto numero [%d]\n", x + 1);
     exibirOnlyQuarto(quarto, x);
   }
 
-  printf("Todos os quartos foram exibidos\n");
+  printf("Todos os quartos foram exibidos\n\n");
 
 
 }

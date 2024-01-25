@@ -16,35 +16,42 @@ void exibirQuartoTipo(StDbQuartos *quarto, int numQuartos)
 {
   Utils.SystemComand.clearTela();
 
-  printf("Exibindo todos os quarto que possui Tipo...\n\n");
-
   printf("Qual o tipo do quarto deseja Listar?\n");
   printf("1 - Simples\n"); 
   printf("2 - Duplo\n");
   printf("3 - Suite\n");
+  printf("0 - Sair\n");
 
   int opc;
   Utils.InputsBasic.getNumeroInt(&opc, "Digite o numero correspodente: ");
 
   switch (opc)
   {
-  case 1:
-    exibirQuartoSimples(quarto, numQuartos);
-    break;
-  case 2:
-    exibirQuartoDuplo( quarto, numQuartos);
-    break;
-  case 3:
-    exibirQuartoSuite( quarto, numQuartos);
-    break;
-  default:
-    printf("Alternativa invalida\n");
-    exibirQuartoTipo(quarto, numQuartos);
+    case 0:
+      return;
+      break; 
+    case 1:
+      exibirQuartoSimples(quarto, numQuartos);
+      return;
+      break;
+    case 2:
+      exibirQuartoDuplo( quarto, numQuartos);
+      return;
+      break;
+    case 3:
+      exibirQuartoSuite( quarto, numQuartos);
+      return;
+      break;
+    default:
+      printf("Alternativa invalida\n");
   }
 }
 static void exibirQuartoSimples(StDbQuartos *quarto, int numQuartos)
 {
   int existe = 0;
+
+  printf("Exibindo todos os quarto que possui Tipo [Simples]...\n\n");
+
   for (int x = 0; x < numQuartos; x++)
   {
     if (quarto[x].tipoQuarto == SIMPLES)
@@ -54,12 +61,17 @@ static void exibirQuartoSimples(StDbQuartos *quarto, int numQuartos)
     }
   }
   if(!existe)
-    printf("Nao existe quartos do tipo Simples\n");
+    printf("Nao existe quartos do tipo Simples\n\n");
+  printf("Todos os quartos foram exibidos\n\n");
+
 }
 
 static void exibirQuartoDuplo(StDbQuartos *quarto, int numQuartos)
 {
   int existe = 0;
+
+  printf("Exibindo todos os quarto que possui Tipo [Duplo]...\n\n");
+
   for (int x = 0; x < numQuartos; x++)
   {
     existe = 1;
@@ -68,11 +80,16 @@ static void exibirQuartoDuplo(StDbQuartos *quarto, int numQuartos)
   }
   if(!existe)
     printf("Nao existe quartos do tipo Duplo\n");
+  printf("Todos os quartos foram exibidos\n");
+
 }
 
 static void exibirQuartoSuite(StDbQuartos *quarto, int numQuartos)
 {
   int existe = 0;
+
+  printf("Exibindo todos os quarto que possui Tipo [Suite]...\n\n");
+
   for (int x = 0; x < numQuartos; x++)
   {
     if (quarto[x].tipoQuarto == SUITE)
@@ -83,6 +100,8 @@ static void exibirQuartoSuite(StDbQuartos *quarto, int numQuartos)
   }
   if(!existe)
     printf("Nao existe quartos do tipo Suite\n");
+  printf("Todos os quartos foram exibidos\n");
+
 }
 
 

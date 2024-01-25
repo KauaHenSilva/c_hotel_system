@@ -10,10 +10,10 @@ void exibirReservaId(StDbFluxoFinanceiro *FluxoFinanceiro, StDbControle controle
 
   Utils.SystemComand.clearTela();
 
+
   printf("Exibindo todos os Fluxo Financeiros que possui ID...\n\n");
   for(int x = 0 ; x < *(controler.quantidadeDeReserva) ; x++)
   {
-    printf("Fluxo Financeiro numero [%d]\n", x + 1);
     exibirOnly(FluxoFinanceiro, x);
   }
 
@@ -24,7 +24,7 @@ void exibirReservaId(StDbFluxoFinanceiro *FluxoFinanceiro, StDbControle controle
     return;
   };
 
-  printf("O Fluxo Financeiro selecionado foi:\n");
+  printf("\nO Fluxo Financeiro selecionado foi:\n\n");
   exibirOnly(FluxoFinanceiro, id);
 
 }

@@ -18,7 +18,7 @@ void exibirReservaAll(StDbFluxoFinanceiro *dbFluxoFinanceiro, StDbControle contr
   }
 
   if(!existe)
-    printf("Nao existe nenhuma reserva!\n");
+    printf("Nao existe nenhuma reserva!\n\n");
 
   printf("Todas as reservas foram exibidas!\n");
   
