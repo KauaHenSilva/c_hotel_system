@@ -41,11 +41,11 @@ O objetivo deste projeto é criar um sistema de gerenciamento para um hotel de p
 
 ### Gestão Financeira
 
-- **Realizar reserva** (Falta Calcular Tempo)
-- **Excluir reserva** 
-- **Realizar check-in**
-- **Realizar pagamento**
-- **Consultar reservas** (Falta exibir o Tempo)
+- **Realizar reserva** (Parcial) - Falta Calcular Tempo
+- **Excluir reserva**  (Pronto)
+- **Realizar check-in** (Parcial) - Verificação
+- **Realizar pagamento** (Parcial) - Verificação
+- **Consultar reservas** (Parcial) - Falta exibir o Tempo
 - **Valores recebidos**
 
 ## Comportamento das Funções
