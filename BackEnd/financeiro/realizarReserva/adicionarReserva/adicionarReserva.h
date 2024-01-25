@@ -15,11 +15,11 @@ void adicionarReserva(StDbFluxoFinanceiro **dbFluxoFinanceiro, StDbControle *con
   adicionandoEspaco(dbFluxoFinanceiro, controler->quantidadeDeReserva);
   adicionandoIdReserva(*dbFluxoFinanceiro, *(controler->quantidadeDeReserva) - 1, controler->idReserva);
   adicionandoIdCliente(*dbFluxoFinanceiro, *(controler->quantidadeDeReserva) - 1,  idUserQuarto.idUser, cliente);
-  adicionandoIdQuarto(*dbFluxoFinanceiro,*(controler->quantidadeDeCLientes) - 1, idUserQuarto.idQuarto, quarto);
+  adicionandoIdQuarto(*dbFluxoFinanceiro,*(controler->quantidadeDeReserva) - 1, idUserQuarto.idQuarto, quarto);
   adicionandoCpfCliente(*dbFluxoFinanceiro, *(controler->quantidadeDeReserva) - 1, idUserQuarto.idUser, cliente);
   adicionandoValorQuarto(*dbFluxoFinanceiro, *(controler->quantidadeDeReserva) - 1, idUserQuarto.idQuarto, quarto);
   adicionandoStatusPagamentoReserva(*dbFluxoFinanceiro, *(controler->quantidadeDeReserva) - 1);
-  adicionandoNomeCliente(cliente, *(controler->quantidadeDeCLientes) - 1, *dbFluxoFinanceiro, idUserQuarto.idUser);
+  adicionandoNomeCliente(cliente, idUserQuarto.idUser, *dbFluxoFinanceiro, *(controler->quantidadeDeReserva) - 1);
   quarto[idUserQuarto.idQuarto].statusQuarto = RESERVADO;
 }
 

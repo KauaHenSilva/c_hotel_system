@@ -38,6 +38,8 @@ void removerQuarto(StDbQuartos **dbQuartos, int *numQuartos) {
   *dbQuartos = realloc(*dbQuartos, (*numQuartos - 1) * sizeof(StDbQuartos));
   (*numQuartos)--;
 
+  Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
+
 }
 
 

@@ -21,13 +21,20 @@ typedef struct  {
     char rg[15];  
 } StDbClientes ;
 
+#include <time.h>
+
+typedef struct {
+    time_t DataInicial;
+    time_t DataFinal;
+} DataCadastroCheck;
+
 typedef enum {PAGO, NAO_PAGO} EnStatusPagamento;
 typedef struct  {
     int idReserva;
     int idQuarto;
     int idCliente;
-    // char dataEntradaUser[100];
-    // char dataSaidaUser[100];
+    DataCadastroCheck dataCadrastro;
+    DataCadastroCheck dataChek;
     char nomeCliente[100];
     char cpfCliente[15];
     double valorPagar;

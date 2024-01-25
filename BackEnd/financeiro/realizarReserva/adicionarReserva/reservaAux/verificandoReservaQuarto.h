@@ -1,7 +1,7 @@
 #if !defined(VERIFICANDORESERVAQUARTO)
 #define VERIFICANDORESERVAQUARTO
 
-int verificarReservaQuarto(StDbQuartos *quarto, StDbControle *controle)
+int verificarReservaQuarto(StDbQuartos *quarto, int qtdQuarto)
 {
   while (1)
   {
@@ -9,14 +9,13 @@ int verificarReservaQuarto(StDbQuartos *quarto, StDbControle *controle)
 
 
     printf("Escolha um quarto Disponivel:\n\n");
-    for (int x = 0; x < *(controle->quantidadeDeQuarto); x++)
+    for (int x = 0; x < qtdQuarto; x++)
     {
-      printf("Quarto [%d]:\n", x);
       exibirOnlyQuarto(quarto, x);
     }
 
     int idQuarto;
-    Quarto.geyQuartoId(quarto, *(controle->quantidadeDeQuarto), &idQuarto);
+    Quarto.geyQuartoId(quarto, qtdQuarto, &idQuarto);
     if (idQuarto == -1)
       return idQuarto;
 

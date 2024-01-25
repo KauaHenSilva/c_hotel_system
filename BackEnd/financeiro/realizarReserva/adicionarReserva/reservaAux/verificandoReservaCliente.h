@@ -3,7 +3,7 @@
 
 #include "../../../../../db/model.h"
 
-int verificarReservaCliente(StDbClientes *cliente, StDbControle *controle)
+int verificarReservaCliente(StDbClientes *cliente, int qtdCliente)
 {
   while (1)
   {
@@ -12,11 +12,11 @@ int verificarReservaCliente(StDbClientes *cliente, StDbControle *controle)
 
     printf("Escolha um Cliente:\n\n");
 
-    for (int x = 0; x < *(controle->quantidadeDeCLientes); x++)
+    for (int x = 0; x < qtdCliente; x++)
       exibirOnlyCliente(cliente, x);
 
     int idCliente;
-    Cliente.getClienteId(cliente, *(controle->quantidadeDeCLientes), &idCliente);
+    Cliente.getClienteId(cliente, qtdCliente, &idCliente);
 
     return idCliente;
   }

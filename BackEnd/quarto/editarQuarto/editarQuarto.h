@@ -21,7 +21,7 @@ void editarQuarto(StDbQuartos *dbQuarto, int numQuartos)
   for(int x  = 0 ; x < numQuartos ; x++)
     exibirOnlyQuarto(dbQuarto, x);
 
-  if(!Utils.InputsBasic.getConfirmacao("Você deseja Editar algum quarto? [S]im [N]ao:"))
+  if(!Utils.InputsBasic.getConfirmacao("Voce deseja Editar algum quarto? [S]im [N]ao:"))
     return;
 
   int id;
@@ -48,7 +48,7 @@ void editarQuarto(StDbQuartos *dbQuarto, int numQuartos)
       editarQuarto(dbQuarto, numQuartos);
       break;
     default:
-      printf("Opção inválida\n");
+      printf("Opcao inválida\n");
       editarQuarto(dbQuarto, numQuartos);
       break;
   }
