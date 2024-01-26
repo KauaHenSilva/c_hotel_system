@@ -14,7 +14,7 @@ void frontEndFinanceiro(StDbFluxoFinanceiro **financeiro, StDbQuartos *quarto, S
   {
     Utils.SystemComand.clearTela();
 
-    printf("Menu Reserva!\n");
+    printf("Menu Financeiro!\n");
     printf("1 - Realizar Reserva\n");
     printf("2 - Exibir Reserva\n");
     printf("3 - Realizar shek-In\n");

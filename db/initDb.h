@@ -17,8 +17,8 @@ int idCliente = 0;
 int idReserva = 0;
 
 StDbControle controle = {
-  &quantidadeDeCLientes,
   &quantidadeDeQuarto,
+  &quantidadeDeCLientes,
   &quantidadeDeReserva,
   &idReserva,
 };

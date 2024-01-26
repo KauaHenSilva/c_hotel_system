@@ -4,7 +4,7 @@ void saveQuartos(StDbQuartos *quartos, int quantidadeQuartos, int idQuarto) {
     FILE *arquivo = fopen("C:/Meus-Estudos-Global/Desktop/C/C_Hotel_System/db/quartos/dbQuarto.bin", "wb");
 
     if (!arquivo) {
-        printf("Erro ao abrir o arquivo\n");
+        printf("Arquivo Ausente!\n");
         return;
     }
 

@@ -19,14 +19,13 @@ O objetivo deste projeto é criar um sistema de gerenciamento para um hotel de p
 
 ### Controle de Quartos
 
-
 - **Cadastrar quarto** (Feito)
 - **Consultar quarto** (Feito)
 - **Editar quarto** (Feito)
 - **Excluir quarto** (Feito)
 
 - **FrontEndQuarto** (Feito)
-- **DbQuarto** (Feito)
+- **DbQuarto** (Feito) 
 
 ### Controle de Clientes
 
@@ -42,7 +41,7 @@ O objetivo deste projeto é criar um sistema de gerenciamento para um hotel de p
 ### Gestão Financeira
 
 - **Realizar reserva** (Feito)
-- **Excluir reserva** 
+- **Excluir reserva** (Feito)
 - **Realizar check-in** (Feito)
 - **Realizar pagamento** (Feito)
 - **Consultar reservas** (Feito)

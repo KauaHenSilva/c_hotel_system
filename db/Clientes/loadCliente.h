@@ -6,7 +6,7 @@ void loadCliente(StDbClientes **Clientes, int *quantidadeDeClientes, int *idClie
     FILE *arquivo = fopen("C:/Meus-Estudos-Global/Desktop/C/C_Hotel_System/db/Clientes/dbClientes.bin", "rb");
 
     if (!arquivo) {
-        printf("Erro ao abrir o arquivo\n");
+        printf("Arquivo Ausente!\n");
         return;
     }
 

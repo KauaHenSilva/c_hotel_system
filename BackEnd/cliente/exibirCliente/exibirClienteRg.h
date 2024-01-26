@@ -29,7 +29,7 @@ void exibirClienteRg(StDbClientes *cliente, int numClientes){
   int existe = 0;
   for(int x = 0 ; x < numClientes ; x++)
   {
-    if(cliente[x].rg == rg){
+    if(!strcmp(cliente[x].rg, rg)){
       existe = 1;
       exibirOnlyCliente(cliente, x);
     }

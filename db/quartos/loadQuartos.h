@@ -6,7 +6,7 @@ void loadQuartos(StDbQuartos **quartos, int *quantidadeQuartos, int *idQuarto) {
     FILE *arquivo = fopen("C:/Meus-Estudos-Global/Desktop/C/C_Hotel_System/db/quartos/dbQuarto.bin", "rb");
 
     if (!arquivo) {
-        printf("Erro ao abrir o arquivo\n");
+        printf("Arquivo Ausente!\n");
         return;
     }
 

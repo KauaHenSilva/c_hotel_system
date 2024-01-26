@@ -19,7 +19,7 @@ void realizarReserva(StDbFluxoFinanceiro **dbFluxoFinanceiro, StDbQuartos *quart
   if (!Utils.InputsBasic.getConfirmacao("voce deseja Realizar uma Reserva? [S]im [N]ao: "))
     return;
 
-  int idQuarto = verificarReservaQuarto(quarto, *(controle->quantidadeDeCLientes));
+  int idQuarto = verificarReservaQuarto(quarto, *(controle->quantidadeDeQuarto));
 
   struct tm dataEntradaTemp;
   struct tm dataSaidaTemp;
