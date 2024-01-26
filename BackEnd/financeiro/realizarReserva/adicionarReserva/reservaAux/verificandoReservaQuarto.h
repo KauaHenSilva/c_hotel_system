@@ -19,12 +19,6 @@ int verificarReservaQuarto(StDbQuartos *quarto, int qtdQuarto)
     if (idQuarto == -1)
       return idQuarto;
 
-    if (!quarto[idQuarto].statusQuarto == LIVRE)
-    {
-      printf("O Quarto nao esta Disponivel!");
-      continue;
-    }
-
     return idQuarto;
   }
 }

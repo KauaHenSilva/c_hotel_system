@@ -11,20 +11,18 @@
 #include "./_adicionando_valorQuartoReserva.h"
 #include "./_adicionando_AdicionarDiaReserva.h"
 
-void adicionarReserva(StDbFluxoFinanceiro **dbFluxoFinanceiro, StDbControle *controler, idUserQuarto idUserQuarto, StDbClientes *cliente, StDbQuartos *quarto)
+void adicionarReserva(StDbFluxoFinanceiro **dbFluxoFinanceiro, StDbControle *controler, auxIdUserQuartoTime idUserQuarto, StDbClientes *cliente, StDbQuartos *quarto)
 {
   adicionandoEspaco(dbFluxoFinanceiro, controler->quantidadeDeReserva);
   adicionandoIdReserva(*dbFluxoFinanceiro, *(controler->quantidadeDeReserva) - 1, controler->idReserva);
-  adicionandoIdCliente(*dbFluxoFinanceiro, *(controler->quantidadeDeReserva) - 1,  idUserQuarto.idUser, cliente);
-  adicionandoIdQuarto(*dbFluxoFinanceiro,*(controler->quantidadeDeReserva) - 1, idUserQuarto.idQuarto, quarto);
+  adicionandoIdCliente(*dbFluxoFinanceiro, *(controler->quantidadeDeReserva) - 1, idUserQuarto.idUser, cliente);
+  adicionandoIdQuarto(*dbFluxoFinanceiro, *(controler->quantidadeDeReserva) - 1, idUserQuarto.idQuarto, quarto);
   adicionandoCpfCliente(*dbFluxoFinanceiro, *(controler->quantidadeDeReserva) - 1, idUserQuarto.idUser, cliente);
   adicionandoStatusPagamentoReserva(*dbFluxoFinanceiro, *(controler->quantidadeDeReserva) - 1);
   adicionandoNomeCliente(cliente, idUserQuarto.idUser, *dbFluxoFinanceiro, *(controler->quantidadeDeReserva) - 1);
-  adicionarDiaDaReserva(*dbFluxoFinanceiro, *(controler->quantidadeDeReserva) - 1);
-  adicionandoValorQuarto(*dbFluxoFinanceiro, *(controler->quantidadeDeReserva) - 1, idUserQuarto.idQuarto, quarto);
   quarto[idUserQuarto.idQuarto].statusQuarto = RESERVADO;
+  adicionarDiaDaReserva(*dbFluxoFinanceiro, *(controler->quantidadeDeReserva) - 1, idUserQuarto);
+  adicionandoValorQuarto(*dbFluxoFinanceiro, *(controler->quantidadeDeReserva) - 1, idUserQuarto.idQuarto, quarto);
 }
 
-
 #endif // ADICIONARRESERVA
-

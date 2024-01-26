@@ -11,7 +11,7 @@ void getData(struct tm *data, const char *msg)
 
   while (1)
   {
-    getNumeroInt(&data->tm_year, "Digite o ano (AAAA): ");
+    getNumeroInt(&data->tm_year, "Digite o ano [AAAA]: ");
     data->tm_year -= 1900;
     if (data->tm_year < 0)
     {
@@ -23,7 +23,7 @@ void getData(struct tm *data, const char *msg)
 
   while (1)
   {
-    getNumeroInt(&data->tm_mon, "Digite o mes (1-12): ");
+    getNumeroInt(&data->tm_mon, "Digite o mes [1-12]: ");
     data->tm_mon -= 1;
     if (data->tm_mon < 0 || data->tm_mon > 11)
     {
@@ -35,7 +35,7 @@ void getData(struct tm *data, const char *msg)
 
   while (1)
   {
-    getNumeroInt(&data->tm_mday, "Digite o dia (1-31): ");
+    getNumeroInt(&data->tm_mday, "Digite o dia [1-31]: ");
     if (data->tm_mday < 1 || data->tm_mday > 31)
     {
       printf("Dia invalido\n");

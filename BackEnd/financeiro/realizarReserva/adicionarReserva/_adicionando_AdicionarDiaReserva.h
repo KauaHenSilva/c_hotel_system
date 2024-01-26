@@ -3,12 +3,10 @@
 
 #include "../../../../db/model.h"
 
-void adicionarDiaDaReserva(StDbFluxoFinanceiro *dbReserva, int posicaoMemoria)
+void adicionarDiaDaReserva(StDbFluxoFinanceiro *dbReserva, int posicaoMemoria, auxIdUserQuartoTime auxIdUserQuartoTime)
 {
-  Utils.SystemComand.clearTela();
-  Utils.InputsSavin.getData(&(dbReserva[posicaoMemoria].dataReserva.DataInicial), "Data Inicial: ");
-  Utils.SystemComand.clearTela();
-  Utils.InputsSavin.getData(&(dbReserva[posicaoMemoria].dataReserva.DataFinal), "Data Final: ");
+  dbReserva[posicaoMemoria].dataReserva.DataInicial = auxIdUserQuartoTime.dataInicial;
+  dbReserva[posicaoMemoria].dataReserva.DataFinal = auxIdUserQuartoTime.dataFinal;
 }
 
 #endif // ADICIONANDOODIADARESERVA

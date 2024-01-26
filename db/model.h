@@ -53,6 +53,8 @@ typedef struct {
 typedef struct {
   int idUser;
   int idQuarto;
-}idUserQuarto;
+  struct tm dataInicial;
+  struct tm dataFinal;
+} auxIdUserQuartoTime;
 
 #endif // __MODELS
