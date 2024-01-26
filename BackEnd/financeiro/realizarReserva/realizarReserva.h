@@ -46,7 +46,7 @@ void realizarReserva(StDbFluxoFinanceiro **dbFluxoFinanceiro, StDbQuartos *quart
 
   adicionarReserva(dbFluxoFinanceiro, controle, auxIdUserQuartoTime, cliente, quarto);
 
-  printf("Reserva Realizada com sucesso!\n\n")
+  printf("Reserva Realizada com sucesso!\n\n");
   Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
 
 }

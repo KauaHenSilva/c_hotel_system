@@ -6,7 +6,7 @@ void exibirData(struct tm* data, const char* msg)
 {
     char buffer[20];
         
-    strftime(buffer, sizeof(buffer), "%Y-%m-%d", data);
+    strftime(buffer, sizeof(buffer), "%d-%m-%Y", data);
 
     printf("%s%s\n",msg, buffer);
 
@@ -29,6 +29,7 @@ void exibirOnly(StDbFluxoFinanceiro *dbFluxoFinanceiro, int x)
     printf(" - Status do Pagamento: PAGO\n");
     break;
   }
+
   exibirData(&dbFluxoFinanceiro[x].dataReserva.DataInicial, " - Data de inicial cadrastro: ");
   exibirData(&dbFluxoFinanceiro[x].dataReserva.DataFinal, " - Data de final cadrastro: ");
 
