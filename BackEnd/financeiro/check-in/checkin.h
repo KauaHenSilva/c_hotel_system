@@ -14,26 +14,18 @@ void chekin(StDbFluxoFinanceiro *dbFluxoFinanceiro, StDbControle *controle, StDb
 
   for (int x = 0; x < *controle->quantidadeDeReserva; x++)
   {
-    int roomFound = 0; 
 
     for (int y = 0; y < *controle->quantidadeDeQuarto; y++)
     {
       if (dbQuartos[y].numero == dbFluxoFinanceiro[x].idQuarto &&
-          (dbQuartos[y].statusQuarto == LIVRE || dbQuartos[y].statusQuarto == OCUPADO) &&
-          dbFluxoFinanceiro[x].statusPagamento == PAGO)
+          (!(dbQuartos[y].statusQuarto == LIVRE) && !(dbQuartos[y].statusQuarto == OCUPADO)) &&
+          dbFluxoFinanceiro[x].statusPagamento == NAO_PAGO)
       {
-        roomFound = 1;
-        break;
+        exibirOnly(dbFluxoFinanceiro, x);
+        disponivel = (int *)realloc(disponivel, sizeof(int) * (cont + 1));
+        disponivel[cont] = dbFluxoFinanceiro[x].idReserva;
+        cont++;
       }
-    }
-
-    if (!roomFound)
-    {
-      exibirOnly(dbFluxoFinanceiro, x);
-
-      disponivel = (int *)realloc(disponivel, sizeof(int) * (cont + 1));
-      disponivel[cont] = dbFluxoFinanceiro[x].idReserva;
-      cont++;
     }
   }
 

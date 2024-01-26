@@ -18,18 +18,16 @@ void chekOut(StDbFluxoFinanceiro *dbFluxoFinanceiro, StDbControle *controle, StD
     {
       if (dbQuartos[y].numero == dbFluxoFinanceiro[x].idQuarto)
       {
-        if (dbQuartos[y].statusQuarto == LIVRE || dbQuartos[y].statusQuarto == RESERVADO)
+        if (!(dbQuartos[y].statusQuarto == LIVRE) && !(dbQuartos[y].statusQuarto == RESERVADO))
         {
-          break;
+          exibirOnly(dbFluxoFinanceiro, x);
+
+          disponivel = (int *)realloc(disponivel, sizeof(int) * (cont + 1));
+          disponivel[cont] = dbFluxoFinanceiro[x].idReserva;
+          cont++;
         }
       }
     }
-
-    exibirOnly(dbFluxoFinanceiro, x);
-
-    disponivel = (int *)realloc(disponivel, sizeof(int) * (cont + 1));
-    disponivel[cont] = dbFluxoFinanceiro[x].idReserva;
-    cont++;
   }
 
   if (cont == 0)
