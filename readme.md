@@ -43,10 +43,10 @@ O objetivo deste projeto é criar um sistema de gerenciamento para um hotel de p
 
 - **Realizar reserva** (Parcial) - Falta Calcular Tempo
 - **Excluir reserva**  (Pronto)
-- **Realizar check-in** (Parcial) - Verificação
-- **Realizar pagamento** (Parcial) - Verificação
+- **Realizar check-in** (Feito)
+- **Realizar pagamento** (Feito)
 - **Consultar reservas** (Parcial) - Falta exibir o Tempo
-- **Valores recebidos**
+- **Valores recebidos** (Feito)
 
 - **FrontEndFinaça** 
 - **DbFinanca** 
