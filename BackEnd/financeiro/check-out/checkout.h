@@ -5,6 +5,18 @@
 #include "../../../utils/utilis.h"
 #include "../exibirReserva/exibirOnly/exibirOnly.h"
 
+int preucurarQuartoReservado(StDbFluxoFinanceiro *dbFluxoFinanceiro, StDbControle *controle, int idQuarto)
+{
+  for (int x = 0; x < *controle->quantidadeDeReserva; x++)
+  {
+    if (dbFluxoFinanceiro[x].statusQuarto == RESERVADO && dbFluxoFinanceiro[x].idQuarto == idQuarto)
+    {
+      return 1;
+    }
+  }
+  return 0;
+}
+
 void chekOut(StDbFluxoFinanceiro *dbFluxoFinanceiro, StDbControle *controle, StDbQuartos *dbQuartos)
 {
   int cont = 0;
@@ -14,25 +26,20 @@ void chekOut(StDbFluxoFinanceiro *dbFluxoFinanceiro, StDbControle *controle, StD
 
   for (int x = 0; x < *controle->quantidadeDeReserva; x++)
   {
-    for (int y = 0; y < *controle->quantidadeDeQuarto; y++)
+    if ((dbFluxoFinanceiro[x].statusPagamento == NAO_PAGO) &&
+        (dbFluxoFinanceiro[x].statusQuarto == OCUPADO))
     {
-      if (dbQuartos[y].numero == dbFluxoFinanceiro[x].idQuarto)
-      {
-        if (!(dbQuartos[y].statusQuarto == LIVRE) && !(dbQuartos[y].statusQuarto == RESERVADO))
-        {
-          exibirOnly(dbFluxoFinanceiro, x);
-
-          disponivel = (int *)realloc(disponivel, sizeof(int) * (cont + 1));
-          disponivel[cont] = dbFluxoFinanceiro[x].idReserva;
-          cont++;
-        }
-      }
+      exibirOnly(dbFluxoFinanceiro, x);
+      disponivel = (int *)realloc(disponivel, sizeof(int) * (cont + 1));
+      disponivel[cont] = dbFluxoFinanceiro[x].idReserva;
+      cont++;
     }
   }
 
   if (cont == 0)
   {
     printf("Nao existe nenhuma reserva para fazer check-out\n");
+    Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
     return;
   }
 
@@ -53,14 +60,16 @@ void chekOut(StDbFluxoFinanceiro *dbFluxoFinanceiro, StDbControle *controle, StD
   if (!encontrada)
   {
     printf("Reserva nao encontrada\n");
+    Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
     return;
   }
 
-  int idDoQuartoSelecionado;
-  int localReservaFinal;
-  for (int x = 0; x < cont; x++)
+  int idDoQuartoSelecionado = 0;
+  int localReservaFinal = 0;
+
+  for (int x = 0; x < *controle->quantidadeDeReserva; x++)
   {
-    if (idReserva == disponivel[x])
+    if (idReserva == dbFluxoFinanceiro[x].idReserva)
     {
       idDoQuartoSelecionado = dbFluxoFinanceiro[x].idQuarto;
       localReservaFinal = x;
@@ -68,7 +77,8 @@ void chekOut(StDbFluxoFinanceiro *dbFluxoFinanceiro, StDbControle *controle, StD
     }
   }
 
-  int localQuartoFinal;
+  // Encontrar informações do quarto
+  int localQuartoFinal = 0;
   for (int x = 0; x < *controle->quantidadeDeQuarto; x++)
   {
     if (dbQuartos[x].numero == idDoQuartoSelecionado)
@@ -85,12 +95,22 @@ void chekOut(StDbFluxoFinanceiro *dbFluxoFinanceiro, StDbControle *controle, StD
 
   if (dbFluxoFinanceiro[localReservaFinal].statusPagamento == PAGO)
   {
-    dbQuartos[localQuartoFinal].statusQuarto = LIVRE;
+    dbFluxoFinanceiro[localReservaFinal].statusQuarto = LIVRE;
+    
+    if (preucurarQuartoReservado(dbFluxoFinanceiro, controle, idDoQuartoSelecionado))
+      dbQuartos[localQuartoFinal].statusQuarto = RESERVADO;
+    else if(preucurarQuartoOcupado(dbFluxoFinanceiro, controle, idDoQuartoSelecionado))
+      dbQuartos[localQuartoFinal].statusQuarto = OCUPADO;
+    else
+      dbQuartos[localQuartoFinal].statusQuarto = LIVRE;
+
     printf("Check-out Feito Com sucesso!\n");
+    Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
     return;
   }
 
   printf("O Check-out nao foi feito!\n");
+  Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
 }
 
 #endif // CHEKOUT
