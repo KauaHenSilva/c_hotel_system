@@ -28,6 +28,20 @@ void editarQuarto(StDbQuartos *dbQuarto, int numQuartos)
   getQuartoId(dbQuarto, numQuartos, &id);
   if(id == -1) return;
 
+  if(dbQuarto[id].statusQuarto == OCUPADO)
+  {
+    printf("Quarto ocupado, nao pode ser editado! \n\n");
+    Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
+    return;
+  }
+
+  if(dbQuarto[id].statusQuarto == RESERVADO)
+  {
+    printf("Quarto reservado, nao pode ser editado! \n\n");
+    Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
+    return;
+  }
+
   int opcao;
   printf("O que deseja editar?\n");  
   printf("1 - Tipo do quarto\n");
