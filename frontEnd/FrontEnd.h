@@ -11,12 +11,11 @@ struct
 {
   void (*frontEndQuarto)(StDbQuartos **quartos, int *qtdQuartos, int *idQuarto);
   void (*frontEndCliente)(StDbClientes **cliente, int *qtdCliente, int *idCliente);
-  void (*frontEndFinanceiro)(StDbFluxoFinanceiro **fluxoFinanceiro, StDbClientes *cliente,
-                             StDbQuartos *quartos, StDbControle *controle);
+  void (*frontEndFinanceiro)(StDbFluxoFinanceiro **fluxoFinanceiro, StDbQuartos *quartos, StDbClientes *cliente,StDbControle *controle);
 } FrontEnd = {
     (void (*)(StDbQuartos **, int *, int *))frontEndQuarto,
     (void (*)(StDbClientes **, int *, int *))frontEndCliente,
-    (void (*)(StDbFluxoFinanceiro **, StDbClientes *, StDbQuartos *, StDbControle *))frontEndFinanceiro,
+    (void (*)(StDbFluxoFinanceiro **,  StDbQuartos *, StDbClientes *, StDbControle *))frontEndFinanceiro,
 };
 
 #endif // FRONTEND

@@ -29,8 +29,8 @@ void exibirOnly(StDbFluxoFinanceiro *dbFluxoFinanceiro, int x)
     printf(" - Status do Pagamento: PAGO\n");
     break;
   }
-  exibirData(&dbFluxoFinanceiro[x].dataCadrastro.DataInicial, " - Data de inicial cadrastro: ");
-  exibirData(&dbFluxoFinanceiro[x].dataCadrastro.DataFinal, " - Data de final cadrastro: ");
+  exibirData(&dbFluxoFinanceiro[x].dataReserva.DataInicial, " - Data de inicial cadrastro: ");
+  exibirData(&dbFluxoFinanceiro[x].dataReserva.DataFinal, " - Data de final cadrastro: ");
 
   printf("\n");
 }

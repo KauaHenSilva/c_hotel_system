@@ -26,7 +26,7 @@ typedef struct  {
 typedef struct {
     struct tm DataInicial;
     struct tm DataFinal;
-} DataCadastroCheck;
+} Data;
 
 typedef enum {PAGO, NAO_PAGO} EnStatusPagamento;
 
@@ -34,11 +34,11 @@ typedef struct  {
     int idReserva;
     int idQuarto;
     int idCliente;
-    DataCadastroCheck dataCadrastro;
-    DataCadastroCheck dataChek;
     char nomeCliente[100];
     char cpfCliente[15];
+    Data dataReserva;
     double valorPagar;
+    struct tm dataPagamento;
     EnStatusPagamento statusPagamento;
 } StDbFluxoFinanceiro ;  
 

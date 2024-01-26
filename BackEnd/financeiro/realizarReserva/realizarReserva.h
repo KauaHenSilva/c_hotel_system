@@ -10,7 +10,7 @@
 #include "./adicionarReserva/adicionarReserva.h"
 
 
-void realizarReserva(StDbFluxoFinanceiro **dbFluxoFinanceiro, StDbClientes *cliente, StDbQuartos *quarto, StDbControle *controle)
+void realizarReserva(StDbFluxoFinanceiro **dbFluxoFinanceiro, StDbQuartos *quarto, StDbClientes *cliente, StDbControle *controle)
 {
 
   Utils.SystemComand.clearTela();

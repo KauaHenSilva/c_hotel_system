@@ -1,4 +1,3 @@
-
 #if !defined(CHEKIN)
 #define CHEKIN
 
@@ -11,63 +10,84 @@ void chekin(StDbFluxoFinanceiro *dbFluxoFinanceiro, StDbControle *controle, StDb
   int cont = 0;
   int *disponivel = NULL;
 
-  printf("EXibindo todos os quartos para fazer chekin\n\n");
+  printf("Exibindo todos os quartos para fazer check-in\n\n");
 
   for (int x = 0; x < *controle->quantidadeDeReserva; x++)
   {
-    for (int y = 0; y < *controle->quantidadeDeQuarto; y++)
-      if (dbQuartos[y].numero == dbFluxoFinanceiro[x].idQuarto)
-        if (dbQuartos[y].statusQuarto == LIVRE || dbQuartos[y].statusQuarto == OCUPADO)
-          continue;
+    int roomFound = 0; 
 
-    exibirOnly(dbFluxoFinanceiro, x);
-    disponivel = (int *)realloc(disponivel, sizeof(int) * ++cont);
-    disponivel[cont - 1] = dbFluxoFinanceiro[x].idReserva;
+    for (int y = 0; y < *controle->quantidadeDeQuarto; y++)
+    {
+      if (dbQuartos[y].numero == dbFluxoFinanceiro[x].idQuarto &&
+          (dbQuartos[y].statusQuarto == LIVRE || dbQuartos[y].statusQuarto == OCUPADO) &&
+          dbFluxoFinanceiro[x].statusPagamento == PAGO)
+      {
+        roomFound = 1;
+        break;
+      }
+    }
+
+    if (!roomFound)
+    {
+      exibirOnly(dbFluxoFinanceiro, x);
+
+      disponivel = (int *)realloc(disponivel, sizeof(int) * (cont + 1));
+      disponivel[cont] = dbFluxoFinanceiro[x].idReserva;
+      cont++;
+    }
   }
 
   if (cont == 0)
   {
-    printf("Nao existe nenhuma reserva para fazer chekin\n");
+    printf("Nao existe nenhuma reserva para fazer check-in\n");
     return;
   }
 
   int idReserva;
-  Utils.InputsBasic.getNumeroInt(&idReserva, "Digite o id da reserva que deseja fazer chekin: ");
+  Utils.InputsBasic.getNumeroInt(&idReserva, "Digite o id da reserva que deseja fazer check-in: ");
 
   int encontrada = 0;
-  for(int x = 0; x < cont; x++)
-    if(idReserva == disponivel[x])
-      {
-        encontrada = 1;
-        printf("Reserva encontrada\n");
-        break;
-      }
+  for (int x = 0; x < cont; x++)
+  {
+    if (idReserva == disponivel[x])
+    {
+      encontrada = 1;
+      printf("Reserva encontrada\n");
+      break;
+    }
+  }
 
-  if(!encontrada)
+  if (!encontrada)
   {
     printf("Reserva nao encontrada\n");
     return;
   }
 
   int idDoQuartoSelecionado;
-  for (int x = 0; x < *(controle->quantidadeDeReserva); x++)
+  // int localReservaFinal;
+  for (int x = 0; x < cont; x++)
   {
-      if (idReserva == dbFluxoFinanceiro[x].idReserva)
-      {
-        idDoQuartoSelecionado = dbFluxoFinanceiro[x].idQuarto;
-        break;
-      }
+    if (idReserva == disponivel[x])
+    {
+      idDoQuartoSelecionado = dbFluxoFinanceiro[x].idQuarto;
+      break;
+    }
   }
+
   int localQuartoFinal;
-  for(int x = 0 ; x < *(controle->quantidadeDeQuarto); x++)
-    if(dbQuartos[x].numero == idDoQuartoSelecionado)
-      {
-        localQuartoFinal = x;
-        break;
-      }
+  for (int x = 0; x < *controle->quantidadeDeQuarto; x++)
+  {
+    if (dbQuartos[x].numero == idDoQuartoSelecionado)
+    {
+      localQuartoFinal = x;
+      break;
+    }
+  }
 
   dbQuartos[localQuartoFinal].statusQuarto = OCUPADO;
-  printf("Quarto %d agora esta ocupado LIVRE, OCUPADO, RESERVADO \n", dbQuartos[localQuartoFinal].numero);
+  printf("Check-in Feito Com sucesso!\n");
+
+  free(disponivel);
 }
 
 #endif // CHEKIN

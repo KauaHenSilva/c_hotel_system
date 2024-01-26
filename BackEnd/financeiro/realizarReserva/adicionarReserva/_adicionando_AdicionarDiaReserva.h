@@ -6,9 +6,9 @@
 void adicionarDiaDaReserva(StDbFluxoFinanceiro *dbReserva, int posicaoMemoria)
 {
   Utils.SystemComand.clearTela();
-  Utils.InputsSavin.getData(&(dbReserva[posicaoMemoria].dataCadrastro.DataInicial), "Data Inicial: ");
+  Utils.InputsSavin.getData(&(dbReserva[posicaoMemoria].dataReserva.DataInicial), "Data Inicial: ");
   Utils.SystemComand.clearTela();
-  Utils.InputsSavin.getData(&(dbReserva[posicaoMemoria].dataCadrastro.DataFinal), "Data Final: ");
+  Utils.InputsSavin.getData(&(dbReserva[posicaoMemoria].dataReserva.DataFinal), "Data Final: ");
 }
 
 #endif // ADICIONANDOODIADARESERVA

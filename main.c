@@ -48,7 +48,7 @@ void exec()
         FrontEnd.frontEndCliente(&dbClintes, &quantidadeDeCLientes, &idCliente);
         break;
       case 3:
-        FrontEnd.frontEndFinanceiro(&DbFluxoFinanceiro, dbClintes, dbQuartos, &controle);
+        FrontEnd.frontEndFinanceiro(&DbFluxoFinanceiro, dbQuartos, dbClintes, &controle);
         break;
     }
   }

@@ -17,8 +17,9 @@ void frontEndFinanceiro(StDbFluxoFinanceiro **financeiro, StDbQuartos *quarto, S
     printf("Menu Reserva!\n");
     printf("1 - Realizar Reserva\n");
     printf("2 - Exibir Reserva\n");
-    printf("3 - Realizar pagamento\n");
-    printf("4 - Realizar shekin\n");
+    printf("3 - Realizar shek-In\n");
+    printf("4 - Realizar shek-Out\n");
+    printf("5 - Exibir valores em um intervalo de tempo\n");
     printf("0 - Voltar\n");
 
     Utils.InputsBasic.getNumeroInt(&opc, "Digite o numero correspodente: ");
@@ -35,10 +36,13 @@ void frontEndFinanceiro(StDbFluxoFinanceiro **financeiro, StDbQuartos *quarto, S
         frontEndExibicaoFinanceiro(*financeiro, *controle);
         break;
       case 3:
-        Financeiro.realizarPagamento(*financeiro, controle);
+        Financeiro.chekin(*financeiro, controle, quarto);
         break;
       case 4:
-        Financeiro.chekin(*financeiro, controle);
+        Financeiro.checkout(*financeiro, controle, quarto);
+        break;
+      case 5:
+        Financeiro.exibirValoresIntervalo(*financeiro, controle);
         break;
       default:
         printf("Alternativa invalida\n");
