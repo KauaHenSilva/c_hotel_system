@@ -20,6 +20,8 @@ StDbControle controle = {
   &quantidadeDeQuarto,
   &quantidadeDeCLientes,
   &quantidadeDeReserva,
+  &idQuarto,
+  &idCliente,
   &idReserva,
 };
 

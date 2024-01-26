@@ -3,6 +3,7 @@
 
 #include "db/Clientes/loadCliente.h"
 #include "db/quartos/loadQuartos.h"
+#include "db/Financeiro/loadFinanceiro.h"
 
 #include "frontEnd/frontEnd.h"
 
@@ -13,6 +14,7 @@ int main()
 {
   loadCliente(&dbClintes, &quantidadeDeCLientes, &idCliente);
   loadQuartos(&dbQuartos, &quantidadeDeQuarto, &idQuarto);
+  loadFinanceiro(&DbFluxoFinanceiro, &quantidadeDeReserva, &idReserva);
   exec();
   return 0;
 }

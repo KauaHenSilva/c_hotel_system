@@ -5,6 +5,8 @@
 #include "../../db/model.h"
 #include "../../BackEnd/financeiro/financeiro.h"
 #include "./frontEndExibicaoFinanceiro.h"
+#include "../../db/Financeiro/saveFinanceiro.h"
+#include "../../db/Clientes/saveCliente.h"
 
 void frontEndFinanceiro(StDbFluxoFinanceiro **financeiro, StDbQuartos *quarto, StDbClientes *cliente, StDbControle *controle)
 {
@@ -32,21 +34,29 @@ void frontEndFinanceiro(StDbFluxoFinanceiro **financeiro, StDbQuartos *quarto, S
         break;
       case 1:
         Financeiro.realizarReserva(financeiro, quarto, cliente, controle);
+        saveFinanceiro(*financeiro, *(controle->quantidadeDeReserva), *(controle->idReserva));
+        saveCliente(cliente, *(controle->quantidadeDeCLientes), *(controle->idCliente));
         break;
       case 2:
         frontEndExibicaoFinanceiro(*financeiro, *controle);
         break;
       case 3:
         Financeiro.chekin(*financeiro, controle, quarto);
+        saveFinanceiro(*financeiro, *(controle->quantidadeDeReserva), *(controle->idReserva));
+        saveCliente(cliente, *(controle->quantidadeDeCLientes), *(controle->idCliente));
         break;
       case 4:
         Financeiro.checkout(*financeiro, controle, quarto);
+        saveFinanceiro(*financeiro, *(controle->quantidadeDeReserva), *(controle->idReserva));
+        saveCliente(cliente, *(controle->quantidadeDeCLientes), *(controle->idCliente));
         break;
       case 5:
         Financeiro.exibirValoresIntervalo(*financeiro, controle);
         break;
       case 6:
         Financeiro.removerReserva(financeiro, controle->quantidadeDeReserva);
+        saveFinanceiro(*financeiro, *(controle->quantidadeDeReserva), *(controle->idReserva));
+        saveCliente(cliente, *(controle->quantidadeDeCLientes), *(controle->idCliente));
         break;
       default:
         printf("Alternativa invalida\n");

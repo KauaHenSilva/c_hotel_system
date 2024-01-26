@@ -46,6 +46,8 @@ typedef struct {
     int *quantidadeDeQuarto;
     int *quantidadeDeCLientes;
     int *quantidadeDeReserva;
+    int *idQuarto;
+    int *idCliente;
     int *idReserva;
 } StDbControle;
 

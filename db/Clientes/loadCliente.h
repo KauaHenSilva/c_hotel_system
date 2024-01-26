@@ -1,3 +1,7 @@
+#if !defined(LOADCLIENTE)
+#define LOADCLIENTE
+
+
 #include <stdio.h>
 
 #include "../../db/model.h"
@@ -19,3 +23,7 @@ void loadCliente(StDbClientes **Clientes, int *quantidadeDeClientes, int *idClie
 
     fclose(arquivo);
 }
+
+
+
+#endif // LOADCLIENTE

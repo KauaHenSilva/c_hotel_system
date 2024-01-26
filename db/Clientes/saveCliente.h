@@ -1,3 +1,7 @@
+#if !defined(SAVECLIENTE)
+#define SAVECLIENTE
+
+
 #include <stdio.h>
 
 void saveCliente(StDbClientes *Cliente, int quantidadeClientes, int idCliente) {
@@ -15,3 +19,6 @@ void saveCliente(StDbClientes *Cliente, int quantidadeClientes, int idCliente) {
 
     fclose(arquivo);
 }
+
+#endif // SAVECLIENTE
+
