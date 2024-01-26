@@ -12,6 +12,7 @@ void getReservaId(StDbFluxoFinanceiro *dbFluxoFinanceiro, int numFluxos, int *id
         if (numFluxos == 0)
         {
             (*idFluxo) = -1;
+            printf("Fluxo Financeiro nao encontrado\n");
             return;
         }
 
@@ -25,8 +26,6 @@ void getReservaId(StDbFluxoFinanceiro *dbFluxoFinanceiro, int numFluxos, int *id
                 return;
             }
         }
-
-        printf("Fluxo Financeiro nao encontrado\n");
     }
 }
 

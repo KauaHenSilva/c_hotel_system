@@ -20,7 +20,7 @@ void exibirReservaId(StDbFluxoFinanceiro *FluxoFinanceiro, StDbControle controle
   int id;
   getReservaId(FluxoFinanceiro, *(controler.quantidadeDeReserva), &id);
   if(id == -1){
-    printf("Nenhum Fluxo Financeiro cadrastrado!\n");
+    printf("Nenhum Fluxo Financeiro cadrastrado!\n\n");
     return;
   };
 

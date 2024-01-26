@@ -33,7 +33,7 @@ void exibirReservaNome(StDbFluxoFinanceiro *dbFluxoFinanceiro, StDbControle cont
   }
 
   if(!existe)
-    printf("Este cliente nao possui fluxo financeiro\n");
+    printf("Este cliente nao possui fluxo financeiro\n\n");
 
 }
 

@@ -1,3 +1,7 @@
+#if !defined(SAVEQUARTO)
+#define SAVEQUARTO
+
+
 #include <stdio.h>
 
 void saveQuartos(StDbQuartos *quartos, int quantidadeQuartos, int idQuarto) {
@@ -14,3 +18,6 @@ void saveQuartos(StDbQuartos *quartos, int quantidadeQuartos, int idQuarto) {
 
     fclose(arquivo);
 }
+
+#endif // SAVEQUARTO
+

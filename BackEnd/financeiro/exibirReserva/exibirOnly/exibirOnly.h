@@ -1,15 +1,13 @@
 #if !defined(EXIVIRONLY)
 #define EXIVIRONLY
 
-
-void exibirData(struct tm* data, const char* msg)
+void exibirData(struct tm *data, const char *msg)
 {
-    char buffer[20];
-        
-    strftime(buffer, sizeof(buffer), "%d-%m-%Y", data);
+  char buffer[20];
 
-    printf("%s%s\n",msg, buffer);
+  strftime(buffer, sizeof(buffer), "%d-%m-%Y", data);
 
+  printf("%s%s\n", msg, buffer);
 }
 
 void exibirOnly(StDbFluxoFinanceiro *dbFluxoFinanceiro, int x)
@@ -19,6 +17,7 @@ void exibirOnly(StDbFluxoFinanceiro *dbFluxoFinanceiro, int x)
   printf(" - id do Cliente: %d\n", dbFluxoFinanceiro[x].idCliente);
   printf(" - id do Quarto: %d\n", dbFluxoFinanceiro[x].idQuarto);
   printf(" - Nome do Cliente: %s\n", dbFluxoFinanceiro[x].nomeCliente);
+  printf(" - cpf do Cliente: %s\n", dbFluxoFinanceiro[x].cpfCliente);
   printf(" - Valor a pagar: %.2lf\n", dbFluxoFinanceiro[x].valorPagar);
   switch (dbFluxoFinanceiro[x].statusPagamento)
   {
@@ -28,6 +27,18 @@ void exibirOnly(StDbFluxoFinanceiro *dbFluxoFinanceiro, int x)
   case PAGO:
     printf(" - Status do Pagamento: PAGO\n");
     break;
+  }
+  switch (dbFluxoFinanceiro[x].statusQuarto)
+  {
+    case LIVRE:
+      printf(" - Status do Quarto: LIVRE\n");
+      break;
+    case OCUPADO:
+      printf(" - Status do Quarto: OCUPADO\n");
+      break;
+    case RESERVADO:
+      printf(" - Status do Quarto: RESERVADO\n");
+      break;
   }
 
   exibirData(&dbFluxoFinanceiro[x].dataReserva.DataInicial, " - Data de inicial cadrastro: ");

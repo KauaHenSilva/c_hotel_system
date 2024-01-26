@@ -1,11 +1,16 @@
+#if !defined(LOADQUARTO)
+#define LOADQUARTO
+
 #include <stdio.h>
 
 #include "../../db/model.h"
 
-void loadQuartos(StDbQuartos **quartos, int *quantidadeQuartos, int *idQuarto) {
+void loadQuartos(StDbQuartos **quartos, int *quantidadeQuartos, int *idQuarto)
+{
     FILE *arquivo = fopen("C:/Meus-Estudos-Global/Desktop/C/C_Hotel_System/db/quartos/dbQuarto.bin", "rb");
 
-    if (!arquivo) {
+    if (!arquivo)
+    {
         printf("Arquivo Ausente!\n");
         return;
     }
@@ -19,3 +24,5 @@ void loadQuartos(StDbQuartos **quartos, int *quantidadeQuartos, int *idQuarto) {
 
     fclose(arquivo);
 }
+
+#endif // LOADQUARTO

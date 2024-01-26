@@ -22,7 +22,8 @@ int verificaConflitoReserva(StDbFluxoFinanceiro *dbFluxoFinanceiro, int qtdFluxo
     if(dbFluxoFinanceiro[i].idQuarto == quarto[idQuarto].numero)
       if (verificaConflitoDatas(dbFluxoFinanceiro[i].dataReserva.DataInicial, dbFluxoFinanceiro[i].dataReserva.DataFinal, newInicio, newFinal))
       {
-        printf("Ocorreu Um conflito de datas\n");
+        printf("Ocorreu Um conflito de datas, nao e possivel cadratrar reserva!\n\n");
+        Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
         return 1; // Há conflito de datas
       }
   }
