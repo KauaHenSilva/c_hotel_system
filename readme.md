@@ -60,8 +60,14 @@ O objetivo deste projeto é criar um sistema de gerenciamento para um hotel de p
 - **Valores recebidos:** Permite a consulta de todos os valores recebidos durante um intervalo de tempo definido pelo usuário.
 
 
-## Revisões
+## Resultados
 
-- **Revisão De Usabilidade**  
+- **Revisão De Usabilidade** ( Aguardando )
 
-- **Revisão De Funcionalidades** (Feito)
+- **Revisão De Funcionalidades** ( Aguardando )
+
+- **Nota** ( Aguardando )
+
+- **Comentario do Professor sobre o projeto**
+
+( Aguardando )
