@@ -1,4 +1,4 @@
-# README - Sistema de Gerenciamento de Hotel (Projeto Finalizado)
+# Sistema de Gerenciamento de Hotel (Projeto Finalizado)
 
 Este é um projeto desenvolvido como parte da 3ª avaliação da disciplina de Algoritmos e Programação II, ministrada pelo Professor Alan Rafael Ferreira dos Santos na Universidade Federal do Piauí - Campus Senador Helvídio Nunes de Barros, no curso de Bacharelado em Sistemas de Informação.
 
