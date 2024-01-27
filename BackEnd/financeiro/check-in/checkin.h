@@ -23,7 +23,7 @@ void checkin(StDbFluxoFinanceiro *dbFluxoFinanceiro, StDbControle *controle, StD
     int cont = 0;
     int *disponivel = NULL;
 
-    printf("Exibindo todas as reservas disponíveis para check-in:\n\n");
+    printf("Exibindo todas as reservas disponiveis para check-in:\n\n");
 
     for (int x = 0; x < *controle->quantidadeDeReserva; x++)
     {

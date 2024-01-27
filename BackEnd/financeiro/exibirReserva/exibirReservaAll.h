@@ -9,7 +9,6 @@ void exibirReservaAll(StDbFluxoFinanceiro *dbFluxoFinanceiro, StDbControle contr
   Utils.SystemComand.clearTela();
 
   printf("Exibindo todas as reservas...\n\n");
-
   int existe = 0;
   for(int x = 0 ; x < *(controler.quantidadeDeReserva) ; x++)
   {

@@ -15,9 +15,9 @@ void exibirValoresIntervalo(StDbFluxoFinanceiro *dbFluxoFinanceiro, StDbControle
 
   struct tm inicio, fim;
 
-  Utils.InputsSavin.getData(&inicio, "Digite a data e hora de início do intervalo (AAAA-MM-DD): ");
+  Utils.InputsSavin.getData(&inicio, "Digite a data do início do intervalo: ");
   Utils.SystemComand.clearTela(); 
-  Utils.InputsSavin.getData(&fim, "Digite a data e hora do fim do intervalo (AAAA-MM-DD): ");
+  Utils.InputsSavin.getData(&fim, "Digite a data do fim do intervalo: ");
   Utils.SystemComand.clearTela(); 
 
   printf("Valores recebidos nesse intervalo\n\n");

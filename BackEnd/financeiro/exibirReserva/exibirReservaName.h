@@ -14,7 +14,6 @@ void exibirReservaNome(StDbFluxoFinanceiro *dbFluxoFinanceiro, StDbControle cont
   };
 
   printf("Exibindo todos os Fluxo Financeiros que possui Nome...\n\n")  ;
-
   for(int x = 0 ; x < *(controler.quantidadeDeReserva) ; x++)
   {
     exibirOnly(dbFluxoFinanceiro, x);

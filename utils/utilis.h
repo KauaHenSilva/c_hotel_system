@@ -24,7 +24,6 @@ struct stUtils
   stSystemComand SystemComand;
   stInputsBasic InputsBasic;
   stInputsSv InputsSavin;
-
 } Utils = {
   { 
     (void(*)(const char *))systemPause,
