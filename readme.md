@@ -68,6 +68,4 @@ O objetivo deste projeto é criar um sistema de gerenciamento para um hotel de p
 
 - **Nota** ( Aguardando )
 
-- **Comentario do Professor sobre o projeto**
-
-( Aguardando )
+- **Comentario do Professor sobre o projeto** ( Aguardando )
