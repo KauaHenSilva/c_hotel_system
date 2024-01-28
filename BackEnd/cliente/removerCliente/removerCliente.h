@@ -16,6 +16,16 @@ void removerCliente(StDbClientes **dbCliente, int *numCliente) {
   getClienteId(*dbCliente, *numCliente, &id);
   if(id == -1) return;
 
+  if((*dbCliente)[id].statusCliente == RESERVADO) {
+    printf("O cliente nao pode ser removido pois ele possui um quarto reservado!\n");
+    return;
+  }
+
+  if((*dbCliente)[id].statusCliente == OCUPADO) {
+    printf("O cliente nao pode ser removido pois ele possui um quarto ocupado!\n");
+    return;
+  }
+
   for (int i = id; i < *numCliente - 1; i++) 
   {
     (*dbCliente)[i] = (*dbCliente)[i + 1];

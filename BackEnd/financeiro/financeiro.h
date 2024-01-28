@@ -12,15 +12,15 @@
 struct
 {
   void (*realizarReserva)(StDbFluxoFinanceiro **financeiro, StDbQuartos *quarto, StDbClientes *cliente, StDbControle *controle);
-  void (*checkin)(StDbFluxoFinanceiro *dbFluxoFinanceiro, StDbControle *controle, StDbQuartos *dbQuartos);
-  void (*checkout)(StDbFluxoFinanceiro *dbFluxoFinanceiro, StDbControle *controle, StDbQuartos *dbQuartos);
+  void (*checkin)(StDbFluxoFinanceiro *dbFluxoFinanceiro,StDbClientes *cliente, StDbControle *controle, StDbQuartos *dbQuartos);
+  void (*checkout)(StDbFluxoFinanceiro *dbFluxoFinanceiro,StDbClientes *cliente, StDbControle *controle, StDbQuartos *dbQuartos);
   void (*exibirValoresIntervalo)(StDbFluxoFinanceiro *dbFluxoFinanceiro, StDbControle *controle);
   void (*removerReserva)(StDbFluxoFinanceiro **fluxo, int *qtdFluxo, StDbQuartos *quarto);
   StExibirReserva ExibirReserva;
 } Financeiro = {
     (void (*)(StDbFluxoFinanceiro **, StDbQuartos *, StDbClientes *, StDbControle *))realizarReserva,
-    (void (*)(StDbFluxoFinanceiro *, StDbControle *, StDbQuartos *))checkin,
-    (void (*)(StDbFluxoFinanceiro *, StDbControle *, StDbQuartos *))chekOut,
+    (void (*)(StDbFluxoFinanceiro *,StDbClientes *, StDbControle *, StDbQuartos *))checkin,
+    (void (*)(StDbFluxoFinanceiro *,StDbClientes *, StDbControle *, StDbQuartos *))chekOut,
     (void (*)(StDbFluxoFinanceiro *, StDbControle *))exibirValoresIntervalo,
     (void (*)(StDbFluxoFinanceiro **, int *, StDbQuartos *))removerReserva,
     {

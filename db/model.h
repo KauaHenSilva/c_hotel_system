@@ -19,6 +19,7 @@ typedef struct  {
     char cpf[12];
     char telefone[15];
     char rg[15];  
+    EnStatusQuarto statusCliente;
 } StDbClientes ;
 
 #include <time.h>

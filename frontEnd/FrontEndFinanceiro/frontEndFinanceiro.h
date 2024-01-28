@@ -41,12 +41,12 @@ void frontEndFinanceiro(StDbFluxoFinanceiro **financeiro, StDbQuartos *quarto, S
         frontEndExibicaoFinanceiro(*financeiro, *controle);
         break;
       case 3:
-        Financeiro.checkin(*financeiro, controle, quarto);
+        Financeiro.checkin(*financeiro,cliente, controle, quarto);
         saveFinanceiro(*financeiro, *(controle->quantidadeDeReserva), *(controle->idReserva));
         saveQuartos(quarto, *(controle->quantidadeDeQuarto), *(controle->idQuarto));
         break;
       case 4:
-        Financeiro.checkout(*financeiro, controle, quarto);
+        Financeiro.checkout(*financeiro,cliente, controle, quarto);
         saveFinanceiro(*financeiro, *(controle->quantidadeDeReserva), *(controle->idReserva));
         saveQuartos(quarto, *(controle->quantidadeDeQuarto), *(controle->idQuarto));
         break;

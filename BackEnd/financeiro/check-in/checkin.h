@@ -18,7 +18,7 @@ int preucurarQuartoOcupado(StDbFluxoFinanceiro *dbFluxoFinanceiro, StDbControle 
     return 0;
 }
 
-void checkin(StDbFluxoFinanceiro *dbFluxoFinanceiro, StDbControle *controle, StDbQuartos *dbQuartos)
+void checkin(StDbFluxoFinanceiro *dbFluxoFinanceiro,StDbClientes *dbClientes, StDbControle *controle, StDbQuartos *dbQuartos)
 {
     int cont = 0;
     int *disponivel = NULL;
@@ -68,6 +68,7 @@ void checkin(StDbFluxoFinanceiro *dbFluxoFinanceiro, StDbControle *controle, StD
     }
 
     int idDoQuartoSelecionado = 0;
+    int idDoClienteSelecionado = 0;
     int localReservaFinal = 0;
 
     for (int x = 0; x < *controle->quantidadeDeReserva; x++)
@@ -80,19 +81,40 @@ void checkin(StDbFluxoFinanceiro *dbFluxoFinanceiro, StDbControle *controle, StD
         }
     }
 
-    // Encontrar informações do quarto
-    int localQuartoFinal = 0;
-    for (int x = 0; x < *controle->quantidadeDeQuarto; x++)
+    for (int x = 0; x < *controle->quantidadeDeReserva; x++)
     {
-        if (dbQuartos[x].numero == idDoQuartoSelecionado)
+        if (idReserva == dbFluxoFinanceiro[x].idReserva)
         {
-            localQuartoFinal = x;
+            idDoQuartoSelecionado = dbFluxoFinanceiro[x].idCliente;
+            localReservaFinal = x;
             break;
         }
     }
 
-    dbQuartos[localQuartoFinal].statusQuarto = OCUPADO;
+    // Encontrar informações do quarto
+    int localQuartoFinal = 0;
+    for (int x = 0; x < *controle->quantidadeDeQuarto; x++)
+    {
+        if (dbClintes[x].idCadrastro == idDoQuartoSelecionado)
+        {
+            idDoClienteSelecionado = x;
+            break;
+        }
+    }
+
+    int localClienteFinal = 0;
+    for (int x = 0; x < *controle->quantidadeDeCLientes; x++)
+    {
+        if (dbClientes[x].idCadrastro == idDoClienteSelecionado)
+        {
+            localClienteFinal = x;
+            break;
+        }
+    }
+
     dbFluxoFinanceiro[localReservaFinal].statusQuarto = OCUPADO;
+    dbQuartos[localQuartoFinal].statusQuarto = OCUPADO;
+    dbClintes[localClienteFinal].statusCliente = OCUPADO;
 
     printf("Check-in Feito Com sucesso!\n\n");
     Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");

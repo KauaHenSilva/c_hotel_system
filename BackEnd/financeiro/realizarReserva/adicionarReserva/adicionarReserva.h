@@ -20,7 +20,12 @@ void adicionarReserva(StDbFluxoFinanceiro **dbFluxoFinanceiro, StDbControle *con
   adicionandoCpfCliente(*dbFluxoFinanceiro, *(controler->quantidadeDeReserva) - 1, idUserQuarto.idUser, cliente);
   adicionandoStatusPagamentoReserva(*dbFluxoFinanceiro, *(controler->quantidadeDeReserva) - 1);
   adicionandoNomeCliente(cliente, idUserQuarto.idUser, *dbFluxoFinanceiro, *(controler->quantidadeDeReserva) - 1);
-  quarto[idUserQuarto.idQuarto].statusQuarto = RESERVADO;
+
+  if(quarto[idUserQuarto.idQuarto].statusQuarto == LIVRE)
+    quarto[idUserQuarto.idQuarto].statusQuarto = RESERVADO;
+  if(cliente[idUserQuarto.idUser].statusCliente == LIVRE)
+    cliente[idUserQuarto.idUser].statusCliente = RESERVADO;
+    
   ((*dbFluxoFinanceiro)[*(controler->quantidadeDeReserva) - 1].statusQuarto = RESERVADO);
   adicionarDiaDaReserva(*dbFluxoFinanceiro, *(controler->quantidadeDeReserva) - 1, idUserQuarto);
   adicionandoValorQuarto(*dbFluxoFinanceiro, *(controler->quantidadeDeReserva) - 1, idUserQuarto.idQuarto, quarto);

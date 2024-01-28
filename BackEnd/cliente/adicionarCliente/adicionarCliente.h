@@ -9,6 +9,7 @@
 #include "./inputsOnly/_adicionar_NomeCliente.h"
 #include "./inputsOnly/_adicionar_RgCliente.h"
 #include "./inputsOnly/_adicionar_TelefoneCliente.h"
+#include "./inputsOnly/_adicionar_adicionarStatusQuarto.h"
 
 void adicionarCliente(StDbClientes **dbCliente, int *numClientes, int *idCliente)
 {
@@ -22,10 +23,12 @@ void adicionarCliente(StDbClientes **dbCliente, int *numClientes, int *idCliente
   adicionarTelefoneCliente(*dbCliente, *numClientes - 1);
   adicionarEmailCliente(*dbCliente, *numClientes - 1);
   adicionarEnderecoCliente(*dbCliente, *numClientes - 1);
+  adicionarStatusCliente(*dbCliente, *numClientes - 1);
   
   Utils.SystemComand.clearTela();
 
   printf("Cliente adicionado com sucesso!\n");
+  Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
 }
 
 

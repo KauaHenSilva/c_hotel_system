@@ -21,6 +21,13 @@ void realizarReserva(StDbFluxoFinanceiro **dbFluxoFinanceiro, StDbQuartos *quart
 
   int idQuarto = verificarReservaQuarto(quarto, *(controle->quantidadeDeQuarto));
 
+  if(idQuarto == -1)
+  {
+    printf("Reserva nao realizada Faltam Quarto!\n\n");
+    Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
+    return;
+  }
+
   struct tm dataEntradaTemp;
   struct tm dataSaidaTemp;
   
@@ -34,8 +41,12 @@ void realizarReserva(StDbFluxoFinanceiro **dbFluxoFinanceiro, StDbQuartos *quart
 
   int idCliente = verificarReservaCliente(cliente, *(controle->quantidadeDeCLientes));
 
-  if (idQuarto == -1 || idCliente == -1)
+  if (idCliente == -1)
+  {
+    printf("Reserva nao realizada Faltam Cliente!\n\n");
+    Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
     return;
+  }
 
   auxIdUserQuartoTime auxIdUserQuartoTime = {
     idCliente,

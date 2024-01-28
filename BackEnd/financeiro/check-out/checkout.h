@@ -17,7 +17,31 @@ int preucurarQuartoReservado(StDbFluxoFinanceiro *dbFluxoFinanceiro, StDbControl
   return 0;
 }
 
-void chekOut(StDbFluxoFinanceiro *dbFluxoFinanceiro, StDbControle *controle, StDbQuartos *dbQuartos)
+int preucurarClienteReservado(StDbFluxoFinanceiro *dbFluxoFinanceiro, StDbControle *controle, int idCliente)
+{
+  for (int x = 0; x < *controle->quantidadeDeReserva; x++)
+  {
+    if (dbFluxoFinanceiro[x].statusQuarto == RESERVADO && dbFluxoFinanceiro[x].idCliente == idCliente)
+    {
+      return 1;
+    }
+  }
+  return 0;
+}
+
+int preucurarClienteOcupado(StDbFluxoFinanceiro *dbFluxoFinanceiro, StDbControle *controle, int idCliente)
+{
+  for (int x = 0; x < *controle->quantidadeDeReserva; x++)
+  {
+    if (dbFluxoFinanceiro[x].statusQuarto == OCUPADO && dbFluxoFinanceiro[x].idCliente == idCliente)
+    {
+      return 1;
+    }
+  }
+  return 0;
+}
+
+void chekOut(StDbFluxoFinanceiro *dbFluxoFinanceiro,StDbClientes *cliente ,StDbControle *controle, StDbQuartos *dbQuartos)
 {
   int cont = 0;
   int *disponivel = NULL;
@@ -65,17 +89,19 @@ void chekOut(StDbFluxoFinanceiro *dbFluxoFinanceiro, StDbControle *controle, StD
   }
 
   int idDoQuartoSelecionado = 0;
+  int idDoClienteSelecionado = 0;
   int localReservaFinal = 0;
-
   for (int x = 0; x < *controle->quantidadeDeReserva; x++)
   {
     if (idReserva == dbFluxoFinanceiro[x].idReserva)
     {
       idDoQuartoSelecionado = dbFluxoFinanceiro[x].idQuarto;
+      idDoClienteSelecionado = dbFluxoFinanceiro[x].idCliente;
       localReservaFinal = x;
       break;
     }
   }
+
 
   // Encontrar informações do quarto
   int localQuartoFinal = 0;
@@ -84,6 +110,17 @@ void chekOut(StDbFluxoFinanceiro *dbFluxoFinanceiro, StDbControle *controle, StD
     if (dbQuartos[x].numero == idDoQuartoSelecionado)
     {
       localQuartoFinal = x;
+      break;
+    }
+  }
+
+    // Encontrar informações do Cliente
+  int localClienteFinal = 0;
+  for (int x = 0; x < *controle->quantidadeDeQuarto; x++)
+  {
+    if (cliente[x].idCadrastro == idDoClienteSelecionado)
+    {
+      localClienteFinal = x;
       break;
     }
   }
@@ -103,6 +140,13 @@ void chekOut(StDbFluxoFinanceiro *dbFluxoFinanceiro, StDbControle *controle, StD
       dbQuartos[localQuartoFinal].statusQuarto = OCUPADO;
     else
       dbQuartos[localQuartoFinal].statusQuarto = LIVRE;
+
+    if(preucurarClienteReservado(dbFluxoFinanceiro, controle, idDoClienteSelecionado))
+      cliente[localClienteFinal].statusCliente = RESERVADO;
+    else if(preucurarClienteOcupado(dbFluxoFinanceiro, controle, idDoClienteSelecionado))
+      cliente[localClienteFinal].statusCliente = OCUPADO;
+    else
+      cliente[localClienteFinal].statusCliente = LIVRE;
 
     printf("Check-out Feito Com sucesso!\n");
     Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");

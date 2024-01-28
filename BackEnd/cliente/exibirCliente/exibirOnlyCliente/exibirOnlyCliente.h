@@ -12,7 +12,20 @@ void exibirOnlyCliente(StDbClientes *cliente, int id)
     printf(" - Rg do CLiente: %s\n", cliente[id].rg);
     printf(" - Telefone do CLiente: %s\n", cliente[id].telefone);
     printf(" - Endereco do CLiente: %s\n", cliente[id].endereco);
-    printf(" - Email do CLiente: %s\n\n", cliente[id].email);
+    printf(" - Email do CLiente: %s\n", cliente[id].email);
+    switch (cliente[id].statusCliente)
+    {
+    case LIVRE:
+        printf(" - O cliente nao possui quarto reservado!\n\n");
+        break;
+    case RESERVADO:
+        printf(" - O cliente tem um ou mais quarto reservado!\n\n");
+        break;	
+    case OCUPADO:
+        printf(" - O cliente possui um quarto ocupado!\n\n");
+        break;
+    }
+    printf("\n");
 
 }
 #endif // EXIBIRONLYCLIENTE
