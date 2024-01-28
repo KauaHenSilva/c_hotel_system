@@ -21,7 +21,7 @@ void exibirValoresIntervalo(StDbFluxoFinanceiro *dbFluxoFinanceiro, StDbControle
   Utils.SystemComand.clearTela(); 
 
   printf("Valores recebidos nesse intervalo\n\n");
-
+  int x = 0;
   // Exibir valores para o intervalo
   for (int i = 0; i < *(controle->quantidadeDeReserva); i++)
   {
@@ -34,10 +34,14 @@ void exibirValoresIntervalo(StDbFluxoFinanceiro *dbFluxoFinanceiro, StDbControle
         dataFinalTimestamp <= fimTimestamp &&
         dbFluxoFinanceiro[i].statusPagamento == PAGO)
     {
-      printf("Voce recebeu: %.2lf\n", dbFluxoFinanceiro[i].valorPagar);
+      x += dbFluxoFinanceiro[i].valorPagar;
+      exibirOnly(dbFluxoFinanceiro, i);
     }
   }
   printf("\n");
+
+  printf("Valor total recebido neste periodo: %d\n", x);
+
   Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
 
 }
