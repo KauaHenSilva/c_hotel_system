@@ -15,7 +15,7 @@ void exibirValoresIntervalo(StDbFluxoFinanceiro *dbFluxoFinanceiro, StDbControle
 
   struct tm inicio, fim;
 
-  Utils.InputsSavin.getData(&inicio, "Digite a data do início do intervalo: ");
+  Utils.InputsSavin.getData(&inicio, "Digite a data do inicio do intervalo: ");
   Utils.SystemComand.clearTela(); 
   Utils.InputsSavin.getData(&fim, "Digite a data do fim do intervalo: ");
   Utils.SystemComand.clearTela(); 
@@ -40,7 +40,7 @@ void exibirValoresIntervalo(StDbFluxoFinanceiro *dbFluxoFinanceiro, StDbControle
   }
   printf("\n");
 
-  printf("Valor total recebido neste periodo: %d\n", x);
+  printf("Valor total recebido neste periodo: %d\n\n", x);
 
   Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
 
