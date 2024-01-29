@@ -8,29 +8,34 @@ static void adicionarStatusQuartoUser(StDbQuartos *dbQuarto, int posicaoMemoria)
 
 void adicionarStatusQuartoUP(StDbQuartos *dbQuarto, int posicaoMemoria)
 {
-  Utils.SystemComand.clearTela();
-  printf("Adicionando Quarto [status]... \n\n");
-
   int ver;
-  printf("Digite o modelo de status do quarto [%d]: \n", dbQuarto[posicaoMemoria].numero);
-  printf("1 - status Padrao (Padrao: Livre)\n");
-  printf("2 - status Personalizado\n");
-  
-  Utils.InputsBasic.getNumeroInt(&ver, "Digite o modelo de status do quarto: ");
-
-  switch (ver)
+  while (1)
   {
-    case 1:
-      initStatusQuarto(dbQuarto, posicaoMemoria);
-      break;
-    case 2:
-      adicionarStatusQuartoUser(dbQuarto, posicaoMemoria);
-      break;
-    default:
-      Utils.SystemComand.clearTela();
-      printf("Opcao anterior invalida!!\n");
-      adicionarStatusQuarto(dbQuarto, posicaoMemoria);
-      break;
+    Utils.SystemComand.clearTela();
+    printf("Adicionando Quarto [status]... \n\n");
+
+    printf("Digite o modelo de status do quarto [%d]: \n", dbQuarto[posicaoMemoria].numero);
+    printf("1 - status Padrao (Padrao: Livre)\n");
+    printf("2 - status Personalizado\n");
+    
+    Utils.InputsBasic.getNumeroInt(&ver, "Digite o modelo de status do quarto: ");
+
+    switch (ver)
+    {
+      case 1:
+        initStatusQuarto(dbQuarto, posicaoMemoria);
+        break;
+      case 2:
+        adicionarStatusQuartoUser(dbQuarto, posicaoMemoria);
+        break;
+      default:
+        Utils.SystemComand.clearTela();
+        printf("Opcao anterior invalida!!\n");
+        Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
+        continue;
+        break;
+    }
+    break;
   }
   printf("[status] adicionado com sucesso!... \n\n");
 }

@@ -7,6 +7,8 @@
 void removerReserva(StDbFluxoFinanceiro **fluxo, int *qtdFluxo, StDbQuartos *quarto)
 {
 
+  Utils.SystemComand.clearTela();
+
   for (int x = 0; x < *qtdFluxo; x++)
     exibirOnly(*fluxo, x);
 

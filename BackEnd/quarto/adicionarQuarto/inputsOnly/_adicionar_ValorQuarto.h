@@ -8,12 +8,12 @@ static void adicionarValorPadraoQuarto(StDbQuartos *dbQuarto, int posicaoMemoria
 
 void adicionarValorQuarto(StDbQuartos *dbQuarto, int posicaoMemoria)
 {
-    Utils.SystemComand.clearTela();
+    int opc;
 
     while (1)
     {
+        Utils.SystemComand.clearTela();
 
-        int opc;
 
         printf("Digite o tipo do valor do quarto [%d]: \n", dbQuarto[posicaoMemoria].numero);
         printf("1 - Valor Padrao(SIMPLES: 100R$, DUPLO: 200R$, SUITE 300R$)\n");
@@ -31,6 +31,7 @@ void adicionarValorQuarto(StDbQuartos *dbQuarto, int posicaoMemoria)
             break;
         default:
             printf("Alternativa Invalida\n");
+            Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
             continue;
         }
         break;;

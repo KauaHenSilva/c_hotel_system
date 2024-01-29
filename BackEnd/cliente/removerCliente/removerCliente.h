@@ -18,11 +18,13 @@ void removerCliente(StDbClientes **dbCliente, int *numCliente) {
 
   if((*dbCliente)[id].statusCliente == RESERVADO) {
     printf("O cliente nao pode ser removido pois ele possui um quarto reservado!\n");
+    Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
     return;
   }
 
   if((*dbCliente)[id].statusCliente == OCUPADO) {
     printf("O cliente nao pode ser removido pois ele possui um quarto ocupado!\n");
+    Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
     return;
   }
 

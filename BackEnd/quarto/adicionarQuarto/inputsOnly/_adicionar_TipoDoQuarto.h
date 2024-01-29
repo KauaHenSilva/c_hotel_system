@@ -8,29 +8,35 @@ static void adicionarTipoPadraoQuarto(StDbQuartos *dbQuarto, int posicaoMemoria)
 
 void adicionarTipoQuarto(StDbQuartos *dbQuarto, int posicaoMemoria)
 {
-  Utils.SystemComand.clearTela();
-
-  printf("Adicionando Quarto [tipo]... \n\n");
-
-  int opc;
-  
-  printf("Digite o tipo do quarto [%d]: \n", dbQuarto[posicaoMemoria].numero);
-  printf("1 - Tipo Padrao(Tipo: Simples)\n");
-  printf("2 - Tipo Personalizado\n");
-
-  Utils.InputsBasic.getNumeroInt(&opc, "Digite o tipo do quarto: ");
-
-  switch (opc)
+  while(1)
   {
-    case 1:
-      adicionarTipoPadraoQuarto(dbQuarto, posicaoMemoria);
-      break;
-    case 2:
-      adicionarTipoPersonalizadoQuarto(dbQuarto, posicaoMemoria);
-      break;
-    default:
-      adicionarTipoQuarto(dbQuarto, posicaoMemoria);
-      break;
+
+    Utils.SystemComand.clearTela();
+
+    printf("Adicionando Quarto [tipo]... \n\n");
+
+    int opc;
+    
+    printf("Digite o tipo do quarto [%d]: \n", dbQuarto[posicaoMemoria].numero);
+    printf("1 - Tipo Padrao(Tipo: Simples)\n");
+    printf("2 - Tipo Personalizado\n");
+
+    Utils.InputsBasic.getNumeroInt(&opc, "Digite o tipo do quarto: ");
+
+    switch (opc)
+    {
+      case 1:
+        adicionarTipoPadraoQuarto(dbQuarto, posicaoMemoria);
+        break;
+      case 2:
+        adicionarTipoPersonalizadoQuarto(dbQuarto, posicaoMemoria);
+        break;
+      default:
+        printf("Alternativa Invalida\n");
+        Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
+        continue;
+    }
+    break;
   }
 
   printf("[tipo] adicionado com sucesso!... \n");
