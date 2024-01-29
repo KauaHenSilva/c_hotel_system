@@ -10,7 +10,7 @@
 #include "../AdicionarCliente/inputsOnly/_adicionar_RgCliente.h"
 #include "../AdicionarCliente/inputsOnly/_adicionar_TelefoneCliente.h"
 
-void editarCliente(StDbClientes *dbCliente, int numQuartos)
+void editarCliente(StDbClientes *dbCliente, int numCliente)
 {
   int opcao;
 
@@ -31,18 +31,18 @@ void editarCliente(StDbClientes *dbCliente, int numQuartos)
     if (opcao == 0)
       return;
 
-    for (int x  = 0 ; x < numQuartos ; x++)
+    for (int x  = 0 ; x < numCliente ; x++)
       exibirOnlyCliente(dbCliente, x);
 
     int id;
-    getClienteId(dbCliente, numQuartos, &id);
+    getClienteId(dbCliente, numCliente, &id);
     if (id == -1)
       return;
 
     switch (opcao)
     {
     case 1:
-      adicionarCpfCliente(dbCliente, id);
+      adicionarCpfCliente(dbCliente, id, numCliente);
       break;
     case 2:
       adicionarEmailCliente(dbCliente, id);

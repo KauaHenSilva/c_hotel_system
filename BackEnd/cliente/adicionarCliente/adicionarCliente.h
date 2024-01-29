@@ -18,7 +18,7 @@ void adicionarCliente(StDbClientes **dbCliente, int *numClientes, int *idCliente
   adicionarEspacoCliente(dbCliente, numClientes);
   adicionarIdCliente(*dbCliente, *numClientes - 1, idCliente);
   adicionarNomeCliente(*dbCliente, *numClientes - 1);
-  adicionarCpfCliente(*dbCliente, *numClientes - 1);
+  adicionarCpfCliente(*dbCliente, *numClientes - 1, *numClientes);
   adicionarRgCliente(*dbCliente, *numClientes - 1);
   adicionarTelefoneCliente(*dbCliente, *numClientes - 1);
   adicionarEmailCliente(*dbCliente, *numClientes - 1);
