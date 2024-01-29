@@ -11,6 +11,7 @@ typedef struct {
   void (*getRg)(char *rg, const char *msg);
   void (*getTelefone)(char *telefone);
   void (*getData)(struct tm *data, const char *msg);
+  void (*getDataAtual)(struct tm *data);
 } stInputsSv;
 
 #endif // INPUTSSV

@@ -30,7 +30,11 @@ typedef struct {
 } Data;
 
 typedef enum {PAGO, NAO_PAGO} EnStatusPagamento;
-
+typedef enum {SIM, NAO} EnStatusPossui;
+typedef struct {
+    struct tm dataAtual;
+    int possui;
+} stDataAtual;
 
 typedef struct  {
     int idReserva;
@@ -39,6 +43,7 @@ typedef struct  {
     char nomeCliente[100];
     char cpfCliente[15];
     Data dataReserva;
+    struct tm dataPagamento;
     double valorPagar;
     EnStatusPagamento statusPagamento;
     EnStatusQuarto statusQuarto;

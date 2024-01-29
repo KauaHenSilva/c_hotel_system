@@ -17,6 +17,7 @@
 #include "./inputsSv/_input_Rg.h"
 #include "./inputsSv/_input_Telefone.h"
 #include "./inputsSv/_input_Data.h"
+#include "./inputsSv/_input_DataAtual.h"
 
 
 struct stUtils
@@ -41,6 +42,7 @@ struct stUtils
     (void (*)(char *, const char*)) getRg,
     (void (*)(char *)) getTelefone,
     (void (*)(struct tm *, const char*)) getData,
+    (void (*)(struct tm *)) getDataAtual,
   }
 };
 

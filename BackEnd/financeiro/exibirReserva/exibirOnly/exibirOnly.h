@@ -10,6 +10,16 @@ void exibirData(struct tm *data, const char *msg)
   printf("%s%s\n", msg, buffer);
 }
 
+void exibirDataPagamento(StDbFluxoFinanceiro *fluxo, int i)
+{
+  char buffer[80];
+
+  strftime(buffer, sizeof(buffer), " - Data e hora do pagamento: %d-%m-%Y %H:%M:%S", &(fluxo[i].dataPagamento));
+  
+  printf("%s\n", buffer);
+}
+
+
 void exibirOnly(StDbFluxoFinanceiro *dbFluxoFinanceiro, int x)
 {
   printf("Fluxo Financa [%d]: \n", x + 1);
@@ -26,6 +36,7 @@ void exibirOnly(StDbFluxoFinanceiro *dbFluxoFinanceiro, int x)
     break;
   case PAGO:
     printf(" - Status do Pagamento: PAGO\n");
+    exibirDataPagamento(dbFluxoFinanceiro, x);
     break;
   }
   switch (dbFluxoFinanceiro[x].statusQuarto)

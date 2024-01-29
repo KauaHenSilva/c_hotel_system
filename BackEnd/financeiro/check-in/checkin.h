@@ -67,43 +67,25 @@ void checkin(StDbFluxoFinanceiro *dbFluxoFinanceiro,StDbClientes *dbClientes, St
         return;
     }
 
+
+
+    int localReservaFinal = 0;
     int idDoQuartoSelecionado = 0;
     int idDoClienteSelecionado = 0;
-    int localReservaFinal = 0;
-
     for (int x = 0; x < *controle->quantidadeDeReserva; x++)
     {
         if (idReserva == dbFluxoFinanceiro[x].idReserva)
         {
+            idDoClienteSelecionado = dbFluxoFinanceiro[x].idCliente;
             idDoQuartoSelecionado = dbFluxoFinanceiro[x].idQuarto;
             localReservaFinal = x;
             break;
         }
     }
 
-    for (int x = 0; x < *controle->quantidadeDeReserva; x++)
-    {
-        if (idReserva == dbFluxoFinanceiro[x].idReserva)
-        {
-            idDoQuartoSelecionado = dbFluxoFinanceiro[x].idCliente;
-            localReservaFinal = x;
-            break;
-        }
-    }
-
     // Encontrar informações do quarto
-    int localQuartoFinal = 0;
-    for (int x = 0; x < *controle->quantidadeDeQuarto; x++)
-    {
-        if (dbClintes[x].idCadrastro == idDoQuartoSelecionado)
-        {
-            idDoClienteSelecionado = x;
-            break;
-        }
-    }
-
     int localClienteFinal = 0;
-    for (int x = 0; x < *controle->quantidadeDeCLientes; x++)
+    for (int x = 0; x < *controle->quantidadeDeQuarto; x++)
     {
         if (dbClientes[x].idCadrastro == idDoClienteSelecionado)
         {
@@ -112,9 +94,29 @@ void checkin(StDbFluxoFinanceiro *dbFluxoFinanceiro,StDbClientes *dbClientes, St
         }
     }
 
+    int localQuartoFinal = 0;
+    for (int x = 0; x < *controle->quantidadeDeQuarto; x++)
+    {
+        if (dbQuartos[x].numero == idDoQuartoSelecionado)
+        {
+            localQuartoFinal = x;
+            break;
+        }
+    }
+
+    Utils.SystemComand.clearTela();
+    if(Utils.InputsBasic.getConfirmacao("Deseja alterar a data de Entrada? [S]im [N]ao: "))
+    {
+        exibirData(&dbFluxoFinanceiro[localReservaFinal].dataReserva.DataInicial, "Data de incial da reserva: ");
+        exibirData(&dbFluxoFinanceiro[localReservaFinal].dataReserva.DataInicial, "Data de final de Reserva: ");
+        Utils.InputsSavin.getData(&dbFluxoFinanceiro[localReservaFinal].dataReserva.DataInicial, "Digite a data de inicial Real: ");
+        adicionandoValorQuarto(dbFluxoFinanceiro,localReservaFinal ,localQuartoFinal,dbQuartos);
+    }
+
+
     dbFluxoFinanceiro[localReservaFinal].statusQuarto = OCUPADO;
     dbQuartos[localQuartoFinal].statusQuarto = OCUPADO;
-    dbClintes[localClienteFinal].statusCliente = OCUPADO;
+    dbClientes[localClienteFinal].statusCliente = OCUPADO;
 
     printf("Check-in Feito Com sucesso!\n\n");
     Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");

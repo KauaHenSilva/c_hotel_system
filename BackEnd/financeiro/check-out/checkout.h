@@ -46,6 +46,8 @@ void chekOut(StDbFluxoFinanceiro *dbFluxoFinanceiro,StDbClientes *cliente ,StDbC
   int cont = 0;
   int *disponivel = NULL;
 
+  Utils.SystemComand.clearTela();
+
   printf("Exibindo todos os quartos para fazer check-out\n\n");
 
   for (int x = 0; x < *controle->quantidadeDeReserva; x++)
@@ -76,6 +78,7 @@ void chekOut(StDbFluxoFinanceiro *dbFluxoFinanceiro,StDbClientes *cliente ,StDbC
     if (idReserva == disponivel[x])
     {
       encontrada = 1;
+      Utils.SystemComand.clearTela();
       printf("Reserva encontrada\n");
       break;
     }
@@ -83,6 +86,7 @@ void chekOut(StDbFluxoFinanceiro *dbFluxoFinanceiro,StDbClientes *cliente ,StDbC
 
   if (!encontrada)
   {
+    Utils.SystemComand.clearTela();
     printf("Reserva nao encontrada\n");
     Utils.SystemComand.systemPause("Pressione qualquer tecla para continuar...");
     return;
@@ -125,9 +129,11 @@ void chekOut(StDbFluxoFinanceiro *dbFluxoFinanceiro,StDbClientes *cliente ,StDbC
     }
   }
 
+
   if (Utils.InputsBasic.getConfirmacao("Deseja realmente realizar o pagamento? [S]im [N]ao: "))
   {
     dbFluxoFinanceiro[localReservaFinal].statusPagamento = PAGO;
+    Utils.InputsSavin.getDataAtual(&dbFluxoFinanceiro[localReservaFinal].dataPagamento);
   }
 
   if (dbFluxoFinanceiro[localReservaFinal].statusPagamento == PAGO)
