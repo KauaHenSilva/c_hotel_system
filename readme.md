@@ -59,13 +59,3 @@ O objetivo deste projeto é criar um sistema de gerenciamento para um hotel de p
 - **Realizar pagamento:** Apresenta o valor a ser pago pelo cliente, atualizando o status do quarto e registrando o valor pago no arquivo de controle financeiro.
 - **Valores recebidos:** Permite a consulta de todos os valores recebidos durante um intervalo de tempo definido pelo usuário.
 
-
-## Resultados
-
-- **Revisão De Usabilidade** ( Aguardando )
-
-- **Revisão De Funcionalidades** ( Aguardando )
-
-- **Nota** ( Aguardando )
-
-- **Comentario do Professor sobre o projeto** ( Aguardando )
